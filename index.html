@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enemy tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a guild intelligence ledger, matter-of-fact, quick to scan.
+   IDEA: a guild roster book from the Tibia world, owners as entries and alts filed beneath.
+   PICTURE: the live tree itself, with an online board above it.
+   COLOUR and TYPE: stone ground, deep moss-teal band, signal green for online, Cinzel titles, Inter body.
+   LAYOUT: band with title and online board, then filters, then three guild columns of the tree. */
+:root{color-scheme:light dark;
+--bg:light-dark(#f3f1ec,#121614);--card:light-dark(#ffffff,#1b201e);--ink:light-dark(#1c1d1b,#e9ece8);--mut:light-dark(#62665f,#9aa39c);
+--line:light-dark(#dcd8cf,#2c3330);--band:light-dark(#17454a,#0d2a2d);--bandink:#eef6f4;--on:#1fb85a;--h:#1d7a46;--m:#b07a12;--l:#8a8f88;
+--rb:light-dark(#8c2a1e,#e07a66);--bw:light-dark(#3d4fa3,#8f9ff0);--cc:light-dark(#6c3f8f,#c597ea)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2{font-family:Cinzel,Georgia,serif;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,4.4vw,46px)}h2{font-size:22px}
+.band{padding:clamp(24px,4vw,52px) max(5vw,16px)}
+.top{background:var(--band);color:var(--bandink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:32px;align-items:start}
+.top p{margin:10px 0 0;max-width:60ch;color:#cfe1dd}
+.board{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:18px}
+.board h2{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.rf{margin-left:auto;min-height:36px;padding:0 12px;font-size:14px;background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)}
+.board h2 small{font:500 13px Inter,sans-serif;color:#bcd3ce}
+.big{font:700 clamp(36px,6vw,56px)/1 Cinzel,serif;color:#7ff0a8}
+.onl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:rgba(255,255,255,.1);border-radius:999px;padding:5px 12px;font-size:14px;white-space:nowrap}
+.chip b{font-weight:600}.chip i{font-style:normal;color:#bcd3ce}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--on);margin-right:6px;box-shadow:0 0 0 3px rgba(31,184,90,.22)}
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-block:18px}
+input[type=search]{font:16px Inter,sans-serif;padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:min(320px,100%)}
+button,label.tg{font:500 15px Inter,sans-serif;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--on);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)}
+.cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px 16px;padding-top:0;align-items:start}.cols>p{grid-column:1/-1}
+.col h2{padding-bottom:8px;border-bottom:3px solid currentColor;margin-bottom:12px}
+.col.RB h2{color:var(--rb)}.col.BW h2{color:var(--bw)}.col.CC h2{color:var(--cc)}
+.col .sub{font-size:13px;color:var(--mut);margin:-4px 0 12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px}details.on{border-color:var(--on)}
+summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";color:var(--mut);transition:transform .15s}details[open]>summary::before{transform:rotate(90deg)}
+.nm{font-weight:600}.lv{color:var(--mut);font-size:14px;white-space:nowrap}
+.tag{font-size:12px;border-radius:6px;padding:1px 7px;border:1px solid currentColor;white-space:nowrap}
+.tag.RB{color:var(--rb)}.tag.BW{color:var(--bw)}.tag.CC{color:var(--cc)}.tag.X{color:var(--mut)}
+.cnt{margin-left:auto;font-size:13px;color:var(--mut);white-space:nowrap}
+ul{list-style:none;margin:0;padding:0 14px 12px 30px;border-top:1px solid var(--line)}
+li{padding:8px 0 6px;border-bottom:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+li:last-child{border-bottom:0}
+.ev{flex-basis:100%;font-size:13px;color:var(--mut)}
+.cf{font-size:12px;font-weight:600;border-radius:6px;padding:1px 7px;color:#fff;white-space:nowrap}
+.cf.h{background:var(--h)}.cf.m{background:var(--m)}.cf.l{background:var(--l)}.cf.n{background:transparent;color:var(--mut);border:1px dashed var(--mut)}
+.seen{font-size:13px;color:var(--mut);white-space:nowrap}
+.isOn .nm{color:var(--on)}
+a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
+.live{border-top:1px solid var(--line)}
+.live ol{padding-left:20px;max-width:75ch}.live li{display:list-item;border:0;padding:4px 0}
+.about{padding-left:20px;max-width:80ch}.about li{display:list-item;border:0;padding:4px 0}details.inst{max-width:80ch;margin-top:14px}details.inst>summary{font-weight:600}details.inst ol{padding:0 14px 12px 36px}
+.copyrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.note{font-size:13px;color:var(--mut)}
+.hide{display:none!important}[hidden]{display:none!important}
+.tabs{display:flex;gap:8px;padding-block:14px 0;border-bottom:1px solid var(--line)}
+.tabs a{text-decoration:none;font-weight:600;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center;gap:6px;border-radius:10px 10px 0 0;color:var(--mut);border-bottom:3px solid transparent}
+.tabs a[aria-current=page]{color:var(--ink);border-bottom-color:var(--on)}
+.tabs span{font-size:13px;background:var(--on);color:#fff;border-radius:999px;padding:0 8px}.tabs span:empty{display:none}
+.olt{width:100%;max-width:980px;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:14px}
+.olt th,.olt td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}.olt th{font-size:13px;color:var(--mut);font-weight:600}
+.olt .r{text-align:right;font-variant-numeric:tabular-nums}.olt td.r{font-weight:600}
+@media(max-width:600px){.olt td.r{text-align:start}}
+@media(max-width:420px){.cols{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.top{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){summary::before{transition:none}}
+</style>
+</head>
+<body>
+<header class="band top">
+  <div>
+    <h1>Enemy characters, grouped by owner</h1>
+    <p>Project Fibula. Each box is one likely owner, with the main on top and every character linked to it below, whatever its guild. The starting point was the guilds Bullywannabes, Reformed Bullies and Carlins Cartel. The links come from login/logout patterns on opentibia.info, and they are indications, not proof.</p>
+  </div>
+  <section class="board" aria-live="polite">
+    <h2><span>Online now</span><small id="upd">Loading status …</small><button id="refresh" type="button" class="rf">Refresh now</button></h2>
+    <div class="big" id="onN">–</div>
+    <div class="note" style="color:#bcd3ce" id="onSub">of tracked characters</div>
+    <div class="onl" id="onList"></div>
+  </section>
+</header>
+<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#changes" id="t-changes">Changes</a></nav>
+
+<div id="v-owners" hidden>
+<div class="band tools">
+  <input type="search" id="q" placeholder="Search for a character" aria-label="Search for a character">
+  <label class="tg"><input type="checkbox" id="onlyOn"> Only owners with someone online</label>
+  <button id="exp" type="button">Expand all</button>
+  <div class="legend"><span><span class="cf h">High</span> score ≥100</span><span><span class="cf m">Medium</span> 40–99 or shared online time</span><span><span class="cf l">Low</span> 15–39</span><span><span class="cf n">Name</span> similar name only</span></div>
+</div>
+
+<p class="band note" id="cnt" style="padding-block:0 12px"></p>
+<main class="band cols" id="cols"></main>
+
+</div>
+<section class="band" id="v-online">
+  <h2 id="onTitle">Tracked characters online</h2>
+  <p class="note" id="onSnap"></p>
+  <div class="scroll"><table class="stack olt"><thead><tr><th>Name</th><th class="r">Level</th><th>Vocation</th><th>Owner</th><th>Guild</th></tr></thead><tbody id="onBody"></tbody></table></div>
+</section>
+<section class="band" id="v-changes" hidden>
+  <h2>Changes found by the nightly scan</h2>
+  <p class="note">New alts, new guild members and characters that switched or left a guild. Characters are never dropped: they stay under their owner even after leaving a guild.</p>
+  <div class="scroll"><table class="stack olt"><thead><tr><th>Date</th><th>Change</th><th>Character</th><th>Owner</th><th>Details</th></tr></thead><tbody id="chBody"></tbody></table></div>
+</section>
+<section class="band live">
+  <h2>About the data</h2>
+  <p class="note">All data comes from the public stats on <a href="https://opentibia.info/index/server/fibula">opentibia.info</a> (Project Fibula): the online list, character pages and the site's Players scanner. Nothing is read from the game itself.</p>
+  <ul class="about">
+    <li><b>Online status</b> is collected every 5 minutes by a scheduled GitHub job. Together with GitHub's file cache, a login or logout normally shows here within 5 to 10 minutes.</li>
+    <li><b>This page</b> updates itself every minute, so it can stay open on a second screen. Refresh now checks at once.</li>
+    <li><b>Alt scan</b> runs every night at 04:17 (Norwegian time). It refreshes level, vocation and guild, looks for new alts with the scanner, and adds new members of Bullywannabes, Reformed Bullies and Carlins Cartel. Nobody is ever removed.</li>
+    <li><b>Alt links</b> are based on matching login and logout times over the last 90 days. They are strong hints, not proof.</li>
+  </ul>
+  <details class="inst"><summary>Instant view straight from opentibia.info</summary>
+  <ol>
+    <li>Create a new bookmark in your browser and paste the script as its address (URL).</li>
+    <li>Open <a href="https://opentibia.info/index/server/fibula">opentibia.info with Fibula selected</a>.</li>
+    <li>Click the bookmark. A panel lists the tracked characters online right now, with level, vocation and owner, and refreshes every 60 seconds.</li>
+  </ol>
+  <div class="copyrow"><button id="copyBm" type="button">Copy the live script</button><span class="note" id="copyMsg"></span></div>
+  </details>
+</section>
+
+<script>
+{
+let D={chars:{},clusters:[]};
+const GN={RB:'Reformed Bullies',BW:'Bullywannabes',CC:'Carlins Cartel'};
+const CF={h:'High',m:'Medium',l:'Low',n:'Name'};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let online=new Set(), open=false, snap='';
+const url=n=>'https://opentibia.info/stats/player/'+encodeURIComponent(n);
+const lvl=c=>c.l>1?c.l:'low';
+const vshort=v=>({'Master Sorcerer':'MS','Elder Druid':'ED','Royal Paladin':'RP','Elite Knight':'EK','Sorcerer':'S','Druid':'D','Paladin':'P','Knight':'K'}[v]||v);
+function charRow(n,extra){
+  const c=D.chars[n]||{g:'X',l:0,v:'',ls:''};const on=online.has(n);
+  const g=c.g==='X'?'<span class="tag X">no guild</span>':`<span class="tag ${c.g}">${esc(GN[c.g])}${c.r?' · '+esc(c.r):''}</span>`;
+  return `${on?'<span class="dot" title="Online"></span>':''}<a class="nm" href="${url(n)}">${esc(n)}</a><span class="lv">${lvl(c)} ${esc(vshort(c.v))}</span>${g}${extra||''}<span class="seen">${on?'online now':'last seen '+esc(c.ls)}</span>`;
+}
+function render(){
+  const q=document.getElementById('q').value.trim().toLowerCase(), only=document.getElementById('onlyOn').checked;
+  const rows=[];
+  for(const [main,g,alts] of D.clusters){
+    const names=[main,...alts.map(a=>a[0])];
+    if(q&&!names.some(n=>n.toLowerCase().includes(q)))continue;
+    const nOn=names.filter(n=>online.has(n)).length;
+    if(only&&!nOn)continue;
+    const items=alts.map(([n,cf,ev,nw])=>`<li class="${online.has(n)?'isOn':''}">${charRow(n,` <span class="cf ${cf}">${CF[cf]}</span>${nw?' <span class="cf n">new</span>':''}`)}<span class="ev">${esc(ev)}</span></li>`).join('');
+    rows.push([nOn,names.length,`<details class="${nOn?'on':''}" ${open||q?'open':''}><summary class="${online.has(main)?'isOn':''}">${charRow(main)}<span class="cnt">${names.length} char${names.length>1?'s':''}${nOn?' · '+nOn+' online':''}</span></summary>${items?'<ul>'+items+'</ul>':''}</details>`]);
+  }
+  rows.sort((a,b)=>(b[0]>0)-(a[0]>0)||b[1]-a[1]);
+  document.getElementById('cols').innerHTML=rows.map(r=>r[2]).join('')||'<p class="note">No matches.</p>';
+  document.getElementById('cnt').textContent=rows.length+' owners shown. Owners with someone online come first, then those with the most characters.';
+  const all=new Set(D.clusters.flatMap(c=>[c[0],...c[2].map(a=>a[0])]));
+  const on=[...all].filter(n=>online.has(n));
+  document.getElementById('onN').textContent=online.size?on.length:'–';
+  document.getElementById('onSub').textContent=`of ${all.size} tracked characters`;
+  const owner=n=>{for(const c of D.clusters){if(c[0]===n||c[2].some(a=>a[0]===n))return c[0]}return n};
+  document.getElementById('onList').innerHTML=on.map(n=>`<span class="chip"><span class="dot"></span><b>${esc(n)}</b>${owner(n)!==n?' <i>('+esc(owner(n))+')</i>':''}</span>`).join('');
+  const ol=on.map(n=>[n,D.chars[n]||{g:'X',l:0,v:''},owner(n)]).sort((a,b)=>b[1].l-a[1].l);
+  document.getElementById('tabN').textContent=online.size?String(on.length):'';
+  document.getElementById('onSnap').textContent=snap?('Online list collected every 5 minutes; this page updates itself every minute. Last change '+snap+'.'):'No status loaded yet.';
+  document.getElementById('onBody').innerHTML=ol.map(([n,c,o])=>`<tr><td><span class="dot"></span><a class="nm" href="${url(n)}">${esc(n)}</a></td><td class="r">${c.l>1?esc(c.l):'low'}</td><td>${esc(c.v)}</td><td>${o!==n?esc(o):'(main)'}</td><td>${c.g==='X'?'<span class="tag X">no guild</span>':`<span class="tag ${c.g}">${esc(GN[c.g])}</span>`}</td></tr>`).join('')||'<tr><td colspan="5" class="note">No tracked characters online in the latest snapshot.</td></tr>';
+}
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('onlyOn').addEventListener('change',render);
+document.getElementById('exp').addEventListener('click',e=>{open=!open;e.target.textContent=open?'Collapse all':'Expand all';render()});
+function route(){const h=location.hash,ch=h==='#changes',ow=h==='#owners',on=!ch&&!ow;document.getElementById('v-owners').hidden=!ow;document.getElementById('v-online').hidden=!on;document.getElementById('v-changes').hidden=!ch;document.getElementById('t-changes').toggleAttribute('aria-current',ch);if(ch)document.getElementById('t-changes').setAttribute('aria-current','page');
+  document.getElementById('t-owners').toggleAttribute('aria-current',ow);document.getElementById('t-online').toggleAttribute('aria-current',on);
+  if(!ch)document.getElementById(on?'t-online':'t-owners').setAttribute('aria-current','page')}
+window.addEventListener('hashchange',route);
+render();route();
+
+/* bookmarklet */
+const mkBm=()=>{const own={};for(const c of D.clusters){for(const n of [c[0],...c[2].map(a=>a[0])]){const x=D.chars[n]||{};own[n]=[c[0],x.l>1?String(x.l):'low',x.v||'']}}
+return "javascript:(()=>{const O="+JSON.stringify(own)+";let p=document.getElementById('bwlive');if(!p){p=document.createElement('div');p.id='bwlive';p.style.cssText='position:fixed;top:12px;right:12px;z-index:99999;background:#17454a;color:#fff;font:14px/1.4 sans-serif;padding:12px 14px;border-radius:12px;max-height:85vh;overflow:auto;width:320px;box-shadow:0 8px 30px rgba(0,0,0,.4)';document.body.appendChild(p)}const t=s=>document.createTextNode(s);async function go(){try{const h=await(await fetch('/stats/online',{cache:'no-store'})).text();const d=new DOMParser().parseFromString(h,'text/html');const on=new Set([...d.querySelectorAll('a[href*=\"/stats/player/\"]')].map(a=>a.textContent.trim()));const L=Object.keys(O).filter(n=>on.has(n)).sort((a,b)=>(parseInt(O[b][1])||0)-(parseInt(O[a][1])||0));p.textContent='';const b=document.createElement('b');b.textContent='Tracked chars online: '+L.length+' ('+new Date().toLocaleTimeString()+')';p.appendChild(b);for(const n of L){const r=document.createElement('div');r.style.marginTop='6px';r.appendChild(t(n+' \u2013 '+O[n][1]+' '+O[n][2]+(O[n][0]!==n?' ('+O[n][0]+')':'')));p.appendChild(r)}}catch(e){p.textContent='Error: '+e}}go();clearInterval(window.__bwl);window.__bwl=setInterval(go,60000)})()";};
+document.getElementById('copyBm').addEventListener('click',async()=>{const m=document.getElementById('copyMsg');try{await navigator.clipboard.writeText(mkBm());m.textContent='Copied. Paste it as the address of a new bookmark.'}catch(e){m.textContent='Copying was blocked.'}});
+
+const RAW='https://raw.githubusercontent.com/Anamnesisfibula/anamnesisfibula.github.io/data/';
+const getJ=f=>fetch(RAW+f+'.json?t='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>fetch('data/'+f+'.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()));
+async function load(){const u=document.getElementById('upd');
+  try{const [n,st]=await Promise.all([getJ('network'),getJ('status')]);
+    D=n;online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render()}
+  catch(err){u.textContent='Could not load data'}}
+async function loadChanges(){try{const L=await getJ('changes');const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change'};
+  document.getElementById('chBody').innerHTML=L.slice().reverse().map(c=>`<tr><td>${esc(c.date||'')}</td><td>${esc(T[c.type]||c.type||'')}</td><td><a class="nm" href="${url(c.name||'')}">${esc(c.name||'')}</a></td><td>${esc(c.owner||'')}</td><td>${esc(c.type==='new_alt'?'via '+c.via+', score '+c.score:c.type==='guild_change'?c.from+' → '+c.to:c.guild||'')}</td></tr>`).join('')||'<tr><td colspan="5" class="note">No changes yet. The first nightly scan found nothing new.</td></tr>'}catch(e){}}
+load();setInterval(load,60000);document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Checking …';await load();await loadChanges();b.disabled=false;b.textContent='Refresh now'});loadChanges();setInterval(loadChanges,600000);
+}
+</script>
+</body>
+</html>

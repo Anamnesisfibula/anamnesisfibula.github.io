@@ -1,0 +1,61 @@
+name: Update tracker
+# Data lives on the "data" branch so frequent updates do not rebuild GitHub Pages.
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # starts a ~58 min watcher; overlapping runs queue, so coverage is continuous
+    - cron: "17 3 * * *"     # daily alt scan, 04:17 Norwegian time (UTC+1)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "watch (online every 5 min for ~1 h), online (once) or scan"
+        default: "watch"
+permissions:
+  contents: write
+concurrency:
+  group: tracker
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install requests beautifulsoup4
+      - name: Check out data branch
+        run: |
+          git config --global user.name "tracker-bot"
+          git config --global user.email "tracker-bot@users.noreply.github.com"
+          git fetch origin data --depth 1
+          git worktree add databr origin/data
+          cd databr && git checkout -B data
+      - name: Run
+        env:
+          DATA_DIR: ${{ github.workspace }}/databr
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            if [ "${{ github.event.schedule }}" = "17 3 * * *" ]; then MODE=scan; else MODE=watch; fi
+          fi
+          push() {
+            cd databr
+            git add -A
+            if ! git diff --cached --quiet; then
+              git commit -q -m "Update data $(date -u +%FT%TZ)"
+              git push -q origin data || (git pull -q --rebase origin data && git push -q origin data)
+            fi
+            cd ..
+          }
+          if [ "$MODE" = "scan" ]; then
+            python scripts/update.py online; python scripts/update.py scan; push
+          elif [ "$MODE" = "online" ]; then
+            python scripts/update.py online; push
+          else
+            END=$(( $(date +%s) + 58*60 ))
+            while [ $(date +%s) -lt $END ]; do
+              python scripts/update.py online || true
+              push
+              sleep 300
+            done
+          fi
