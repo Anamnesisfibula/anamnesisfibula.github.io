@@ -1,0 +1,1016 @@
+{
+ "chars": {
+  "Grzeczny Obywatel": {
+   "g": "BW",
+   "r": "the Leader",
+   "l": 1,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-01 20:05"
+  },
+  "Ell": {
+   "g": "BW",
+   "r": "a Vice-Leader",
+   "l": 30,
+   "v": "Royal Paladin",
+   "ls": "2026-11-22 10:13"
+  },
+  "Luca Soprano": {
+   "g": "BW",
+   "r": "a Vice-Leader",
+   "l": 20,
+   "v": "Elder Druid",
+   "ls": "2026-11-25 18:09"
+  },
+  "Maticore": {
+   "g": "BW",
+   "r": "a Vice-Leader",
+   "l": 6,
+   "v": "Druid",
+   "ls": "2026-11-22 15:49"
+  },
+  "The Porucznik": {
+   "g": "BW",
+   "r": "a Vice-Leader",
+   "l": 1,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 22:12"
+  },
+  "Turbo Koksik": {
+   "g": "BW",
+   "r": "a Vice-Leader",
+   "l": 27,
+   "v": "Elder Druid",
+   "ls": "2026-11-11 20:08"
+  },
+  "Ww": {
+   "g": "BW",
+   "r": "a Vice-Leader",
+   "l": 28,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-23 21:37"
+  },
+  "Barbossa": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 24,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 21:37"
+  },
+  "Bubblebea": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 19,
+   "v": "Elder Druid",
+   "ls": "2026-11-26 00:27"
+  },
+  "Endurion": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-26 00:27"
+  },
+  "Glizda": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-25 23:57"
+  },
+  "Glizdek": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-25 13:52"
+  },
+  "Glizdogon": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-24 00:41"
+  },
+  "Glizzy": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-25 23:19"
+  },
+  "Jeb z dzidy": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 21,
+   "v": "Royal Paladin",
+   "ls": "2026-11-03 20:37"
+  },
+  "Kakaowy wlamywacz": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-25 21:21"
+  },
+  "Lord Chutten": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 7,
+   "v": "Sorcerer",
+   "ls": "2026-11-26 00:40"
+  },
+  "Marry Jane": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 19,
+   "v": "Elder Druid",
+   "ls": "2026-11-22 23:23"
+  },
+  "Mroczny di'maker": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-25 18:55"
+  },
+  "Mroczny Elder": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-24 12:10"
+  },
+  "Mroczny Maker": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-25 22:12"
+  },
+  "Mroczny Marcelo": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-23 16:25"
+  },
+  "Seryjny Morderca": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Paladin",
+   "ls": "2026-11-25 20:21"
+  },
+  "Turbo Knight": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Knight",
+   "ls": "2026-11-16 20:48"
+  },
+  "Turbo Matt": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-19 13:27"
+  },
+  "Turbo Sorcer": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-19 12:45"
+  },
+  "Underlord": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 20,
+   "v": "Elder Druid",
+   "ls": "2026-11-26 00:12"
+  },
+  "Wachu Mag": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 1,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-26 00:12"
+  },
+  "Wodywodpecker": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 23,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 22:37"
+  },
+  "Zabka": {
+   "g": "BW",
+   "r": "a Member",
+   "l": 22,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 20:21"
+  },
+  "Kopacz Ognia": {
+   "g": "RB",
+   "r": "the Leader",
+   "l": 82,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 15:19"
+  },
+  "Akarat Zakarum": {
+   "g": "RB",
+   "r": "a Vice-Leader",
+   "l": 91,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 22:12"
+  },
+  "Domino": {
+   "g": "RB",
+   "r": "a Vice-Leader",
+   "l": 61,
+   "v": "Elder Druid",
+   "ls": "2026-11-25 12:22"
+  },
+  "Venator": {
+   "g": "RB",
+   "r": "a Vice-Leader",
+   "l": 49,
+   "v": "Royal Paladin",
+   "ls": "2026-09-07 20:04"
+  },
+  "Billy Butcher": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 24,
+   "v": "Elite Knight",
+   "ls": "2026-08-31 20:01"
+  },
+  "Charon": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 37,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-21 22:41"
+  },
+  "Dawaj milion": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 61,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 01:22"
+  },
+  "Diva": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 29,
+   "v": "Elder Druid",
+   "ls": "2026-11-22 10:37"
+  },
+  "Fede Soprano": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 37,
+   "v": "Elite Knight",
+   "ls": "2026-11-09 10:11"
+  },
+  "Has Midre": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 64,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 22:37"
+  },
+  "Herbal Syndykat": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 40,
+   "v": "Royal Paladin",
+   "ls": "2026-11-22 23:40"
+  },
+  "Hujadi Mage": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 55,
+   "v": "Elite Knight",
+   "ls": "2026-11-04 20:39"
+  },
+  "Hulaj Dusza": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 83,
+   "v": "Elite Knight",
+   "ls": "2026-11-25 22:52"
+  },
+  "Kanrak": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 56,
+   "v": "Elite Knight",
+   "ls": "2026-11-23 18:24"
+  },
+  "Koirr": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 56,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 18:09"
+  },
+  "Konga Smash": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 105,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 20:21"
+  },
+  "Kuciapa premium": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 35,
+   "v": "Elite Knight",
+   "ls": "2026-11-15 23:12"
+  },
+  "Lingerin Steve": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 32,
+   "v": "Elder Druid",
+   "ls": "2026-11-24 23:54"
+  },
+  "Morre": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 38,
+   "v": "Elite Knight",
+   "ls": "2026-11-10 17:49"
+  },
+  "Night Stalker": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 52,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 21:56"
+  },
+  "Pumas": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 40,
+   "v": "Elder Druid",
+   "ls": "2026-09-07 21:56"
+  },
+  "Quekss": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 101,
+   "v": "Elite Knight",
+   "ls": "2026-11-25 22:22"
+  },
+  "Samba'sky": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 78,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 22:37"
+  },
+  "Sir Zawalisty Knight": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 31,
+   "v": "Elite Knight",
+   "ls": "2026-11-22 14:43"
+  },
+  "Stare Narty Malysza": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 97,
+   "v": "Elite Knight",
+   "ls": "2026-11-25 17:10"
+  },
+  "Stary Jaksinowski": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 42,
+   "v": "Elite Knight",
+   "ls": "2026-11-12 22:24"
+  },
+  "Tharg": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 62,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 17:54"
+  },
+  "Wariat Av": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 108,
+   "v": "Royal Paladin",
+   "ls": "2026-11-22 21:24"
+  },
+  "Wladeczek": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 47,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 21:06"
+  },
+  "Wolodyjowski": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 67,
+   "v": "Elite Knight",
+   "ls": "2026-11-24 23:23"
+  },
+  "Yamaha": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 43,
+   "v": "Royal Paladin",
+   "ls": "2026-11-09 19:37"
+  },
+  "Zlodziej Kobiet": {
+   "g": "RB",
+   "r": "BULLER",
+   "l": 35,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 23:50"
+  },
+  "Pierogi Ruskie": {
+   "g": "RB",
+   "r": "BULLY MAKER",
+   "l": 21,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-26 00:27"
+  },
+  "Strzelba Kon": {
+   "g": "RB",
+   "r": "BULLY MAKER",
+   "l": 20,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-22 22:08"
+  },
+  "Szyje na Drutach": {
+   "g": "RB",
+   "r": "BULLY MAKER",
+   "l": 21,
+   "v": "Elder Druid",
+   "ls": "2026-11-25 10:12"
+  },
+  "Melepeta": {
+   "g": "CC",
+   "r": "a Vice-Leader",
+   "l": 69,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 19:36"
+  },
+  "Glizdor": {
+   "g": "CC",
+   "r": "the Leader",
+   "l": 75,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-26 00:41"
+  },
+  "Glizdur": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-26 00:12"
+  },
+  "Lil Que": {
+   "g": "X",
+   "r": "",
+   "l": 17,
+   "v": "Elder Druid",
+   "ls": "2026-11-25 12:22"
+  },
+  "Ghazphantom": {
+   "g": "X",
+   "r": "",
+   "l": 30,
+   "v": "Elder Druid",
+   "ls": "2026-11-24 18:43"
+  },
+  "Szpony Pazurow Bestii": {
+   "g": "X",
+   "r": "",
+   "l": 22,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-22 23:40"
+  },
+  "Don Oyche": {
+   "g": "X",
+   "r": "",
+   "l": 19,
+   "v": "Elder Druid",
+   "ls": "2026-11-26 00:39"
+  },
+  "Sredi": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-04 17:39"
+  },
+  "Lysynaplet": {
+   "g": "X",
+   "r": "",
+   "l": 7,
+   "v": "Druid",
+   "ls": "2026-11-26 00:39"
+  },
+  "Itans Kiepper": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "No vocation",
+   "ls": "2026-11-04 22:22"
+  },
+  "Sleeping Johnny": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-12 20:10"
+  },
+  "Leo Vince": {
+   "g": "X",
+   "r": "",
+   "l": 8,
+   "v": "Druid",
+   "ls": "2026-11-25 18:53"
+  },
+  "Xuremi": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Knight",
+   "ls": "2026-11-24 23:39"
+  },
+  "Turrican": {
+   "g": "CC",
+   "r": "the Leader",
+   "l": 86,
+   "v": "Elite Knight",
+   "ls": "2026-11-25 19:36"
+  },
+  "Cho Po": {
+   "g": "CC",
+   "r": "a Vice-Leader",
+   "l": 72,
+   "v": "Royal Paladin",
+   "ls": "2026-11-23 17:14"
+  },
+  "Delwena": {
+   "g": "CC",
+   "r": "a Vice-Leader",
+   "l": 28,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-20 19:37"
+  },
+  "Mystic": {
+   "g": "CC",
+   "r": "a Member",
+   "l": 22,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 16:31"
+  }
+ },
+ "clusters": [
+  [
+   "Wariat Av",
+   "RB",
+   [
+    [
+     "Strzelba Kon",
+     "m",
+     "score 346, shared online time"
+    ],
+    [
+     "Szpony Pazurow Bestii",
+     "h",
+     "score 228"
+    ],
+    [
+     "Maticore",
+     "m",
+     "score 35–54"
+    ]
+   ]
+  ],
+  [
+   "Konga Smash",
+   "RB",
+   [
+    [
+     "Lingerin Steve",
+     "m",
+     "score 208, shared online time"
+    ]
+   ]
+  ],
+  [
+   "Quekss",
+   "RB",
+   [
+    [
+     "Lil Que",
+     "h",
+     "score 376"
+    ],
+    [
+     "Grzeczny Obywatel",
+     "m",
+     "score 42, one way"
+    ]
+   ]
+  ],
+  [
+   "Stare Narty Malysza",
+   "RB",
+   [
+    [
+     "Ghazphantom",
+     "m",
+     "score 629, shared online time"
+    ]
+   ]
+  ],
+  [
+   "Akarat Zakarum",
+   "RB",
+   [
+    [
+     "Ww",
+     "h",
+     "score 261 both ways"
+    ]
+   ]
+  ],
+  [
+   "Kopacz Ognia",
+   "RB",
+   [
+    [
+     "Szyje na Drutach",
+     "h",
+     "score 278"
+    ],
+    [
+     "Pierogi Ruskie",
+     "m",
+     "score 78"
+    ],
+    [
+     "Sir Zawalisty Knight",
+     "l",
+     "score 33–38"
+    ]
+   ]
+  ],
+  [
+   "Samba'sky",
+   "RB",
+   [
+    [
+     "Lord Chutten",
+     "h",
+     "score 107 both ways"
+    ]
+   ]
+  ],
+  [
+   "Wolodyjowski",
+   "RB",
+   [
+    [
+     "Underlord",
+     "h",
+     "score 103 both ways"
+    ],
+    [
+     "Sredi",
+     "m",
+     "score 85"
+    ]
+   ]
+  ],
+  [
+   "Has Midre",
+   "RB",
+   [
+    [
+     "Don Oyche",
+     "m",
+     "score 85"
+    ]
+   ]
+  ],
+  [
+   "Tharg",
+   "RB",
+   [
+    [
+     "Endurion",
+     "h",
+     "score 108 both ways"
+    ]
+   ]
+  ],
+  [
+   "Domino",
+   "RB",
+   [
+    [
+     "Night Stalker",
+     "h",
+     "score 490"
+    ]
+   ]
+  ],
+  [
+   "Dawaj milion",
+   "RB",
+   [
+    [
+     "Morre",
+     "m",
+     "score 61, shared online time"
+    ],
+    [
+     "Kakaowy wlamywacz",
+     "m",
+     "score 59 with Morre"
+    ]
+   ]
+  ],
+  [
+   "Kanrak",
+   "RB",
+   [
+    [
+     "Barbossa",
+     "h",
+     "score 109"
+    ],
+    [
+     "Bubblebea",
+     "h",
+     "score 105"
+    ],
+    [
+     "The Porucznik",
+     "l",
+     "score 10–23"
+    ]
+   ]
+  ],
+  [
+   "Koirr",
+   "RB",
+   [
+    [
+     "Wachu Mag",
+     "h",
+     "score 143 both ways"
+    ],
+    [
+     "Seryjny Morderca",
+     "l",
+     "score 18–20"
+    ]
+   ]
+  ],
+  [
+   "Yamaha",
+   "RB",
+   [
+    [
+     "Leo Vince",
+     "l",
+     "score 25"
+    ]
+   ]
+  ],
+  [
+   "Herbal Syndykat",
+   "RB",
+   [
+    [
+     "Itans Kiepper",
+     "l",
+     "score 28"
+    ],
+    [
+     "Sleeping Johnny",
+     "l",
+     "score 15"
+    ]
+   ]
+  ],
+  [
+   "Charon",
+   "RB",
+   [
+    [
+     "Kuciapa premium",
+     "l",
+     "score 17"
+    ]
+   ]
+  ],
+  [
+   "Zlodziej Kobiet",
+   "RB",
+   [
+    [
+     "Lysynaplet",
+     "m",
+     "score 53"
+    ]
+   ]
+  ],
+  [
+   "Glizdor",
+   "CC",
+   [
+    [
+     "Glizda",
+     "h",
+     "score 255"
+    ],
+    [
+     "Glizzy",
+     "m",
+     "score 62"
+    ],
+    [
+     "Glizdek",
+     "m",
+     "score 54"
+    ],
+    [
+     "Glizdogon",
+     "l",
+     "score 18"
+    ],
+    [
+     "Glizdur",
+     "l",
+     "score 15–18"
+    ]
+   ]
+  ],
+  [
+   "Turrican",
+   "CC",
+   [
+    [
+     "Mystic",
+     "h",
+     "score 219 both ways"
+    ]
+   ]
+  ],
+  [
+   "Melepeta",
+   "CC",
+   [
+    [
+     "Luca Soprano",
+     "h",
+     "score 716"
+    ],
+    [
+     "Cho Po",
+     "m",
+     "score 279, shared online time"
+    ],
+    [
+     "Fede Soprano",
+     "m",
+     "score 89, shared online time"
+    ]
+   ]
+  ],
+  [
+   "Ell",
+   "BW",
+   [
+    [
+     "Diva",
+     "m",
+     "score 56 both ways"
+    ]
+   ]
+  ],
+  [
+   "Turbo Koksik",
+   "BW",
+   [
+    [
+     "Turbo Sorcer",
+     "m",
+     "score 48"
+    ],
+    [
+     "Jeb z dzidy",
+     "l",
+     "score 27"
+    ],
+    [
+     "Turbo Knight",
+     "l",
+     "score 18"
+    ],
+    [
+     "Turbo Matt",
+     "n",
+     "name only"
+    ]
+   ]
+  ],
+  [
+   "Zabka",
+   "BW",
+   [
+    [
+     "Xuremi",
+     "l",
+     "score 21"
+    ]
+   ]
+  ],
+  [
+   "Mroczny di'maker",
+   "BW",
+   [
+    [
+     "Mroczny Elder",
+     "n",
+     "name only"
+    ],
+    [
+     "Mroczny Maker",
+     "n",
+     "name only"
+    ],
+    [
+     "Mroczny Marcelo",
+     "n",
+     "name only"
+    ]
+   ]
+  ],
+  [
+   "Marry Jane",
+   "BW",
+   []
+  ],
+  [
+   "Wodywodpecker",
+   "BW",
+   []
+  ],
+  [
+   "Venator",
+   "RB",
+   []
+  ],
+  [
+   "Billy Butcher",
+   "RB",
+   []
+  ],
+  [
+   "Hujadi Mage",
+   "RB",
+   []
+  ],
+  [
+   "Hulaj Dusza",
+   "RB",
+   []
+  ],
+  [
+   "Pumas",
+   "RB",
+   []
+  ],
+  [
+   "Stary Jaksinowski",
+   "RB",
+   []
+  ],
+  [
+   "Wladeczek",
+   "RB",
+   []
+  ],
+  [
+   "Delwena",
+   "CC",
+   []
+  ]
+ ],
+ "scanned": "2026-11-26 00:43"
+}
