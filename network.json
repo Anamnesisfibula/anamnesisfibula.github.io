@@ -881,6 +881,118 @@
    "l": 1,
    "v": "Sorcerer",
    "ls": "2026-11-26 00:12"
+  },
+  "Spluwa Del Toro": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "",
+   "ls": ""
+  },
+  "Szyje na Drucicckku": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Drucicczkach": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Druciczkach": {
+   "g": "X",
+   "r": "",
+   "l": 14,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Druciczku": {
+   "g": "X",
+   "r": "",
+   "l": 14,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Drucikach": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Druciku": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Drucjuszu": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Szyje na Drutku": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Druid",
+   "ls": ""
+  },
+  "Bestia z Carlin": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "",
+   "ls": ""
+  },
+  "Dazzling": {
+   "g": "X",
+   "r": "",
+   "l": 11,
+   "v": "",
+   "ls": ""
+  },
+  "Napad na bank": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "",
+   "ls": ""
+  },
+  "Synchrom": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "",
+   "ls": ""
+  },
+  "Badie": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "",
+   "ls": ""
+  },
+  "Rooky Balboa": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "",
+   "ls": ""
+  },
+  "Jajo": {
+   "g": "X",
+   "r": "",
+   "l": 2,
+   "v": "",
+   "ls": ""
   }
  },
  "clusters": [
@@ -966,8 +1078,8 @@
    [
     [
      "Szyje na Drutach",
-     "h",
-     "score 278"
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app (2026-11-26); before: score 278"
     ],
     [
      "Pierogi Ruskie",
@@ -976,13 +1088,67 @@
     ],
     [
      "Sir Zawalisty Knight",
-     "l",
-     "score 33–38"
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app (2026-11-26); before: score 33–38"
     ],
     [
      "Szyje na Drucie",
-     "l",
-     "score 20 with Szyje na Drutach, almost the same name",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app (2026-11-26); before: score 20 with Szyje na Drutach, almost the same name",
+     "2026-11-26"
+    ],
+    [
+     "Spluwa Del Toro",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Drucicckku",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Drucicczkach",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Druciczkach",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Druciczku",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Drucikach",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Druciku",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Drucjuszu",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Szyje na Drutku",
+     "c",
+     "same account as Szyje na Drucie on amera.fibula.app",
      "2026-11-26"
     ]
    ]
@@ -1009,8 +1175,26 @@
     ],
     [
      "Sredi",
-     "m",
-     "score 85"
+     "c",
+     "same account as Sredi on amera.fibula.app (2026-11-26); before: score 85"
+    ],
+    [
+     "Bestia z Carlin",
+     "c",
+     "same account as Sredi on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Dazzling",
+     "c",
+     "same account as Sredi on amera.fibula.app",
+     "2026-11-26"
+    ],
+    [
+     "Napad na bank",
+     "c",
+     "same account as Sredi on amera.fibula.app",
+     "2026-11-26"
     ]
    ]
   ],
@@ -1126,6 +1310,12 @@
      "Leo Vince",
      "l",
      "score 25"
+    ],
+    [
+     "Synchrom",
+     "c",
+     "same account as Yamaha on amera.fibula.app",
+     "2026-11-26"
     ]
    ]
   ],
@@ -1244,6 +1434,12 @@
      "Diva",
      "m",
      "score 56 both ways"
+    ],
+    [
+     "Badie",
+     "c",
+     "same account as Ell on amera.fibula.app",
+     "2026-11-26"
     ]
    ]
   ],
@@ -1253,23 +1449,23 @@
    [
     [
      "Turbo Sorcer",
-     "m",
-     "score 48"
+     "c",
+     "same account as Turbo Sorcer on amera.fibula.app (2026-11-26); before: score 48"
     ],
     [
      "Jeb z dzidy",
-     "l",
-     "score 27"
+     "c",
+     "same account as Turbo Sorcer on amera.fibula.app (2026-11-26); before: score 27"
     ],
     [
      "Turbo Knight",
-     "l",
-     "score 18"
+     "c",
+     "same account as Turbo Sorcer on amera.fibula.app (2026-11-26); before: score 18"
     ],
     [
      "Turbo Matt",
-     "n",
-     "name only"
+     "c",
+     "same account as Turbo Sorcer on amera.fibula.app (2026-11-26); before: name only"
     ]
    ]
   ],
@@ -1323,7 +1519,14 @@
   [
    "Billy Butcher",
    "RB",
-   []
+   [
+    [
+     "Rooky Balboa",
+     "c",
+     "same account as Billy Butcher on amera.fibula.app",
+     "2026-11-26"
+    ]
+   ]
   ],
   [
    "Hujadi Mage",
@@ -1403,6 +1606,12 @@
      "Monkeyinme",
      "l",
      "score 21",
+     "2026-11-26"
+    ],
+    [
+     "Jajo",
+     "l",
+     "same account as Monkeyinme on amera.fibula.app",
      "2026-11-26"
     ]
    ]
