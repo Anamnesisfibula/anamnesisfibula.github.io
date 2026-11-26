@@ -55,6 +55,12 @@ jobs:
           elif [ "$MODE" = "online" ]; then
             python scripts/update.py online; push
           else
+            # nightly alt scan, run by the watcher because GitHub's cron is unreliable:
+            # once per day after 04:00 Norwegian time, if it has not run today
+            DUE=$(python -c "import json,datetime,zoneinfo;t=datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Oslo'));s=json.load(open('databr/network.json')).get('scanned') or '';print(1 if t.hour>=4 and not s.startswith(t.strftime('%Y-%m-%d')) else 0)" || echo 0)
+            if [ "$DUE" = "1" ]; then
+              python scripts/update.py scan || true; python scripts/update.py ownscan || true; push
+            fi
             END=$(( $(date +%s) + 55*60 ))
             while [ $(date +%s) -lt $END ]; do
               python scripts/update.py online || true
