@@ -1,5 +1,39 @@
 [
  {
+  "date": "2026-11-26 12:08",
+  "victim": "Sneak",
+  "vlevel": 30,
+  "killers": [
+   [
+    "Darkshear",
+    30
+   ],
+   [
+    "Brittany Grimer",
+    87
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Sztefan"
+ },
+ {
+  "date": "2026-11-26 11:34",
+  "victim": "Sneak",
+  "vlevel": 31,
+  "killers": [
+   [
+    "Azkanis",
+    46
+   ],
+   [
+    "Nolesy",
+    50
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Sztefan"
+ },
+ {
   "date": "2026-11-26 11:25",
   "victim": "Tyshawn",
   "vlevel": 29,
