@@ -403,5 +403,77 @@
   "name": "Zawadiaka",
   "owner": "Zawadiaka",
   "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Bru'toh",
+  "owner": "Turrican",
+  "via": "Turrican",
+  "score": 105
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Xinup Saint",
+  "owner": "Losos Saint",
+  "via": "Losos Saint",
+  "score": 22
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Gloomcarver",
+  "owner": "Gueaoeiruere",
+  "via": "Gueaoeiruere",
+  "score": 72
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Drikov",
+  "owner": "Bone",
+  "via": "Bone",
+  "score": 40
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Monkeyinme",
+  "owner": "Bone",
+  "via": "Bone",
+  "score": 21
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Azaroth",
+  "owner": "Lyzask",
+  "via": "Lyzask",
+  "score": 83
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Neravin",
+  "owner": "Lyzask",
+  "via": "Azaroth",
+  "score": 19
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Ceregiele",
+  "owner": "Vito Soprano",
+  "via": "Vito Soprano",
+  "score": 22
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Sneak",
+  "owner": "Sztefan",
+  "via": "Sztefan",
+  "score": 23
  }
 ]
