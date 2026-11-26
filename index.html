@@ -137,7 +137,8 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
   <ul class="about">
     <li><b>Online status</b> is collected every 5 minutes by a scheduled GitHub job. Together with GitHub's file cache, a login or logout normally shows here within 5 to 10 minutes.</li>
     <li><b>This page</b> updates itself every minute, so it can stay open on a second screen. Refresh now checks at once.</li>
-    <li><b>Alt scan</b> runs every night at 04:17 (Norwegian time). It refreshes level, vocation and guild, looks for new alts with the scanner, and adds new members of Bullywannabes, Reformed Bullies, Carlins Cartel, Wyrok Ulicy and Stare Gity. Nobody is ever removed.</li>
+    <li><b>Alt scan</b> runs every night at 04:17 (Norwegian time). It refreshes level, vocation and guild and adds new members of the tracked guilds. Nobody is ever removed.</li>
+    <li><b>Own alt scanner:</b> every login and logout on the server is logged from the online list. Each night it looks for characters that log in right when a tracked character logs out (and the other way round) on several days, then checks the exact times on their character pages. Hits are added under the owner and marked new. It gets better the more days of data it has (it keeps 21 days).</li>
     <li><b>Alt links</b> are based on matching login and logout times over the last 90 days. They are strong hints, not proof.</li>
   </ul>
   <details class="inst"><summary>Instant view straight from opentibia.info</summary>

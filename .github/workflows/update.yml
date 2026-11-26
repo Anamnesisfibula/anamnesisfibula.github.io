@@ -48,7 +48,7 @@ jobs:
             cd ..
           }
           if [ "$MODE" = "scan" ]; then
-            python scripts/update.py online; python scripts/update.py scan; python scripts/update.py kills || true; push
+            python scripts/update.py online; python scripts/update.py scan; python scripts/update.py ownscan || true; python scripts/update.py kills || true; push
           elif [ "$MODE" = "backfill" ]; then
             python scripts/update.py backfill; push
           elif [ "$MODE" = "online" ]; then

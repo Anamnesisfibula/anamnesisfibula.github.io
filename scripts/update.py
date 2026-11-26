@@ -68,6 +68,27 @@ def run_online():
     save(STATUS, {"updated": old.get("updated") if same else now(), "checked": now(),
                   "server_online": len(on), "online": tracked})
     print(f"{len(tracked)} tracked online of {len(on)}")
+    record_events(on)
+
+# ---------- own scanner: login/logout event log ----------
+EVENTS = DATA / "events.json"     # [[unix_ts, [logged in], [logged out]], ...]
+PREV = DATA / "online_prev.json"
+KEEP_DAYS = 21
+
+def record_events(on):
+    ts = int(time.time())
+    prev = load(PREV, None)
+    save(PREV, {"t": ts, "online": sorted(on)})
+    if not prev or ts - prev["t"] > 20 * 60:   # gap too long: no reliable handovers
+        return
+    p = set(prev["online"])
+    ins, outs = sorted(on - p), sorted(p - on)
+    if not ins and not outs: return
+    ev = load(EVENTS, [])
+    ev.append([ts, ins, outs])
+    cut = ts - KEEP_DAYS * 86400
+    ev = [e for e in ev if e[0] >= cut]
+    EVENTS.write_text(json.dumps(ev, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 # ---------- scan ----------
 def player(s, name):
@@ -260,9 +281,87 @@ def probe_scan(names):
         out.append(f"guild {g}: {len(guild_members(s, g))} members")
     (DATA / "probe_scan.txt").write_text("\n".join(out), encoding="utf-8")
 
+# ---------- own scanner: find and verify alts ----------
+def sessions(s, name):
+    """Exact login/logout pairs (last 20) from the player page, as datetimes."""
+    html = s.get(f"{BASE}/stats/player/{requests.utils.quote(name)}", timeout=30).text
+    soup = BeautifulSoup(html, "html.parser")
+    out = []
+    for t in soup.find_all("table"):
+        if "Last 20 login" not in t.get_text(" ", strip=True)[:80]: continue
+        for tr in t.find_all("tr"):
+            c = [td.get_text(strip=True) for td in tr.find_all("td")]
+            if len(c) >= 2 and re.match(r"\d{4}-", c[0]) and re.match(r"\d{4}-", c[1]):
+                out.append((dt.datetime.fromisoformat(c[0]), dt.datetime.fromisoformat(c[1])))
+    return out
+
+def exact_matches(a, b):
+    """Count a-logout -> b-login and b-logout -> a-login within 1 minute, and overlap minutes."""
+    one = dt.timedelta(minutes=1)
+    m = sum(1 for _, ao in a for bi, _ in b if abs(bi - ao) <= one) + \
+        sum(1 for ai, _ in a for _, bo in b if abs(ai - bo) <= one)
+    ov = 0
+    for ai, ao in a:
+        for bi, bo in b:
+            x = (min(ao, bo) - max(ai, bi)).total_seconds() / 60
+            if x > 2: ov += x
+    return m, ov
+
+def handovers(events, tracked):
+    """For each tracked char, count other chars that log in when it logs out (same or next 5-min tick) and vice versa."""
+    from collections import defaultdict
+    cnt = defaultdict(lambda: defaultdict(set))   # tracked -> other -> set(days)
+    for i, (ts, ins, outs) in enumerate(events):
+        nxt = events[i + 1] if i + 1 < len(events) and events[i + 1][0] - ts <= 6 * 60 else None
+        near_in = set(ins) | set(nxt[1] if nxt else [])
+        near_out = set(outs) | set(nxt[2] if nxt else [])
+        day = time.strftime("%Y-%m-%d", time.gmtime(ts))
+        for t in tracked:
+            if t in outs:
+                for x in near_in - {t}: cnt[t][x].add(day)
+            if t in ins:
+                for x in near_out - {t}: cnt[t][x].add(day)
+    return cnt
+
+def run_ownscan(min_days=2, max_verify=60):
+    net = load(NET, None); log = load(LOG, [])
+    own = owner_of(net); chars, clusters = net["chars"], net["clusters"]
+    events = load(EVENTS, [])
+    if len(events) < 50:
+        print("own scanner: not enough events yet", len(events)); return
+    cnt = handovers(events, set(own))
+    cands = []
+    for t, others in cnt.items():
+        for x, days in others.items():
+            if x in own or len(days) < min_days: continue
+            cands.append((len(days), t, x))
+    cands.sort(reverse=True)
+    s = session(); today = now()[:10]; cache = {}
+    def sess(n):
+        if n not in cache:
+            cache[n] = sessions(s, n); time.sleep(PAUSE)
+        return cache[n]
+    added = 0
+    for d, t, x in cands[:max_verify]:
+        if x in own: continue
+        m, ov = exact_matches(sess(t), sess(x))
+        if m < 3: continue
+        cf = "h" if m >= 6 and ov == 0 else "m"
+        ev = f"own scanner: {m} exact handovers with {t}, seen on {d} days" + (f", {round(ov)} min online together" if ov else "") + f" (new {today})"
+        main = own[t]
+        next(c for c in clusters if c[0] == main)[2].append([x, cf, ev, today]); own[x] = main
+        p = player(s, x); time.sleep(PAUSE)
+        chars[x] = p or {"g": "X", "r": "", "l": 0, "v": "", "ls": ""}
+        log.append({"date": today, "type": "new_alt", "name": x, "owner": main, "via": t, "score": f"own {m}"})
+        added += 1
+    net["ownscan"] = {"time": now(), "events": len(events), "candidates": len(cands), "added": added}
+    save(NET, net); save(LOG, log[-300:])
+    print("own scanner added", added, "of", len(cands), "candidates")
+
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "online"
     if mode == "backfill": run_kills(20)
+    elif mode == "ownscan": run_ownscan()
     elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
     elif mode == "probeguild": probe_guild(sys.argv[2])
     elif mode == "probescan": probe_scan(sys.argv[2].split(";"))
