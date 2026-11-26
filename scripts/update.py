@@ -19,7 +19,7 @@ NET = DATA / "network.json"
 STATUS = DATA / "status.json"
 LOG = DATA / "changes.json"
 KILLS = DATA / "kills.json"
-GUILDS = {"RB": "Reformed Bullies", "BW": "Bullywannabes", "CC": "Carlins Cartel", "WU": "Wyrok Ulicy"}
+GUILDS = {"RB": "Reformed Bullies", "BW": "Bullywannabes", "CC": "Carlins Cartel", "WU": "Wyrok Ulicy", "SG": "Stare Gity"}
 MIN_SCORE = 40      # new alt candidates below this are ignored
 HIGH_SCORE = 100    # at or above this (and never online together) = high confidence
 PAUSE = 1.0
