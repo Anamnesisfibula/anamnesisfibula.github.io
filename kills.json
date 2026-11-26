@@ -1,5 +1,22 @@
 [
  {
+  "date": "2026-11-26 13:22",
+  "victim": "Glizda",
+  "vlevel": 10,
+  "killers": [
+   [
+    "Memphiz",
+    112
+   ],
+   [
+    "Leike",
+    null
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Glizdor"
+ },
+ {
   "date": "2026-11-26 12:08",
   "victim": "Sneak",
   "vlevel": 30,
