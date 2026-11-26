@@ -67,6 +67,7 @@ async function exiva(p, req, u, body, env, iph) {
     const id = clean(u.searchParams.get('id'), 12);
     const h = await env.DB.prepare('SELECT id, target, created, last FROM hunt WHERE id=?').bind(id).first();
     if (!h) return err('That hunt was not found. It may have ended.', 404);
+    if (h.last === 0) return err('This hunt has been ended.', 410);
     const { results } = await env.DB.prepare('SELECT id, spot, x, y, z, dir, dist, lvl, who, owner, t FROM reading WHERE hunt=? AND t>? ORDER BY t DESC LIMIT 200').bind(id, now - READ_AGE).all();
     return json({ now, hunt: h, readings: results.map(r => ({ ...r, owner: r.owner.slice(0, 8) })) }, 200, { 'Cache-Control': 'no-store' });
   }
@@ -97,6 +98,14 @@ async function exiva(p, req, u, body, env, iph) {
     await env.DB.prepare('INSERT INTO reading (hunt, spot, x, y, z, dir, dist, lvl, who, owner, t, iph) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)')
       .bind(id, clean(body.spot, 30) || 'Spot', x, y, z, dir, dist, lvl, clean(body.who, 30), owner, now, iph).run();
     await env.DB.prepare('UPDATE hunt SET last=? WHERE id=?').bind(now, id).run();
+    return json({ ok: true });
+  }
+  if (p === '/exiva/end' && req.method === 'POST') {
+    // Anyone in the hunt can end it (same open model as the rest). Ended = last set to 0.
+    const id = clean(body.hunt, 12);
+    if (await limited(env, 'hunt', iph)) return err('Too many changes from you, try again later.', 429);
+    await env.DB.prepare('UPDATE hunt SET last=0 WHERE id=?').bind(id).run();
+    await env.DB.prepare('DELETE FROM reading WHERE hunt=?').bind(id).run();
     return json({ ok: true });
   }
   if (p === '/exiva/del' && req.method === 'POST') {
