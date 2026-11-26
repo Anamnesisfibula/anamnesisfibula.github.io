@@ -1154,6 +1154,20 @@
    "l": 1,
    "v": "Druid",
    "ls": "2026-11-26 13:17"
+  },
+  "Goat freddy": {
+   "g": "X",
+   "r": "",
+   "l": 36,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-26 13:18"
+  },
+  "Azifaralek": {
+   "g": "X",
+   "r": "",
+   "l": 83,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 22:37"
   }
  },
  "clusters": [
@@ -2072,6 +2086,18 @@
    "Zawadiaka",
    "SG",
    []
+  ],
+  [
+   "Goat freddy",
+   "X",
+   [
+    [
+     "Azifaralek",
+     "h",
+     "score 105 with Goat freddy, never online at the same time",
+     "2026-11-26"
+    ]
+   ]
   ]
  ],
  "scanned": "2026-11-26 09:16"

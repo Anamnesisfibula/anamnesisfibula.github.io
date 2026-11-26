@@ -493,5 +493,20 @@
   "owner": "Quekss",
   "via": "admin report",
   "score": "-"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Goat freddy",
+  "owner": "Goat freddy",
+  "guild": "reported by admin"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Azifaralek",
+  "owner": "Goat freddy",
+  "via": "Goat freddy",
+  "score": 105
  }
 ]
