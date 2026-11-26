@@ -874,6 +874,13 @@
    "l": 1,
    "v": "Sorcerer",
    "ls": "2026-11-26 04:33"
+  },
+  "Tester Sd": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-26 00:12"
   }
  },
  "clusters": [
@@ -922,6 +929,12 @@
      "Grzeczny Obywatel",
      "m",
      "score 42, one way"
+    ],
+    [
+     "Tester Sd",
+     "h",
+     "reported by admin",
+     "2026-11-26"
     ]
    ]
   ],
