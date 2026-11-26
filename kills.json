@@ -150,6 +150,21 @@
   "owner_victim": null
  },
  {
+  "date": "2026-11-25 13:55",
+  "victim": "Salvavidas",
+  "vlevel": 14,
+  "killers": [
+   [
+    "Szyje na Drucie",
+    8
+   ]
+  ],
+  "tracked_killers": [
+   "Szyje na Drucie"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-25 13:53",
   "victim": "Raknar lodbrok",
   "vlevel": 20,
@@ -352,6 +367,19 @@
    "Kakaowy wlamywacz"
   ],
   "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 12:13",
+  "victim": "Hymel Jadwiga",
+  "vlevel": 10,
+  "killers": [
+   [
+    "Onisuna",
+    null
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Domino"
  },
  {
   "date": "2026-11-25 11:15",
