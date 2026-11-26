@@ -1,5 +1,5 @@
 name: One-off data job
-# Runs beside the watcher (no shared queue). Modes: backfill (last 1000 deaths) or kills.
+# Runs beside the watcher (no shared queue). Modes: backfill, kills, add, scan, online, sugset (approve/reject suggestions) ...
 on:
   workflow_dispatch:
     inputs:
@@ -21,9 +21,15 @@ jobs:
       - run: pip install requests beautifulsoup4
       - env:
           DATA_DIR: ${{ github.workspace }}/databr
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          MODE: ${{ github.event.inputs.mode }}
+          ARG1: ${{ github.event.inputs.arg1 }}
+          ARG2: ${{ github.event.inputs.arg2 }}
         run: |
+          # admin key for the suggestion server, derived from the Cloudflare token so nobody has to handle it
+          export SUGGEST_ADMIN_KEY=$(printf 'fibula-suggest-admin:%s' "$CF_TOKEN" | sha256sum | cut -c1-48)
           git config --global user.name tracker-bot; git config --global user.email tracker-bot@users.noreply.github.com
           git fetch origin data --depth 1; git worktree add databr origin/data; cd databr; git checkout -B data; cd ..
-          python scripts/update.py "${{ github.event.inputs.mode }}" "${{ github.event.inputs.arg1 }}" "${{ github.event.inputs.arg2 }}"
-          cd databr; git add -A; git diff --cached --quiet || git commit -qm "One-off ${{ github.event.inputs.mode }}"
+          python scripts/update.py "$MODE" "$ARG1" "$ARG2"
+          cd databr; git add -A; git diff --cached --quiet || git commit -qm "One-off $MODE"
           for i in 1 2 3; do git pull -q --rebase origin data && git push -q origin data && break; sleep 5; done

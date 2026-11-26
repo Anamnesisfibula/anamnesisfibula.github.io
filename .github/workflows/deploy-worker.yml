@@ -1,0 +1,48 @@
+name: Deploy suggestion server
+# Deploys worker/ to Cloudflare. Needs repo secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["worker/**", ".github/workflows/deploy-worker.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: deploy-worker
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Check secrets
+        run: |
+          for v in CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID; do
+            if [ -z "${!v}" ]; then echo "::error::Secret for $v is missing"; exit 1; fi
+          done
+      - run: npm i -g wrangler@3
+      - name: Deploy
+        working-directory: worker
+        run: |
+          getid() { wrangler d1 list --json 2>/dev/null | jq -r '.[] | select(.name=="fibula-suggest") | .uuid' | head -1; }
+          ID=$(getid)
+          if [ -z "$ID" ]; then wrangler d1 create fibula-suggest; ID=$(getid); fi
+          sed "s/__DB_ID__/$ID/" wrangler.toml.tpl > wrangler.toml
+          wrangler d1 execute fibula-suggest --remote --file schema.sql
+          wrangler deploy | tee ../deploy.txt
+          printf 'fibula-suggest-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -c1-48 | tr -d '\n' | wrangler secret put ADMIN_KEY
+      - name: Publish API address for the page
+        run: |
+          URL=$(grep -o 'https://[a-z0-9.-]*\.workers\.dev' deploy.txt | head -1)
+          [ -n "$URL" ] || { echo "::error::Could not find the workers.dev address"; exit 1; }
+          echo "API: $URL"
+          git config --global user.name "tracker-bot"
+          git config --global user.email "tracker-bot@users.noreply.github.com"
+          git fetch origin data --depth 1 && git worktree add databr origin/data && cd databr && git checkout -B data
+          printf '{"api":"%s"}\n' "$URL" > config.json
+          git add config.json
+          if ! git diff --cached --quiet; then git commit -q -m "Set suggestion API address" && (git push -q origin data || (git pull -q --rebase origin data && git push -q origin data)); fi

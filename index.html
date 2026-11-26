@@ -67,6 +67,15 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 .about{padding-left:20px;max-width:80ch}.about li{display:list-item;border:0;padding:4px 0}details.inst{max-width:80ch;margin-top:14px}details.inst>summary{font-weight:600}details.inst ol{padding:0 14px 12px 36px}
 .copyrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
 .note{font-size:13px;color:var(--mut)}
+.sugf{display:grid;gap:8px;max-width:620px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+.sugf label{display:grid;gap:4px;font-weight:600;font-size:14px}
+.sugf input,.sugf textarea{font:16px Inter,sans-serif;padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-weight:400}
+.slist{display:grid;gap:10px;max-width:980px}
+.sg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.sg .ev{flex-basis:100%}.sg .vb{margin-left:auto;display:flex;gap:8px}
+.vb button{min-height:40px;padding:0 12px}.vb button[aria-pressed=true]{border-color:var(--on);background:color-mix(in srgb,var(--on) 18%,var(--card))}
+.adm{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.adm input{flex:1 1 220px;font:15px Inter,sans-serif;padding:8px 12px;min-height:40px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.err{color:var(--rb)}.ok{color:var(--h)}
 .hide{display:none!important}[hidden]{display:none!important}
 .tabs{display:flex;gap:8px;padding-block:14px 0;border-bottom:1px solid var(--line)}
 .tabs a{text-decoration:none;font-weight:600;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center;gap:6px;border-radius:10px 10px 0 0;color:var(--mut);border-bottom:3px solid transparent}
@@ -94,7 +103,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
     <div class="onl" id="onList"></div>
   </section>
 </header>
-<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a></nav>
+<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a><a href="#suggest" id="t-suggest">Suggest alt <span id="sugN"></span></a></nav>
 
 <div id="v-owners" hidden>
 <div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies, Carlins Cartel, Wyrok Ulicy and Stare Gity.</p></div>
@@ -131,6 +140,26 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
   <p class="note">New alts, new guild members and characters that switched or left a guild. Characters are never dropped: they stay under their owner even after leaving a guild.</p>
   <div class="scroll"><table class="stack olt"><thead><tr><th>Date</th><th>Change</th><th>Character</th><th>Owner</th><th>Details</th></tr></thead><tbody id="chBody"></tbody></table></div>
 </section>
+<section class="band" id="v-suggest" hidden>
+  <h2>Suggest an alt</h2>
+  <p class="note">Know a character that belongs to someone we track? Suggest it here and vote on what others have suggested. Nothing goes on the tracker until the admin has checked it. One vote per suggestion for each browser.</p>
+  <div id="sugOff" class="note" hidden>Suggestions are not switched on yet.</div>
+  <form id="sugF" class="sugf" autocomplete="off" hidden>
+    <label>Character<input id="sChar" maxlength="40" required placeholder="Name of the alt"></label>
+    <span class="note" id="sCharInfo" aria-live="polite"></span>
+    <label>Belongs to (tracked character)<input id="sMain" list="sMains" maxlength="40" required placeholder="Start typing a tracked name"></label>
+    <datalist id="sMains"></datalist>
+    <span class="note" id="sMainInfo" aria-live="polite"></span>
+    <label>Why do you think so?<textarea id="sCom" maxlength="300" rows="3" required placeholder="For example: logs in right after the main logs out, same hunting spot, said so in game"></textarea></label>
+    <div class="copyrow"><button type="submit" id="sGo">Send suggestion</button><span class="note" id="sMsg" aria-live="polite"></span></div>
+  </form>
+  <div class="tools" style="padding-inline:0">
+    <label class="tg"><input type="radio" name="sf" value="open" checked> Waiting for admin</label>
+    <label class="tg"><input type="radio" name="sf" value="approved"> Approved</label>
+    <label class="tg"><input type="radio" name="sf" value="rejected"> Rejected</label>
+  </div>
+  <div id="sList" class="slist"></div>
+</section>
 <section class="band live">
   <h2>About the data</h2>
   <p class="note">All data comes from the public stats on <a href="https://opentibia.info/index/server/fibula">opentibia.info</a> (Project Fibula): the online list, character pages and the site's Players scanner. Nothing is read from the game itself.</p>
@@ -139,6 +168,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
     <li><b>This page</b> updates itself every minute, so it can stay open on a second screen. Refresh now checks at once.</li>
     <li><b>Alt scan</b> runs every night at 04:17 (Norwegian time). It refreshes level, vocation and guild and adds new members of the tracked guilds. Nobody is ever removed.</li>
     <li><b>Own alt scanner:</b> every login and logout on the server is logged from the online list. Each night it looks for characters that log in right when a tracked character logs out (and the other way round) on several days, then checks the exact times on their character pages. Hits are added under the owner and marked new. It gets better the more days of data it has (it keeps 21 days).</li>
+    <li><b>Suggestions</b> are stored on a small server of our own. Anyone can suggest and vote without an account, with one vote per browser and a limit on how many suggestions one connection can send. The admin checks each one before it is added.</li>
     <li><b>Alt links</b> are based on matching login and logout times over the last 90 days. They are strong hints, not proof.</li>
   </ul>
   <details class="inst"><summary>Instant view straight from opentibia.info</summary>
@@ -194,9 +224,9 @@ function render(){
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('onlyOn').addEventListener('change',render);
 document.getElementById('exp').addEventListener('click',e=>{open=!open;e.target.textContent=open?'Collapse all':'Expand all';render()});
-function route(){const h=location.hash,ch=h==='#changes',ow=h==='#owners',ki=h==='#kills',on=!ch&&!ow&&!ki;document.getElementById('v-kills').hidden=!ki;document.getElementById('t-kills').toggleAttribute('aria-current',ki);if(ki)document.getElementById('t-kills').setAttribute('aria-current','page');document.getElementById('v-owners').hidden=!ow;document.getElementById('v-online').hidden=!on;document.getElementById('v-changes').hidden=!ch;document.getElementById('t-changes').toggleAttribute('aria-current',ch);if(ch)document.getElementById('t-changes').setAttribute('aria-current','page');
-  document.getElementById('t-owners').toggleAttribute('aria-current',ow);document.getElementById('t-online').toggleAttribute('aria-current',on);
-  if(!ch&&!ki)document.getElementById(on?'t-online':'t-owners').setAttribute('aria-current','page')}
+function route(){const V=['online','owners','kills','changes','suggest'];let h=location.hash.slice(1);if(!V.includes(h))h='online';
+  for(const v of V){document.getElementById('v-'+v).hidden=v!==h;const t=document.getElementById('t-'+v);if(v===h)t.setAttribute('aria-current','page');else t.removeAttribute('aria-current')}
+  if(h==='suggest')setTimeout(loadSug,0)}
 window.addEventListener('hashchange',route);
 render();route();
 
@@ -209,7 +239,7 @@ const RAW='https://raw.githubusercontent.com/Anamnesisfibula/anamnesisfibula.git
 const getJ=f=>fetch(RAW+f+'.json?t='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>fetch('data/'+f+'.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()));
 async function load(){const u=document.getElementById('upd');
   try{const [n,st]=await Promise.all([getJ('network'),getJ('status')]);
-    D=n;online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render();renderKills()}
+    D=n;fillMains&&fillMains();online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render();renderKills()}
   catch(err){u.textContent='Could not load data'}}
 async function loadChanges(){try{const L=await getJ('changes');
   const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change',added:'Added by hand',guild_added:'Guild added'};
@@ -230,6 +260,43 @@ function renderKills(){
 }
 async function loadKills(){try{KL=await getJ('kills');if(!Array.isArray(KL))KL=[]}catch(e){KL=[]}renderKills()}
 document.querySelectorAll('input[name=kf]').forEach(r=>r.addEventListener('change',renderKills));document.getElementById('kPve').addEventListener('change',renderKills);
+
+/* ---------- suggestions ---------- */
+let API='',SG=[];
+const VOTER=localStorage.getItem('voter')||(()=>{const v=crypto.randomUUID().replace(/-/g,'');localStorage.setItem('voter',v);return v})();
+const myVotes=JSON.parse(localStorage.getItem('myVotes')||'{}');
+const api=(p,b)=>fetch(API+p,b?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}:{cache:'no-store'}).then(async r=>{const j=await r.json().catch(()=>({error:'Bad answer from server'}));if(!r.ok)throw new Error(j.error||'Error');return j});
+function renderSug(){
+  const f=(document.querySelector('input[name=sf]:checked')||{}).value||'open';
+  const open=SG.filter(x=>x.status==='open').length;document.getElementById('sugN').textContent=open?String(open):'';
+  const L=SG.filter(x=>x.status===f);
+  if(f==='open')L.sort((a,b)=>(b.up-b.down)-(a.up-a.down)||b.id-a.id);
+  document.getElementById('sList').innerHTML=L.map(x=>{const mv=myVotes[x.id]||0,isOpen=x.status==='open';
+    const st=x.status==='approved'?`<span class="cf h">${x.imported?'Added':'Approved'}</span>`:x.status==='rejected'?'<span class="cf n">Rejected</span>':'';
+    return `<div class="sg" data-id="${x.id}"><a class="nm" href="${url(x.char)}">${esc(x.char)}</a><span class="lv">${x.lvl>1?esc(x.lvl):'low'} ${esc(vshort(x.voc||''))}</span><span>belongs to <b>${esc(x.main)}</b>${x.owner!==x.main?' <span class="lv">('+esc(x.owner)+')</span>':''}</span>${st}
+    <span class="vb"><button type="button" data-v="1" aria-pressed="${mv===1}" ${isOpen?'':'disabled'} aria-label="Vote yes">👍 ${x.up}</button><button type="button" data-v="-1" aria-pressed="${mv===-1}" ${isOpen?'':'disabled'} aria-label="Vote no">👎 ${x.down}</button></span>
+    <span class="ev">“${esc(x.comment)}” · ${esc(x.created)}${x.note?' · admin: '+esc(x.note):''}</span></div>`}).join('')||'<p class="note">Nothing here yet.</p>';
+}
+async function loadSug(){if(!API)return;try{SG=await api('/suggestions');renderSug()}catch(e){}}
+document.querySelectorAll('input[name=sf]').forEach(r=>r.addEventListener('change',renderSug));
+document.getElementById('sList').addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;const card=b.closest('.sg'),id=+card.dataset.id;
+  try{if(b.dataset.v){let v=+b.dataset.v;if(myVotes[id]===v)v=0;await api('/vote',{id,v,voter:VOTER});if(v)myVotes[id]=v;else delete myVotes[id];localStorage.setItem('myVotes',JSON.stringify(myVotes))}
+  await loadSug()}catch(err){alertMsg(card,err.message)}});
+function alertMsg(card,m){let s=card.querySelector('.err');if(!s){s=document.createElement('span');s.className='ev err';card.appendChild(s)}s.textContent=m}
+function fillMains(){const names=D.clusters.flatMap(c=>[c[0],...c[2].map(a=>a[0])]).sort((a,b)=>a.localeCompare(b));document.getElementById('sMains').innerHTML=names.map(n=>`<option value="${esc(n)}">`).join('')}
+const ownerOfS=n=>{for(const c of D.clusters){if(c[0]===n||c[2].some(a=>a[0]===n))return c[0]}return null};
+document.getElementById('sMain').addEventListener('input',e=>{const n=e.target.value.trim(),o=ownerOfS(n),i=document.getElementById('sMainInfo');i.className='note'+(n&&!o?' err':'');i.textContent=!n?'':o?(o!==n?'Owner: '+o:'Tracked main'):'Pick a name from the list of tracked characters.'});
+let lt;document.getElementById('sChar').addEventListener('input',e=>{clearTimeout(lt);const n=e.target.value.trim(),i=document.getElementById('sCharInfo');i.className='note';i.textContent='';if(n.length<2)return;
+  lt=setTimeout(async()=>{i.textContent='Looking up on opentibia.info …';try{const r=await api('/lookup?name='+encodeURIComponent(n));
+    if(r.tracked){i.className='note err';i.textContent=r.name+' is already tracked'+(r.owner&&r.owner!==r.name?' (under '+r.owner+')':'')+'.'}
+    else{i.className='note ok';i.textContent='Found: '+r.name+', level '+r.level+' '+r.voc+(r.guild?', guild '+r.guild:'')}}catch(err){i.className='note err';i.textContent=err.message}},700)});
+document.getElementById('sugF').addEventListener('submit',async e=>{e.preventDefault();const m=document.getElementById('sMsg'),b=document.getElementById('sGo');b.disabled=true;m.className='note';m.textContent='Sending …';
+  try{const r=await api('/suggest',{char:document.getElementById('sChar').value,main:document.getElementById('sMain').value.trim(),comment:document.getElementById('sCom').value});
+    m.className='note ok';m.textContent='Thanks. '+r.char+' is now waiting for votes and the admin.';e.target.reset();document.getElementById('sCharInfo').textContent='';document.getElementById('sMainInfo').textContent='';await loadSug()}
+  catch(err){m.className='note err';m.textContent=err.message}b.disabled=false});
+async function initSug(){try{const c=await getJ('config');API=(c.api||'').replace(/\/$/,'')}catch(e){}
+  document.getElementById('sugOff').hidden=!!API;document.getElementById('sugF').hidden=!API;if(API){loadSug();setInterval(loadSug,60000)}}
+initSug();
 load();setInterval(load,60000);loadKills();setInterval(loadKills,120000);document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Checking …';await load();await loadChanges();await loadKills();b.disabled=false;b.textContent='Refresh now'});loadChanges();setInterval(loadChanges,600000);
 }
 </script>

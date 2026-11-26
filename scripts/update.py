@@ -363,10 +363,43 @@ def run_ownscan(min_days=2, max_verify=60):
     save(NET, net); save(LOG, log[-300:])
     print("own scanner added", added, "of", len(cands), "candidates")
 
+# ---------- player suggestions (Cloudflare worker, approved by admin) ----------
+def run_import():
+    key = os.environ.get("SUGGEST_ADMIN_KEY", ""); cfg = load(DATA / "config.json", {})
+    api = cfg.get("api", "")
+    if not key or not api: return
+    rows = requests.get(f"{api}/admin/approved", params={"key": key}, timeout=30).json()
+    if not rows: return
+    net = load(NET, None); log = load(LOG, []); own = owner_of(net); s = session(); today = now()[:10]; done = []
+    for r in rows:
+        ch, main = r["char"], r["main"]
+        if ch not in own and main in own:
+            owner = own[main]
+            p = player(s, ch); time.sleep(PAUSE)
+            if p: net["chars"][ch] = p
+            ev = f"suggested by a player, approved by admin: {r.get('comment', '')[:160]}"
+            next(c for c in net["clusters"] if c[0] == owner)[2].append([ch, "m", ev, today]); own[ch] = owner
+            log.append({"date": today, "type": "new_alt", "name": ch, "owner": owner, "via": "player suggestion", "score": "-"})
+        done.append(r["id"])
+    save(NET, net); save(LOG, log[-300:])
+    requests.post(f"{api}/admin/imported", json={"key": key, "ids": done}, timeout=30)
+
+def run_sugset(spec):
+    """spec like 'approved:3,5;rejected:4' -> set status on the suggestion server, then import approved ones."""
+    key = os.environ.get("SUGGEST_ADMIN_KEY", ""); api = load(DATA / "config.json", {}).get("api", "")
+    for part in filter(None, spec.split(";")):
+        st, ids = part.split(":")
+        for i in filter(None, ids.split(",")):
+            r = requests.post(f"{api}/admin/set", json={"key": key, "id": int(i), "status": st.strip()}, timeout=30)
+            print(i, st, r.status_code, r.text[:200])
+    run_import()
+
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "online"
     if mode == "backfill": run_kills(20)
     elif mode == "ownscan": run_ownscan()
+    elif mode == "import": run_import()
+    elif mode == "sugset": run_sugset(sys.argv[2])
     elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
     elif mode == "probeguild": probe_guild(sys.argv[2])
     elif mode == "probescan": probe_scan(sys.argv[2].split(";"))
