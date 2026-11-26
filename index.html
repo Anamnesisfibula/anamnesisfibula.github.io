@@ -33,6 +33,7 @@ h1{font-size:clamp(30px,4.4vw,46px)}h2{font-size:22px}
 .chip{background:rgba(255,255,255,.1);border-radius:999px;padding:5px 12px;font-size:14px;white-space:nowrap}
 .chip b{font-weight:600}.chip i{font-style:normal;color:#bcd3ce}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--on);margin-right:6px;box-shadow:0 0 0 3px rgba(31,184,90,.22)}
+.intro{padding-bottom:0}.intro .note{max-width:80ch;margin:6px 0 0}
 .tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-block:18px}
 input[type=search]{font:16px Inter,sans-serif;padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:min(320px,100%)}
 button,label.tg{font:500 15px Inter,sans-serif;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
@@ -81,8 +82,8 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 <body>
 <header class="band top">
   <div>
-    <h1>Enemy characters, grouped by owner</h1>
-    <p>Project Fibula. Each box is one likely owner, with the main on top and every character linked to it below, whatever its guild. The starting point was the guilds Bullywannabes, Reformed Bullies and Carlins Cartel. The links come from login/logout patterns on opentibia.info, and they are indications, not proof.</p>
+    <h1>Enemy tracker</h1>
+    <p>Project Fibula. Every known character of the enemy group and their likely alts, and who of them is online right now.</p>
   </div>
   <section class="board" aria-live="polite">
     <h2><span>Online now</span><small id="upd">Loading status …</small><button id="refresh" type="button" class="rf">Refresh now</button></h2>
@@ -94,6 +95,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 <nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#changes" id="t-changes">Changes</a></nav>
 
 <div id="v-owners" hidden>
+<div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies and Carlins Cartel.</p></div>
 <div class="band tools">
   <input type="search" id="q" placeholder="Search for a character" aria-label="Search for a character">
   <label class="tg"><input type="checkbox" id="onlyOn"> Only owners with someone online</label>
