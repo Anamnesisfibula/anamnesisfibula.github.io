@@ -33,6 +33,8 @@ h1{font-size:clamp(30px,4.4vw,46px)}h2{font-size:22px}
 .chip{background:rgba(255,255,255,.1);border-radius:999px;padding:5px 12px;font-size:14px;white-space:nowrap}
 .chip b{font-weight:600}.chip i{font-style:normal;color:#bcd3ce}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--on);margin-right:6px;box-shadow:0 0 0 3px rgba(31,184,90,.22)}
+.ksum{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 4px}.ksum div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px}.ksum b{display:block;font:700 28px/1.1 Cinzel,serif}
+.kk{color:var(--h);font-weight:600}.kd{color:var(--rb);font-weight:600}.tr{font-weight:600}
 .intro{padding-bottom:0}.intro .note{max-width:80ch;margin:6px 0 0}
 .tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-block:18px}
 input[type=search]{font:16px Inter,sans-serif;padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:min(320px,100%)}
@@ -92,7 +94,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
     <div class="onl" id="onList"></div>
   </section>
 </header>
-<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#changes" id="t-changes">Changes</a></nav>
+<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a></nav>
 
 <div id="v-owners" hidden>
 <div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies and Carlins Cartel.</p></div>
@@ -111,6 +113,18 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
   <h2 id="onTitle">Tracked characters online</h2>
   <p class="note" id="onSnap"></p>
   <div class="scroll"><table class="stack olt"><thead><tr><th>Name</th><th class="r">Level</th><th>Vocation</th><th>Owner</th><th>Guild</th></tr></thead><tbody id="onBody"></tbody></table></div>
+</section>
+<section class="band" id="v-kills" hidden>
+  <h2>Kills and deaths</h2>
+  <p class="note">PvP kills made by tracked characters and deaths of tracked characters, from the death list on opentibia.info. Checked every 5 minutes. The site's death list can run several hours behind the game.</p>
+  <div class="ksum" id="kSum"></div>
+  <div class="tools" style="padding-inline:0">
+    <label class="tg"><input type="radio" name="kf" value="all" checked> All</label>
+    <label class="tg"><input type="radio" name="kf" value="kill"> Their kills</label>
+    <label class="tg"><input type="radio" name="kf" value="death"> Their deaths</label>
+    <label class="tg"><input type="checkbox" id="kPve"> Include deaths to monsters</label>
+  </div>
+  <div class="scroll"><table class="stack olt"><thead><tr><th>Time</th><th>Type</th><th>Victim</th><th>Killed by</th></tr></thead><tbody id="kBody"></tbody></table></div>
 </section>
 <section class="band" id="v-changes" hidden>
   <h2>Changes found by the nightly scan</h2>
@@ -179,9 +193,9 @@ function render(){
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('onlyOn').addEventListener('change',render);
 document.getElementById('exp').addEventListener('click',e=>{open=!open;e.target.textContent=open?'Collapse all':'Expand all';render()});
-function route(){const h=location.hash,ch=h==='#changes',ow=h==='#owners',on=!ch&&!ow;document.getElementById('v-owners').hidden=!ow;document.getElementById('v-online').hidden=!on;document.getElementById('v-changes').hidden=!ch;document.getElementById('t-changes').toggleAttribute('aria-current',ch);if(ch)document.getElementById('t-changes').setAttribute('aria-current','page');
+function route(){const h=location.hash,ch=h==='#changes',ow=h==='#owners',ki=h==='#kills',on=!ch&&!ow&&!ki;document.getElementById('v-kills').hidden=!ki;document.getElementById('t-kills').toggleAttribute('aria-current',ki);if(ki)document.getElementById('t-kills').setAttribute('aria-current','page');document.getElementById('v-owners').hidden=!ow;document.getElementById('v-online').hidden=!on;document.getElementById('v-changes').hidden=!ch;document.getElementById('t-changes').toggleAttribute('aria-current',ch);if(ch)document.getElementById('t-changes').setAttribute('aria-current','page');
   document.getElementById('t-owners').toggleAttribute('aria-current',ow);document.getElementById('t-online').toggleAttribute('aria-current',on);
-  if(!ch)document.getElementById(on?'t-online':'t-owners').setAttribute('aria-current','page')}
+  if(!ch&&!ki)document.getElementById(on?'t-online':'t-owners').setAttribute('aria-current','page')}
 window.addEventListener('hashchange',route);
 render();route();
 
@@ -194,11 +208,26 @@ const RAW='https://raw.githubusercontent.com/Anamnesisfibula/anamnesisfibula.git
 const getJ=f=>fetch(RAW+f+'.json?t='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>fetch('data/'+f+'.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()));
 async function load(){const u=document.getElementById('upd');
   try{const [n,st]=await Promise.all([getJ('network'),getJ('status')]);
-    D=n;online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render()}
+    D=n;online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render();renderKills()}
   catch(err){u.textContent='Could not load data'}}
 async function loadChanges(){try{const L=await getJ('changes');const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change'};
   document.getElementById('chBody').innerHTML=L.slice().reverse().map(c=>`<tr><td>${esc(c.date||'')}</td><td>${esc(T[c.type]||c.type||'')}</td><td><a class="nm" href="${url(c.name||'')}">${esc(c.name||'')}</a></td><td>${esc(c.owner||'')}</td><td>${esc(c.type==='new_alt'?'via '+c.via+', score '+c.score:c.type==='guild_change'?c.from+' → '+c.to:c.guild||'')}</td></tr>`).join('')||'<tr><td colspan="5" class="note">No changes yet. The first nightly scan found nothing new.</td></tr>'}catch(e){}}
-load();setInterval(load,60000);document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Checking …';await load();await loadChanges();b.disabled=false;b.textContent='Refresh now'});loadChanges();setInterval(loadChanges,600000);
+let KL=[];
+function ownerOf(n){for(const c of D.clusters){if(c[0]===n||c[2].some(a=>a[0]===n))return c[0]}return null}
+function pn(n,l,tracked){const s=esc(n)+(l?` <span class="lv">(${esc(l)})</span>`:'');return tracked?`<a class="nm tr" href="${url(n)}">${esc(n)}</a>${l?` <span class="lv">(${esc(l)})</span>`:''}${ownerOf(n)&&ownerOf(n)!==n?` <span class="lv">· ${esc(ownerOf(n))}</span>`:''}`:s}
+function renderKills(){
+  const f=(document.querySelector('input[name=kf]:checked')||{}).value||'all',pve=document.getElementById('kPve').checked;
+  const isKill=k=>(k.tracked_killers||[]).length>0,isDeath=k=>!!k.owner_victim;
+  const rows=KL.filter(k=>(pve||!k.pve)&&(f==='all'||(f==='kill'?isKill(k):isDeath(k))));
+  const wk=Date.now()-7*864e5,recent=KL.filter(k=>Date.parse(k.date.replace(' ','T'))>=wk&&!k.pve);
+  document.getElementById('kSum').innerHTML=`<div><b>${recent.filter(isKill).length}</b>kills last 7 days</div><div><b>${recent.filter(isDeath).length}</b>PvP deaths last 7 days</div><div><b>${KL.filter(k=>!k.pve&&isKill(k)).length}</b>kills recorded in total</div>`;
+  document.getElementById('kBody').innerHTML=rows.slice(0,300).map(k=>{const kill=isKill(k),death=isDeath(k);
+    const type=kill&&death?'<span class="kd">Team kill</span>':kill?'<span class="kk">Kill</span>':'<span class="kd">Death</span>';
+    return `<tr><td>${esc(k.date)}</td><td>${type}</td><td>${pn(k.victim,k.vlevel,death)}</td><td>${(k.killers||[]).map(([n,l])=>pn(n,l,(k.tracked_killers||[]).includes(n))).join(', ')}</td></tr>`}).join('')||'<tr><td colspan="4" class="note">Nothing recorded yet.</td></tr>';
+}
+async function loadKills(){try{KL=await getJ('kills');if(!Array.isArray(KL))KL=[]}catch(e){KL=[]}renderKills()}
+document.querySelectorAll('input[name=kf]').forEach(r=>r.addEventListener('change',renderKills));document.getElementById('kPve').addEventListener('change',renderKills);
+load();setInterval(load,60000);loadKills();setInterval(loadKills,120000);document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Checking …';await load();await loadChanges();await loadKills();b.disabled=false;b.textContent='Refresh now'});loadChanges();setInterval(loadChanges,600000);
 }
 </script>
 </body>

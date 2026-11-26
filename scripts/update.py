@@ -18,6 +18,7 @@ DATA = Path(os.environ.get("DATA_DIR", ROOT / "data"))
 NET = DATA / "network.json"
 STATUS = DATA / "status.json"
 LOG = DATA / "changes.json"
+KILLS = DATA / "kills.json"
 GUILDS = {"RB": "Reformed Bullies", "BW": "Bullywannabes", "CC": "Carlins Cartel"}
 MIN_SCORE = 40      # new alt candidates below this are ignored
 HIGH_SCORE = 100    # at or above this (and never online together) = high confidence
@@ -149,5 +150,58 @@ def run_scan():
     save(NET, net); save(LOG, log[-300:])
     print("scan done", len(own), "chars")
 
+# ---------- kills / deaths ----------
+LVL = re.compile(r"^(.*?)\s*\((\d+)\)\s*$")
+
+def split_name(t):
+    m = LVL.match(t.strip())
+    return (m.group(1).strip(), int(m.group(2))) if m else (t.strip(), None)
+
+def deaths_page(s, page):
+    url = f"{BASE}/stats/deaths" + (f"/{page}" if page > 1 else "")
+    soup = BeautifulSoup(s.get(url, timeout=30).text, "html.parser")
+    out = []
+    for t in soup.find_all("table"):
+        heads = [th.get_text(strip=True) for th in t.find_all("th")]
+        if "Via" not in heads: continue
+        for tr in t.find_all("tr"):
+            c = [td.get_text(" ", strip=True) for td in tr.find_all("td")]
+            if len(c) < 3: continue
+            date = next((x for x in c if re.match(r"\d{4}-\d\d-\d\d \d", x)), None)
+            if not date: continue
+            victim, vl = split_name(c[0])
+            killers = [split_name(k) for k in c[-1].split(",") if k.strip()]
+            out.append({"date": date[:16], "victim": victim, "vlevel": vl,
+                        "killers": [[n, l] for n, l in killers]})
+    return out
+
+def run_kills(pages=3):
+    net = load(NET, None)
+    own = owner_of(net)
+    kills = load(KILLS, [])
+    seen = {(k["date"], k["victim"]) for k in kills}
+    s = session()
+    added = 0
+    for p in range(1, pages + 1):
+        rows = deaths_page(s, p)
+        new_here = 0
+        for r in rows:
+            key = (r["date"], r["victim"])
+            if key in seen: continue
+            players = [k for k in r["killers"] if k[0][:1].isupper()]
+            tk = [k[0] for k in players if k[0] in own]
+            if r["victim"] not in own and not tk: continue
+            if not players: r["pve"] = True
+            r["tracked_killers"] = tk
+            r["owner_victim"] = own.get(r["victim"])
+            kills.append(r); seen.add(key); added += 1; new_here += 1
+        time.sleep(PAUSE)
+        if pages <= 3 and rows and all((r["date"], r["victim"]) in seen for r in rows): break
+    kills.sort(key=lambda k: k["date"], reverse=True)
+    save(KILLS, kills[:2000])
+    print("kills added", added)
+
 if __name__ == "__main__":
-    {"online": run_online, "scan": run_scan}[sys.argv[1] if len(sys.argv) > 1 else "online"]()
+    mode = sys.argv[1] if len(sys.argv) > 1 else "online"
+    if mode == "backfill": run_kills(20)
+    else: {"online": run_online, "scan": run_scan, "kills": run_kills}[mode]()

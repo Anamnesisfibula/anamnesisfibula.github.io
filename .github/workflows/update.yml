@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "watch (online every 5 min for ~1 h), online (once) or scan"
+        description: "watch (online every 5 min for ~1 h), online (once), scan or backfill"
         default: "watch"
 permissions:
   contents: write
@@ -47,16 +47,17 @@ jobs:
             fi
             cd ..
           }
-          if [ "$MODE" = "probe" ]; then
-            python scripts/probe.py databr/probe.txt; push
-          elif [ "$MODE" = "scan" ]; then
-            python scripts/update.py online; python scripts/update.py scan; push
+          if [ "$MODE" = "scan" ]; then
+            python scripts/update.py online; python scripts/update.py scan; python scripts/update.py kills || true; push
+          elif [ "$MODE" = "backfill" ]; then
+            python scripts/update.py backfill; push
           elif [ "$MODE" = "online" ]; then
             python scripts/update.py online; push
           else
             END=$(( $(date +%s) + 58*60 ))
             while [ $(date +%s) -lt $END ]; do
               python scripts/update.py online || true
+              python scripts/update.py kills || true
               push
               sleep 300
             done

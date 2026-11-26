@@ -1,0 +1,25 @@
+name: One-off data job
+# Runs beside the watcher (no shared queue). Modes: backfill (last 1000 deaths) or kills.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        default: "backfill"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install requests beautifulsoup4
+      - env:
+          DATA_DIR: ${{ github.workspace }}/databr
+        run: |
+          git config --global user.name tracker-bot; git config --global user.email tracker-bot@users.noreply.github.com
+          git fetch origin data --depth 1; git worktree add databr origin/data; cd databr; git checkout -B data; cd ..
+          python scripts/update.py "${{ github.event.inputs.mode }}"
+          cd databr; git add -A; git diff --cached --quiet || git commit -qm "One-off ${{ github.event.inputs.mode }}"
+          for i in 1 2 3; do git pull -q --rebase origin data && git push -q origin data && break; sleep 5; done
