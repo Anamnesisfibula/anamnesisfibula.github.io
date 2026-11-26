@@ -129,7 +129,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
     <div class="onl" id="onList"></div>
   </section>
 </header>
-<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a><a href="#suggest" id="t-suggest">Suggest alt <span id="sugN"></span></a><a href="#exiva" id="t-exiva" hidden>Exiva <span class="beta">BETA</span></a></nav>
+<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a><a href="#suggest" id="t-suggest">Suggest alt <span id="sugN"></span></a><a href="#exiva" id="t-exiva">Exiva <span class="beta">BETA</span></a></nav>
 
 <div id="v-owners" hidden>
 <div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Most links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. Links marked Same account are listed on the same account on amera.fibula.app. The search started from Bullywannabes, Reformed Bullies, Carlins Cartel, Wyrok Ulicy and Stare Gity.</p></div>
@@ -388,7 +388,7 @@ async function initSug(){try{const c=await getJ('config');API=(c.api||'').replac
 /* ---------- exiva triangulation (BETA) ---------- */
 const EX={
   // Depot spots from TibiaMaps.io markers. Venore is approximate. 5th item: the update that added the town.
-  spots:[['Carlin',32336,31784,7],['Edron',33169,31812,8],['Darashia',33214,32455,8],['Thais',32347,32226,7],['Venore',32918,32075,6],["Ab'Dendriel",32682,31685,7],['Kazordoon',32657,31910,8],['Ankrahmun',33127,32843,7,'7.3'],['Port Hope',32623,32746,7,'7.5']],
+  spots:[['Carlin',32336,31784,7],['Edron',33169,31812,8],['Darashia',33214,32455,8],['Thais',32347,32226,7],['Venore',32918,32075,6],["Ab'Dendriel",32682,31685,7],['Kazordoon',32657,31910,8]],
   map:{x0:31744,y0:30976,w:2560,h:2048,src:['https://tibiamaps.github.io/tibia-map-data/floor-07-map.png','https://raw.githubusercontent.com/tibiamaps/tibia-map-data/main/data/floor-07-map.png']},
   dirs:{n:'north',ne:'north-east',e:'east',se:'south-east',s:'south',sw:'south-west',w:'west',nw:'north-west'},
   band:{beside:[0,4],near:[5,99],far:[100,274],veryfar:[251,1e9]},
