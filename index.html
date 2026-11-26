@@ -14,7 +14,7 @@
    LAYOUT: band with title and online board, then filters, then three guild columns of the tree. */
 :root{color-scheme:light dark;
 --bg:light-dark(#f3f1ec,#121614);--card:light-dark(#ffffff,#1b201e);--ink:light-dark(#1c1d1b,#e9ece8);--mut:light-dark(#62665f,#9aa39c);
---line:light-dark(#dcd8cf,#2c3330);--band:light-dark(#17454a,#0d2a2d);--bandink:#eef6f4;--on:#1fb85a;--h:#1d7a46;--m:#b07a12;--l:#8a8f88;
+--line:light-dark(#dcd8cf,#2c3330);--band:light-dark(#17454a,#0d2a2d);--bandink:#eef6f4;--on:#1fb85a;--h:#1d7a46;--c:#1b4fa0;--m:#b07a12;--l:#8a8f88;
 --rb:light-dark(#8c2a1e,#e07a66);--bw:light-dark(#3d4fa3,#8f9ff0);--cc:light-dark(#6c3f8f,#c597ea);--wu:light-dark(#0f6e6e,#5fd3d3);--sg:light-dark(#7a5a12,#e0b85c)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
@@ -58,7 +58,7 @@ li{padding:8px 0 6px;border-bottom:1px dashed var(--line);display:flex;flex-wrap
 li:last-child{border-bottom:0}
 .ev{flex-basis:100%;font-size:13px;color:var(--mut)}
 .cf{font-size:12px;font-weight:600;border-radius:6px;padding:1px 7px;color:#fff;white-space:nowrap}
-.cf.h{background:var(--h)}.cf.m{background:var(--m)}.cf.l{background:var(--l)}.cf.n{background:transparent;color:var(--mut);border:1px dashed var(--mut)}
+.cf.c{background:var(--c)}.cf.h{background:var(--h)}.cf.m{background:var(--m)}.cf.l{background:var(--l)}.cf.n{background:transparent;color:var(--mut);border:1px dashed var(--mut)}
 .seen{font-size:13px;color:var(--mut);white-space:nowrap}
 .isOn .nm{color:var(--on)}
 a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
@@ -108,12 +108,12 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 <nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a><a href="#suggest" id="t-suggest">Suggest alt <span id="sugN"></span></a></nav>
 
 <div id="v-owners" hidden>
-<div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies, Carlins Cartel, Wyrok Ulicy and Stare Gity.</p></div>
+<div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Most links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. Links marked Same account are listed on the same account on amera.fibula.app. The search started from Bullywannabes, Reformed Bullies, Carlins Cartel, Wyrok Ulicy and Stare Gity.</p></div>
 <div class="band tools">
   <input type="search" id="q" placeholder="Search for a character" aria-label="Search for a character">
   <label class="tg"><input type="checkbox" id="onlyOn"> Only owners with someone online</label>
   <button id="exp" type="button">Expand all</button>
-  <div class="legend"><span><span class="cf h">High</span> score ≥100</span><span><span class="cf m">Medium</span> 40–99 or shared online time</span><span><span class="cf l">Low</span> 15–39</span><span><span class="cf n">Name</span> similar name only</span></div>
+  <div class="legend"><span><span class="cf c">Same account</span> listed together on amera.fibula.app</span><span><span class="cf h">High</span> score ≥100</span><span><span class="cf m">Medium</span> 40–99 or shared online time</span><span><span class="cf l">Low</span> 15–39</span><span><span class="cf n">Name</span> similar name only</span></div>
 </div>
 
 <p class="band note" id="cnt" style="padding-block:0 12px"></p>
@@ -187,7 +187,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 {
 let D={chars:{},clusters:[]};
 const GN={RB:'Reformed Bullies',BW:'Bullywannabes',CC:'Carlins Cartel',WU:'Wyrok Ulicy',SG:'Stare Gity'};
-const CF={h:'High',m:'Medium',l:'Low',n:'Name'};
+const CF={c:'Same account',h:'High',m:'Medium',l:'Low',n:'Name'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let online=new Set(), open=false, snap='';
 const url=n=>'https://opentibia.info/stats/player/'+encodeURIComponent(n);
