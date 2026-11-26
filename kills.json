@@ -1,5 +1,22 @@
 [
  {
+  "date": "2026-11-26 14:00",
+  "victim": "Szyje na Drucicczkach",
+  "vlevel": 11,
+  "killers": [
+   [
+    "Mendoz",
+    28
+   ],
+   [
+    "Leike",
+    null
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
   "date": "2026-11-26 13:31",
   "victim": "Ww",
   "vlevel": 28,
