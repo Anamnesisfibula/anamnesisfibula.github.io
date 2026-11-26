@@ -1,5 +1,84 @@
 [
  {
+  "date": "2026-11-25 17:10",
+  "victim": "Puerco Man",
+  "vlevel": 58,
+  "killers": [
+   [
+    "Samba'sky",
+    78
+   ],
+   [
+    "Domino",
+    61
+   ]
+  ],
+  "tracked_killers": [
+   "Samba'sky",
+   "Domino"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 17:08",
+  "victim": "Pie",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Glizdor",
+    75
+   ],
+   [
+    "Puerco Man",
+    58
+   ]
+  ],
+  "tracked_killers": [
+   "Glizdor"
+  ],
+  "owner_victim": "Pie"
+ },
+ {
+  "date": "2026-11-25 16:03",
+  "victim": "Jaum",
+  "vlevel": 26,
+  "killers": [
+   [
+    "Pie",
+    20
+   ],
+   [
+    "Gloomcarver",
+    41
+   ]
+  ],
+  "tracked_killers": [
+   "Pie",
+   "Gloomcarver"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 15:49",
+  "victim": "Yeshua",
+  "vlevel": 33,
+  "killers": [
+   [
+    "Pie",
+    20
+   ],
+   [
+    "Pierogi Ruskie",
+    21
+   ]
+  ],
+  "tracked_killers": [
+   "Pie",
+   "Pierogi Ruskie"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-25 15:09",
   "victim": "Vazza laxen",
   "vlevel": 20,
@@ -290,6 +369,19 @@
   ],
   "tracked_killers": [],
   "owner_victim": "Dawaj milion"
+ },
+ {
+  "date": "2026-11-25 11:15",
+  "victim": "Bru'toh",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Cholozeirah",
+    59
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Turrican"
  },
  {
   "date": "2026-11-25 11:02",
