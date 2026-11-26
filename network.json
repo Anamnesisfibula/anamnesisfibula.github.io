@@ -1168,6 +1168,13 @@
    "l": 83,
    "v": "Royal Paladin",
    "ls": "2026-11-25 22:37"
+  },
+  "Zorro Zwinia": {
+   "g": "X",
+   "r": "",
+   "l": 0,
+   "v": "",
+   "ls": ""
   }
  },
  "clusters": [
@@ -1250,6 +1257,12 @@
      "Ww",
      "h",
      "score 261 both ways"
+    ],
+    [
+     "Zorro Zwinia",
+     "h",
+     "reported by admin (same owner as Akarat Zakarum and Ww)",
+     "2026-11-26"
     ]
    ]
   ],
