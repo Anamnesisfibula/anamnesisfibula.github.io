@@ -70,6 +70,8 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 .sugf{display:grid;gap:8px;max-width:620px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
 .sugf label{display:grid;gap:4px;font-weight:600;font-size:14px}
 .sugf input,.sugf textarea{font:16px Inter,sans-serif;padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-weight:400}
+.acw{position:relative;display:block}.acw input{width:100%}.ac{position:absolute;z-index:20;left:0;right:0;top:100%;margin:2px 0 0;padding:4px 0;border:1px solid var(--line);border-radius:10px;background:var(--card);max-height:320px;overflow:auto;box-shadow:0 8px 24px rgba(0,0,0,.18);border-top:1px solid var(--line)}
+.ac li{display:block;padding:8px 14px;border:0;cursor:pointer;font-weight:400}.ac li[aria-selected=true],.ac li:hover{background:color-mix(in srgb,var(--on) 16%,var(--card))}
 .slist{display:grid;gap:10px;max-width:980px}
 .sg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
 .sg .ev{flex-basis:100%}.sg .vb{margin-left:auto;display:flex;gap:8px}
@@ -145,7 +147,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
   <p class="note">Know a character that belongs to someone we track? Suggest it here and vote on what others have suggested. Nothing goes on the tracker until the admin has checked it. One vote per suggestion for each browser.</p>
   <div id="sugOff" class="note" hidden>Suggestions are not switched on yet.</div>
   <form id="sugF" class="sugf" autocomplete="off" hidden>
-    <label>Character<input id="sChar" maxlength="40" required placeholder="Name of the alt"></label>
+    <label>Character<span class="acw"><input id="sChar" maxlength="40" required placeholder="Start typing a name" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sAc"><ul id="sAc" class="ac" role="listbox" hidden></ul></span></label>
     <span class="note" id="sCharInfo" aria-live="polite"></span>
     <label>Belongs to (tracked character)<input id="sMain" list="sMains" maxlength="40" required placeholder="Start typing a tracked name"></label>
     <datalist id="sMains"></datalist>
@@ -286,10 +288,22 @@ function alertMsg(card,m){let s=card.querySelector('.err');if(!s){s=document.cre
 function fillMains(){const names=D.clusters.flatMap(c=>[c[0],...c[2].map(a=>a[0])]).sort((a,b)=>a.localeCompare(b));document.getElementById('sMains').innerHTML=names.map(n=>`<option value="${esc(n)}">`).join('')}
 const ownerOfS=n=>{for(const c of D.clusters){if(c[0]===n||c[2].some(a=>a[0]===n))return c[0]}return null};
 document.getElementById('sMain').addEventListener('input',e=>{const n=e.target.value.trim(),o=ownerOfS(n),i=document.getElementById('sMainInfo');i.className='note'+(n&&!o?' err':'');i.textContent=!n?'':o?(o!==n?'Owner: '+o:'Tracked main'):'Pick a name from the list of tracked characters.'});
-let lt;document.getElementById('sChar').addEventListener('input',e=>{clearTimeout(lt);const n=e.target.value.trim(),i=document.getElementById('sCharInfo');i.className='note';i.textContent='';if(n.length<2)return;
+const AC=document.getElementById('sAc'),SC=document.getElementById('sChar'),NC={};let at,acSel=-1;
+function acShow(list){AC.innerHTML=list.map((n,i)=>`<li role="option" id="ac${i}" aria-selected="${i===acSel}">${esc(n)}</li>`).join('');AC.hidden=!list.length;SC.setAttribute('aria-expanded',String(!!list.length))}
+function acClose(){AC.hidden=true;acSel=-1;SC.setAttribute('aria-expanded','false')}
+function acPick(n){SC.value=n;acClose();SC.dispatchEvent(new Event('change'));clearTimeout(at)}
+SC.addEventListener('input',e=>{clearTimeout(at);const q=SC.value.trim();acSel=-1;if(q.length<2){acClose();return}
+  if(NC[q.toLowerCase()]){acShow(NC[q.toLowerCase()]);return}
+  at=setTimeout(async()=>{try{const L=await api('/names?q='+encodeURIComponent(q));NC[q.toLowerCase()]=L;if(SC.value.trim()===q&&document.activeElement===SC)acShow(L)}catch(err){}},300)});
+SC.addEventListener('keydown',e=>{const n=AC.children.length;if(AC.hidden||!n)return;
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();acSel=(acSel+(e.key==='ArrowDown'?1:-1)+n)%n;[...AC.children].forEach((li,i)=>li.setAttribute('aria-selected',String(i===acSel)));AC.children[acSel].scrollIntoView({block:'nearest'});SC.setAttribute('aria-activedescendant','ac'+acSel)}
+  else if(e.key==='Enter'&&acSel>=0){e.preventDefault();acPick(AC.children[acSel].textContent)}else if(e.key==='Escape')acClose()});
+AC.addEventListener('mousedown',e=>{const li=e.target.closest('li');if(li){e.preventDefault();acPick(li.textContent)}});
+SC.addEventListener('blur',()=>setTimeout(acClose,100));
+let lt;SC.addEventListener('input',()=>{const i=document.getElementById('sCharInfo');i.textContent=''});SC.addEventListener('change',e=>{clearTimeout(lt);const n=SC.value.trim(),i=document.getElementById('sCharInfo');i.className='note';i.textContent='';if(n.length<2)return;
   lt=setTimeout(async()=>{i.textContent='Looking up on opentibia.info …';try{const r=await api('/lookup?name='+encodeURIComponent(n));
     if(r.tracked){i.className='note err';i.textContent=r.name+' is already tracked'+(r.owner&&r.owner!==r.name?' (under '+r.owner+')':'')+'.'}
-    else{i.className='note ok';i.textContent='Found: '+r.name+', level '+r.level+' '+r.voc+(r.guild?', guild '+r.guild:'')}}catch(err){i.className='note err';i.textContent=err.message}},700)});
+    else{i.className='note ok';i.textContent='Found: '+r.name+', level '+r.level+' '+r.voc+(r.guild?', guild '+r.guild:'')}}catch(err){i.className='note err';i.textContent=err.message}},50)});
 document.getElementById('sugF').addEventListener('submit',async e=>{e.preventDefault();const m=document.getElementById('sMsg'),b=document.getElementById('sGo');b.disabled=true;m.className='note';m.textContent='Sending …';
   try{const r=await api('/suggest',{char:document.getElementById('sChar').value,main:document.getElementById('sMain').value.trim(),comment:document.getElementById('sCom').value});
     m.className='note ok';m.textContent='Thanks. '+r.char+' is now waiting for votes and the admin.';e.target.reset();document.getElementById('sCharInfo').textContent='';document.getElementById('sMainInfo').textContent='';await loadSug()}

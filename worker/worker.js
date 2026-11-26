@@ -2,7 +2,7 @@
 const ORIGIN = 'https://anamnesisfibula.github.io';
 const RAW = 'https://raw.githubusercontent.com/Anamnesisfibula/anamnesisfibula.github.io/data/network.json';
 const OT = 'https://opentibia.info';
-const LIMITS = { suggest: [5, 3600], vote: [60, 3600], lookup: [60, 600], admin: [20, 600] };
+const LIMITS = { suggest: [5, 3600], vote: [60, 3600], lookup: [60, 600], names: [150, 600], admin: [20, 600] };
 
 const cors = { 'Access-Control-Allow-Origin': ORIGIN, 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type', 'Vary': 'Origin' };
 const json = (o, st = 200, extra = {}) => new Response(JSON.stringify(o), { status: st, headers: { 'Content-Type': 'application/json', ...cors, ...extra } });
@@ -56,6 +56,18 @@ export default {
     if (req.method === 'POST') { try { body = await req.json(); } catch { return err('bad json'); } }
     try {
       if (p === '/suggestions' && req.method === 'GET') return json(await list(env), 200, { 'Cache-Control': 'no-store' });
+
+      if (p === '/names' && req.method === 'GET') {
+        const q = clean(u.searchParams.get('q'), 30); if (q.length < 2) return json([]);
+        const ck = new Request('https://cache.local/names/' + encodeURIComponent(q.toLowerCase()));
+        const hit = await caches.default.match(ck); if (hit) { const r = new Response(hit.body, hit); for (const [k, v] of Object.entries(cors)) r.headers.set(k, v); return r; }
+        if (await limited(env, 'names', iph)) return err('Too many searches, wait a few minutes.', 429);
+        const r = await fetch(OT + '/count/name/fibula', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'name=' + encodeURIComponent(q) });
+        let list = []; try { list = JSON.parse(await r.text()) || []; } catch { }
+        list = (Array.isArray(list) ? list : []).filter(x => typeof x === 'string').slice(0, 30);
+        const res = json(list, 200, { 'Cache-Control': 'public, max-age=3600' });
+        await caches.default.put(ck, res.clone()); return res;
+      }
 
       if (p === '/lookup' && req.method === 'GET') {
         if (await limited(env, 'lookup', iph)) return err('Too many lookups, wait a few minutes.', 429);
