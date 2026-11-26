@@ -165,5 +165,13 @@
   "owner": "Kopacz Ognia",
   "via": "death list scan",
   "score": "20"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Energy Field Master",
+  "owner": "Domino",
+  "via": "online scan",
+  "score": "15"
  }
 ]

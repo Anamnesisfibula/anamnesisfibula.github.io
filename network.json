@@ -867,6 +867,13 @@
    "l": 8,
    "v": "Druid",
    "ls": "2026-11-26 00:54"
+  },
+  "Energy Field Master": {
+   "g": "X",
+   "r": "",
+   "l": 12,
+   "v": "Sorcerer",
+   "ls": "2026-11-26 02:30"
   }
  },
  "clusters": [
@@ -1035,6 +1042,12 @@
      "Hymel Jadwiga",
      "l",
      "score 18 with Domino, killed together with Glizda",
+     "2026-11-26"
+    ],
+    [
+     "Energy Field Master",
+     "l",
+     "score 15 with Night Stalker, online at the same time",
      "2026-11-26"
     ]
    ]
