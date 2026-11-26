@@ -58,7 +58,7 @@ li{padding:8px 0 6px;border-bottom:1px dashed var(--line);display:flex;flex-wrap
 li:last-child{border-bottom:0}
 .ev{flex-basis:100%;font-size:13px;color:var(--mut)}
 .cf{font-size:12px;font-weight:600;border-radius:6px;padding:1px 7px;color:#fff;white-space:nowrap}
-.cf.h{background:var(--h)}.cf.c{background:#0b5d33}.cf.u{background:transparent;color:var(--m);border:1px dashed var(--m)}.cf.m{background:var(--m)}.cf.l{background:var(--l)}.cf.n{background:transparent;color:var(--mut);border:1px dashed var(--mut)}
+.cf.h{background:var(--h)}.cf.m{background:var(--m)}.cf.l{background:var(--l)}.cf.n{background:transparent;color:var(--mut);border:1px dashed var(--mut)}
 .seen{font-size:13px;color:var(--mut);white-space:nowrap}
 .isOn .nm{color:var(--on)}
 a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
@@ -102,7 +102,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
   <input type="search" id="q" placeholder="Search for a character" aria-label="Search for a character">
   <label class="tg"><input type="checkbox" id="onlyOn"> Only owners with someone online</label>
   <button id="exp" type="button">Expand all</button>
-  <div class="legend"><span><span class="cf h">High</span> score ≥100</span><span><span class="cf m">Medium</span> 40–99 or shared online time</span><span><span class="cf l">Low</span> 15–39</span><span><span class="cf n">Name</span> similar name only</span><span><span class="cf c">Confirmed</span> checked by us</span><span><span class="cf u">Uncertain</span> no longer fits the pattern</span></div>
+  <div class="legend"><span><span class="cf h">High</span> score ≥100</span><span><span class="cf m">Medium</span> 40–99 or shared online time</span><span><span class="cf l">Low</span> 15–39</span><span><span class="cf n">Name</span> similar name only</span></div>
 </div>
 
 <p class="band note" id="cnt" style="padding-block:0 12px"></p>
@@ -155,7 +155,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 {
 let D={chars:{},clusters:[]};
 const GN={RB:'Reformed Bullies',BW:'Bullywannabes',CC:'Carlins Cartel',WU:'Wyrok Ulicy',SG:'Stare Gity'};
-const CF={h:'High',m:'Medium',l:'Low',n:'Name',c:'Confirmed',u:'Uncertain'};
+const CF={h:'High',m:'Medium',l:'Low',n:'Name'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let online=new Set(), open=false, snap='';
 const url=n=>'https://opentibia.info/stats/player/'+encodeURIComponent(n);
@@ -212,7 +212,7 @@ async function load(){const u=document.getElementById('upd');
     D=n;online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render();renderKills()}
   catch(err){u.textContent='Could not load data'}}
 async function loadChanges(){try{const L=await getJ('changes');
-  const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change',added:'Added by hand',guild_added:'Guild added',rejected:'Link rejected',confirmed:'Link confirmed',weakened:'Link now uncertain'};
+  const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change',added:'Added by hand',guild_added:'Guild added'};
   const det=c=>c.type==='new_alt'?`via ${esc(c.via)}, score ${esc(c.score)}`:c.type==='guild_change'?`${esc(c.from)} → ${esc(c.to)}`:c.type==='guild_added'?`<details><summary>${(c.names||[]).length} members</summary>${(c.names||[]).map(esc).join(', ')}</details>`:esc(c.guild||'');
   document.getElementById('chBody').innerHTML=L.slice().reverse().map(c=>`<tr><td>${esc(c.date||'')}</td><td>${esc(T[c.type]||c.type||'')}</td><td>${c.name?`<a class="nm" href="${url(c.name)}">${esc(c.name)}</a>`:esc(c.guild||'')}</td><td>${esc(c.owner&&c.owner!==c.name?c.owner:'')}</td><td>${det(c)}</td></tr>`).join('')||'<tr><td colspan="5" class="note">No changes yet.</td></tr>'}catch(e){}}
 let KL=[];

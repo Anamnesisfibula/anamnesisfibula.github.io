@@ -48,7 +48,7 @@ jobs:
             cd ..
           }
           if [ "$MODE" = "scan" ]; then
-            python scripts/update.py online; python scripts/update.py scan; python scripts/update.py ownscan || true; if [ "$(date -u +%u)" = "7" ]; then python scripts/update.py recheck || true; fi; python scripts/update.py kills || true; push
+            python scripts/update.py online; python scripts/update.py scan; python scripts/update.py ownscan || true; python scripts/update.py kills || true; push
           elif [ "$MODE" = "backfill" ]; then
             python scripts/update.py backfill; push
           elif [ "$MODE" = "online" ]; then
@@ -56,7 +56,6 @@ jobs:
           else
             END=$(( $(date +%s) + 58*60 ))
             while [ $(date +%s) -lt $END ]; do
-              git pull -q --ff-only origin main || true   # pick up review.json edits
               python scripts/update.py online || true
               python scripts/update.py kills || true
               push

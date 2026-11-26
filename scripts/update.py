@@ -19,7 +19,6 @@ NET = DATA / "network.json"
 STATUS = DATA / "status.json"
 LOG = DATA / "changes.json"
 KILLS = DATA / "kills.json"
-REVIEW = ROOT / "review.json"   # edited by hand on GitHub (only org members can change it)
 GUILDS = {"RB": "Reformed Bullies", "BW": "Bullywannabes", "CC": "Carlins Cartel", "WU": "Wyrok Ulicy", "SG": "Stare Gity"}
 MIN_SCORE = 40      # new alt candidates below this are ignored
 HIGH_SCORE = 100    # at or above this (and never online together) = high confidence
@@ -60,7 +59,6 @@ def online(s):
     return names
 
 def run_online():
-    apply_review()
     net = load(NET, None)
     s = session()
     on = online(s)
@@ -163,7 +161,7 @@ def run_scan():
             chars[n] = p  # never removed: a char stays tracked even after leaving a guild
         for e in scanner(s, n):
             other, score = e.get("name"), float(e.get("score") or 0)
-            if not other or score < MIN_SCORE or other in own or is_rejected(own[n], other): continue
+            if not other or score < MIN_SCORE or other in own: continue
             shared = (e.get("overlap") or {}).get("status") == "confirmed"
             cf = "h" if score >= HIGH_SCORE and not shared else "m"
             ev = f"score {round(score)} with {n}" + (", shared online time" if shared else "") + f" (new {today})"
@@ -235,7 +233,7 @@ def link_new(s, net, own, chars, clusters, log, name, note, today, log_added=Tru
     if p: chars[name] = p
     res = [e for e in scanner(s, name) if float(e.get("score") or 0) >= MIN_SCORE]
     time.sleep(PAUSE)
-    best = next((e for e in res if e.get("name") in own and not is_rejected(own[e["name"]], name)), None)
+    best = next((e for e in res if e.get("name") in own), None)
     if best:
         score = float(best["score"]); shared = (best.get("overlap") or {}).get("status") == "confirmed"
         main = own[best["name"]]
@@ -340,7 +338,7 @@ def run_ownscan(min_days=2, max_verify=60):
     cands = []
     for t, others in cnt.items():
         for x, days in others.items():
-            if x in own or len(days) < min_days or is_rejected(own[t], x): continue
+            if x in own or len(days) < min_days: continue
             cands.append((len(days), t, x))
     cands.sort(reverse=True)
     s = session(); today = now()[:10]; cache = {}
@@ -365,87 +363,10 @@ def run_ownscan(min_days=2, max_verify=60):
     save(NET, net); save(LOG, log[-300:])
     print("own scanner added", added, "of", len(cands), "candidates")
 
-# ---------- manual review (reject / confirm) ----------
-def review():
-    r = load(REVIEW, {})
-    return r.get("reject", []), r.get("confirm", [])
-
-def is_rejected(owner, name):
-    rej, _ = review()
-    return any(x.get("name") == name and x.get("owner") in (None, "", owner) for x in rej)
-
-def apply_review():
-    net = load(NET, None)
-    if not net: return
-    log = load(LOG, [])
-    rej, conf = review()
-    today = now()[:10]
-    changed = False
-    net.setdefault("rejected", [])
-    done = {(x["owner"], x["name"]) for x in net["rejected"]}
-    for x in rej:
-        n, o = x.get("name"), x.get("owner")
-        for c in net["clusters"]:
-            if o and c[0] != o: continue
-            hit = [a for a in c[2] if a[0] == n]
-            if not hit or (c[0], n) in done: continue
-            c[2] = [a for a in c[2] if a[0] != n]
-            net["rejected"].append({"owner": c[0], "name": n, "date": today, "note": x.get("note", "")})
-            log.append({"date": today, "type": "rejected", "name": n, "owner": c[0], "guild": x.get("note", "")})
-            changed = True
-    for x in conf:
-        n, o = x.get("name"), x.get("owner")
-        for c in net["clusters"]:
-            if o and c[0] != o: continue
-            for a in c[2]:
-                if a[0] == n and a[1] != "c":
-                    a[1] = "c"
-                    log.append({"date": today, "type": "confirmed", "name": n, "owner": c[0], "guild": x.get("note", "")})
-                    changed = True
-    if changed:
-        save(NET, net); save(LOG, log[-300:])
-
-# ---------- weekly re-check of existing links ----------
-def intervals(events):
-    """Online intervals per name reconstructed from the event log."""
-    from collections import defaultdict
-    start, iv = {}, defaultdict(list)
-    for ts, ins, outs in events:
-        for n in ins: start[n] = ts
-        for n in outs:
-            if n in start: iv[n].append((start.pop(n), ts))
-    return iv
-
-def run_recheck():
-    net = load(NET, None); log = load(LOG, [])
-    events = load(EVENTS, [])
-    if not events or events[-1][0] - events[0][0] < 5 * 86400:
-        print("recheck: need at least 5 days of events"); return
-    iv = intervals(events)
-    cnt = handovers(events, {a[0] for c in net["clusters"] for a in c[2]})
-    today = now()[:10]
-    for c in net["clusters"]:
-        for a in c[2]:
-            name, cf = a[0], a[1]
-            if cf in ("c", "u", "n"): continue          # confirmed by hand, already uncertain, or name-only
-            m = re.search(r"with (.+?)(?:,|;| \(|$)", a[2]); via = m.group(1) if m else c[0]
-            A, B = iv.get(name, []), iv.get(via, [])
-            ta = sum(e - s for s, e in A); tb = sum(e - s for s, e in B)
-            if ta < 3600 or tb < 3600: continue        # too little play to judge
-            ov = sum(max(0, min(e1, e2) - max(s1, s2)) for s1, e1 in A for s2, e2 in B)
-            hand = len(cnt.get(name, {}).get(via, set()))
-            share = ov / min(ta, tb)
-            if share > 0.3 and hand == 0:
-                a[1] = "u"
-                a[2] += f"; uncertain since {today}: online together {round(share*100)}% of the time, no handovers in the last 3 weeks"
-                log.append({"date": today, "type": "weakened", "name": name, "owner": c[0], "guild": f"online with {via} {round(share*100)}% of the time"})
-    save(NET, net); save(LOG, log[-300:])
-
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "online"
     if mode == "backfill": run_kills(20)
     elif mode == "ownscan": run_ownscan()
-    elif mode == "recheck": run_recheck()
     elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
     elif mode == "probeguild": probe_guild(sys.argv[2])
     elif mode == "probescan": probe_scan(sys.argv[2].split(";"))
