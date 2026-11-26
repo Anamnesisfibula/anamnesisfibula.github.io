@@ -387,8 +387,8 @@ async function initSug(){try{const c=await getJ('config');API=(c.api||'').replac
   document.getElementById('sugOff').hidden=!!API;document.getElementById('sugF').hidden=!API;if(API){loadSug();setInterval(loadSug,60000)}}
 /* ---------- exiva triangulation (BETA) ---------- */
 const EX={
-  // Depot spots from TibiaMaps.io markers. Venore is approximate.
-  spots:[['Carlin',32336,31784,7],['Edron',33169,31812,8],['Darashia',33214,32455,8],['Thais',32347,32226,7],['Venore',32918,32075,6],["Ab'Dendriel",32682,31685,7],['Kazordoon',32657,31910,8]],
+  // Depot spots from TibiaMaps.io markers. Venore is approximate. 5th item: the update that added the town.
+  spots:[['Carlin',32336,31784,7],['Edron',33169,31812,8],['Darashia',33214,32455,8],['Thais',32347,32226,7],['Venore',32918,32075,6],["Ab'Dendriel",32682,31685,7],['Kazordoon',32657,31910,8],['Ankrahmun',33127,32843,7,'7.3'],['Port Hope',32623,32746,7,'7.5']],
   map:{x0:31744,y0:30976,w:2560,h:2048,src:['https://tibiamaps.github.io/tibia-map-data/floor-07-map.png','https://raw.githubusercontent.com/tibiamaps/tibia-map-data/main/data/floor-07-map.png']},
   dirs:{n:'north',ne:'north-east',e:'east',se:'south-east',s:'south',sw:'south-west',w:'west',nw:'north-west'},
   band:{beside:[0,4],near:[5,99],far:[100,274],veryfar:[251,1e9]},
@@ -468,7 +468,7 @@ addEventListener('resize',()=>exDraw());
 
 /* input */
 function exSetPick(on){exPicking=on;$e('exMapW').classList.toggle('pick',on);$e('exPickMsg').hidden=!on;$e('exPickMsg').textContent=exCustom?'Spot set at x '+exCustom[0]+', y '+exCustom[1]+'. Click the map again to move it.':'Click the map where you are standing.'}
-$e('exSpot').innerHTML=EX.spots.map((s,i)=>`<option value="${i}">${esc(s[0])} depot${s[0]==='Venore'?' (approx.)':''}</option>`).join('')+'<option value="c">Another spot: click the map</option>';
+$e('exSpot').innerHTML=EX.spots.map((s,i)=>`<option value="${i}">${esc(s[0])} depot${s[0]==='Venore'?' (approx.)':''}${s[4]?' (from '+s[4]+')':''}</option>`).join('')+'<option value="c">Another spot: click the map</option>';
 $e('exSpot').value=exLS('exSpot')||'0';
 $e('exSpot').addEventListener('change',e=>{exLS('exSpot',e.target.value);exSetPick(e.target.value==='c');exUI();exDraw()});
 $e('exWho').value=exLS('exWho')||'';$e('exWho').addEventListener('change',e=>exLS('exWho',e.target.value.trim()));
