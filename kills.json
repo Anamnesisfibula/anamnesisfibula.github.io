@@ -1,5 +1,20 @@
 [
  {
+  "date": "2026-11-25 18:04",
+  "victim": "Franciscus Assisiensi",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Pierogi Ruskie",
+    21
+   ]
+  ],
+  "tracked_killers": [
+   "Pierogi Ruskie"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-25 17:10",
   "victim": "Puerco Man",
   "vlevel": 58,
