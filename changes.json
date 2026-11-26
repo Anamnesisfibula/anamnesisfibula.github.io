@@ -312,5 +312,96 @@
   "name": "Yz",
   "owner": "Yz",
   "guild": "member of Wyrok Ulicy"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Sztefan",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Sztefan",
+  "owner": "Sztefan",
+  "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Bsmarck",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Bsmarck",
+  "owner": "Bsmarck",
+  "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Koniowi Zamelduj",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Koniowi Zamelduj",
+  "owner": "Koniowi Zamelduj",
+  "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Naughty Boy",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Naughty Boy",
+  "owner": "Naughty Boy",
+  "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Neravin",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Neravin",
+  "owner": "Neravin",
+  "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Rorz",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Rorz",
+  "owner": "Rorz",
+  "guild": "member of Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_member",
+  "name": "Zawadiaka",
+  "guild": "Stare Gity"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "added",
+  "name": "Zawadiaka",
+  "owner": "Zawadiaka",
+  "guild": "member of Stare Gity"
  }
 ]

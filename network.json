@@ -229,7 +229,7 @@
    "r": "a Vice-Leader",
    "l": 61,
    "v": "Elder Druid",
-   "ls": "2026-11-26 01:27"
+   "ls": "2026-11-26 01:34"
   },
   "Venator": {
    "g": "RB",
@@ -369,7 +369,7 @@
    "r": "BULLER",
    "l": 78,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 01:27"
+   "ls": "2026-11-26 01:34"
   },
   "Sir Zawalisty Knight": {
    "g": "RB",
@@ -453,7 +453,7 @@
    "r": "BULLY MAKER",
    "l": 21,
    "v": "Elder Druid",
-   "ls": "2026-11-26 01:26"
+   "ls": "2026-11-26 01:34"
   },
   "Melepeta": {
    "g": "CC",
@@ -467,7 +467,7 @@
    "r": "the Leader",
    "l": 75,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 01:28"
+   "ls": "2026-11-26 01:35"
   },
   "Glizdur": {
    "g": "X",
@@ -502,7 +502,7 @@
    "r": "",
    "l": 20,
    "v": "Elder Druid",
-   "ls": "2026-11-26 01:27"
+   "ls": "2026-11-26 01:34"
   },
   "Sredi": {
    "g": "X",
@@ -649,7 +649,7 @@
    "r": "",
    "l": 20,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 01:30"
+   "ls": "2026-11-26 01:37"
   },
   "Therion": {
    "g": "WU",
@@ -726,7 +726,7 @@
    "r": "",
    "l": 41,
    "v": "Knight",
-   "ls": "2026-11-26 01:30"
+   "ls": "2026-11-26 01:37"
   },
   "Joseph Fritz": {
    "g": "WU",
@@ -755,6 +755,55 @@
    "l": 32,
    "v": "Master Sorcerer",
    "ls": "2026-11-14 19:34"
+  },
+  "Sztefan": {
+   "g": "SG",
+   "r": "the Leader",
+   "l": 43,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-25 01:11"
+  },
+  "Bsmarck": {
+   "g": "SG",
+   "r": "a Member",
+   "l": 27,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-22 22:37"
+  },
+  "Koniowi Zamelduj": {
+   "g": "SG",
+   "r": "",
+   "l": 40,
+   "v": "Master Sorcerer",
+   "ls": "2026-05-03 21:36"
+  },
+  "Naughty Boy": {
+   "g": "SG",
+   "r": "",
+   "l": 44,
+   "v": "Elder Druid",
+   "ls": "2026-09-01 10:28"
+  },
+  "Neravin": {
+   "g": "SG",
+   "r": "",
+   "l": 20,
+   "v": "Master Sorcerer",
+   "ls": "2026-10-19 21:56"
+  },
+  "Rorz": {
+   "g": "SG",
+   "r": "",
+   "l": 36,
+   "v": "Master Sorcerer",
+   "ls": "2026-08-21 18:23"
+  },
+  "Zawadiaka": {
+   "g": "SG",
+   "r": "",
+   "l": 50,
+   "v": "Elite Knight",
+   "ls": "2026-05-03 21:51"
   }
  },
  "clusters": [
@@ -1322,7 +1371,42 @@
    "Yz",
    "WU",
    []
+  ],
+  [
+   "Sztefan",
+   "SG",
+   []
+  ],
+  [
+   "Bsmarck",
+   "SG",
+   []
+  ],
+  [
+   "Koniowi Zamelduj",
+   "SG",
+   []
+  ],
+  [
+   "Naughty Boy",
+   "SG",
+   []
+  ],
+  [
+   "Neravin",
+   "SG",
+   []
+  ],
+  [
+   "Rorz",
+   "SG",
+   []
+  ],
+  [
+   "Zawadiaka",
+   "SG",
+   []
   ]
  ],
- "scanned": "2026-11-26 01:30"
+ "scanned": "2026-11-26 01:38"
 }
