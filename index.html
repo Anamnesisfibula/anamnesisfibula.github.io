@@ -15,7 +15,7 @@
 :root{color-scheme:light dark;
 --bg:light-dark(#f3f1ec,#121614);--card:light-dark(#ffffff,#1b201e);--ink:light-dark(#1c1d1b,#e9ece8);--mut:light-dark(#62665f,#9aa39c);
 --line:light-dark(#dcd8cf,#2c3330);--band:light-dark(#17454a,#0d2a2d);--bandink:#eef6f4;--on:#1fb85a;--h:#1d7a46;--m:#b07a12;--l:#8a8f88;
---rb:light-dark(#8c2a1e,#e07a66);--bw:light-dark(#3d4fa3,#8f9ff0);--cc:light-dark(#6c3f8f,#c597ea)}
+--rb:light-dark(#8c2a1e,#e07a66);--bw:light-dark(#3d4fa3,#8f9ff0);--cc:light-dark(#6c3f8f,#c597ea);--wu:light-dark(#0f6e6e,#5fd3d3)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:clip}
@@ -51,7 +51,7 @@ summary::-webkit-details-marker{display:none}
 summary::before{content:"▸";color:var(--mut);transition:transform .15s}details[open]>summary::before{transform:rotate(90deg)}
 .nm{font-weight:600}.lv{color:var(--mut);font-size:14px;white-space:nowrap}
 .tag{font-size:12px;border-radius:6px;padding:1px 7px;border:1px solid currentColor;white-space:nowrap}
-.tag.RB{color:var(--rb)}.tag.BW{color:var(--bw)}.tag.CC{color:var(--cc)}.tag.X{color:var(--mut)}
+.tag.RB{color:var(--rb)}.tag.BW{color:var(--bw)}.tag.CC{color:var(--cc)}.tag.WU{color:var(--wu)}.tag.X{color:var(--mut)}
 .cnt{margin-left:auto;font-size:13px;color:var(--mut);white-space:nowrap}
 ul{list-style:none;margin:0;padding:0 14px 12px 30px;border-top:1px solid var(--line)}
 li{padding:8px 0 6px;border-bottom:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
@@ -97,7 +97,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 <nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a></nav>
 
 <div id="v-owners" hidden>
-<div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies and Carlins Cartel.</p></div>
+<div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies, Carlins Cartel and Wyrok Ulicy.</p></div>
 <div class="band tools">
   <input type="search" id="q" placeholder="Search for a character" aria-label="Search for a character">
   <label class="tg"><input type="checkbox" id="onlyOn"> Only owners with someone online</label>
@@ -137,7 +137,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
   <ul class="about">
     <li><b>Online status</b> is collected every 5 minutes by a scheduled GitHub job. Together with GitHub's file cache, a login or logout normally shows here within 5 to 10 minutes.</li>
     <li><b>This page</b> updates itself every minute, so it can stay open on a second screen. Refresh now checks at once.</li>
-    <li><b>Alt scan</b> runs every night at 04:17 (Norwegian time). It refreshes level, vocation and guild, looks for new alts with the scanner, and adds new members of Bullywannabes, Reformed Bullies and Carlins Cartel. Nobody is ever removed.</li>
+    <li><b>Alt scan</b> runs every night at 04:17 (Norwegian time). It refreshes level, vocation and guild, looks for new alts with the scanner, and adds new members of Bullywannabes, Reformed Bullies, Carlins Cartel and Wyrok Ulicy. Nobody is ever removed.</li>
     <li><b>Alt links</b> are based on matching login and logout times over the last 90 days. They are strong hints, not proof.</li>
   </ul>
   <details class="inst"><summary>Instant view straight from opentibia.info</summary>
@@ -153,7 +153,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 <script>
 {
 let D={chars:{},clusters:[]};
-const GN={RB:'Reformed Bullies',BW:'Bullywannabes',CC:'Carlins Cartel'};
+const GN={RB:'Reformed Bullies',BW:'Bullywannabes',CC:'Carlins Cartel',WU:'Wyrok Ulicy'};
 const CF={h:'High',m:'Medium',l:'Low',n:'Name'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let online=new Set(), open=false, snap='';

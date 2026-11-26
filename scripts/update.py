@@ -19,7 +19,7 @@ NET = DATA / "network.json"
 STATUS = DATA / "status.json"
 LOG = DATA / "changes.json"
 KILLS = DATA / "kills.json"
-GUILDS = {"RB": "Reformed Bullies", "BW": "Bullywannabes", "CC": "Carlins Cartel"}
+GUILDS = {"RB": "Reformed Bullies", "BW": "Bullywannabes", "CC": "Carlins Cartel", "WU": "Wyrok Ulicy"}
 MIN_SCORE = 40      # new alt candidates below this are ignored
 HIGH_SCORE = 100    # at or above this (and never online together) = high confidence
 PAUSE = 1.0
@@ -118,8 +118,8 @@ def run_scan():
     for code, gname in GUILDS.items():
         for n in guild_members(s, gname):
             if n not in own:
-                clusters.append([n, code, []]); own[n] = n
                 log.append({"date": today, "type": "new_member", "name": n, "guild": gname})
+                link_new(s, net, own, chars, clusters, log, n, f"member of {gname}", today)
         time.sleep(PAUSE)
 
     # 2) refresh info + look for new alts
