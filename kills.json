@@ -1,0 +1,1119 @@
+[
+ {
+  "date": "2026-11-25 15:09",
+  "victim": "Vazza laxen",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Wachu Mag",
+    null
+   ],
+   [
+    "Underlord",
+    20
+   ]
+  ],
+  "tracked_killers": [
+   "Wachu Mag",
+   "Underlord"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 14:38",
+  "victim": "Oomaa",
+  "vlevel": 60,
+  "killers": [
+   [
+    "Goat freddy",
+    36
+   ],
+   [
+    "Don Oyche",
+    20
+   ]
+  ],
+  "tracked_killers": [
+   "Don Oyche"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 14:20",
+  "victim": "Don Oyche",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Elder Pastro",
+    84
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Has Midre"
+ },
+ {
+  "date": "2026-11-25 13:56",
+  "victim": "Grid",
+  "vlevel": 21,
+  "killers": [
+   [
+    "Don Oyche",
+    20
+   ],
+   [
+    "Shadowfiend",
+    24
+   ]
+  ],
+  "tracked_killers": [
+   "Don Oyche"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 13:53",
+  "victim": "Raknar lodbrok",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Don Oyche",
+    20
+   ],
+   [
+    "The Porucznik",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Don Oyche",
+   "The Porucznik"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 13:39",
+  "victim": "Juraj Slafkovsky",
+  "vlevel": 17,
+  "killers": [
+   [
+    "Don Oyche",
+    20
+   ],
+   [
+    "Mroczny Maker",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Don Oyche",
+   "Mroczny Maker"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 13:34",
+  "victim": "Relic",
+  "vlevel": 16,
+  "killers": [
+   [
+    "Mroczny Maker",
+    null
+   ],
+   [
+    "Don Oyche",
+    20
+   ]
+  ],
+  "tracked_killers": [
+   "Mroczny Maker",
+   "Don Oyche"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 13:20",
+  "victim": "Mendoz",
+  "vlevel": 28,
+  "killers": [
+   [
+    "Glizda",
+    null
+   ],
+   [
+    "Hymel Jadwiga",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Glizda"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 12:48",
+  "victim": "Kakaowy wlamywacz",
+  "vlevel": 15,
+  "killers": [
+   [
+    "Husleiro",
+    115
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Dawaj milion"
+ },
+ {
+  "date": "2026-11-25 12:45",
+  "victim": "Glizda",
+  "vlevel": 10,
+  "killers": [
+   [
+    "Husleiro",
+    115
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Glizdor"
+ },
+ {
+  "date": "2026-11-25 12:45",
+  "victim": "Kakaowy wlamywacz",
+  "vlevel": 16,
+  "killers": [
+   [
+    "Husleiro",
+    115
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Dawaj milion"
+ },
+ {
+  "date": "2026-11-25 12:45",
+  "victim": "Lord Chutten",
+  "vlevel": 11,
+  "killers": [
+   [
+    "Husleiro",
+    115
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Samba'sky"
+ },
+ {
+  "date": "2026-11-25 12:36",
+  "victim": "Hashirama Senju",
+  "vlevel": 33,
+  "killers": [
+   [
+    "Shadowfiend",
+    24
+   ],
+   [
+    "Lord Chutten",
+    7
+   ]
+  ],
+  "tracked_killers": [
+   "Lord Chutten"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 12:31",
+  "victim": "Keppi",
+  "vlevel": 18,
+  "killers": [
+   [
+    "Endurion",
+    null
+   ],
+   [
+    "Kakaowy wlamywacz",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Endurion",
+   "Kakaowy wlamywacz"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 12:21",
+  "victim": "Backyardigan",
+  "vlevel": 11,
+  "killers": [
+   [
+    "Shadowfiend",
+    24
+   ],
+   [
+    "Glizda",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Glizda"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 12:18",
+  "victim": "Kino",
+  "vlevel": 21,
+  "killers": [
+   [
+    "Kakaowy wlamywacz",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Kakaowy wlamywacz"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 11:15",
+  "victim": "Kakaowy wlamywacz",
+  "vlevel": 16,
+  "killers": [
+   [
+    "Cholozeirah",
+    59
+   ],
+   [
+    "Wankzta",
+    18
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Dawaj milion"
+ },
+ {
+  "date": "2026-11-25 11:02",
+  "victim": "Handy Mage",
+  "vlevel": 23,
+  "killers": [
+   [
+    "Bru'toh",
+    20
+   ],
+   [
+    "Kakaowy wlamywacz",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Kakaowy wlamywacz"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:52",
+  "victim": "Kakaowy wlamywacz",
+  "vlevel": 17,
+  "killers": [
+   [
+    "Georges St-Pierre",
+    76
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Dawaj milion"
+ },
+ {
+  "date": "2026-11-25 10:51",
+  "victim": "Mroczny di'maker",
+  "vlevel": 10,
+  "killers": [
+   [
+    "Georges St-Pierre",
+    76
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Mroczny di'maker"
+ },
+ {
+  "date": "2026-11-25 10:45",
+  "victim": "Many Runes",
+  "vlevel": 22,
+  "killers": [
+   [
+    "Kakaowy wlamywacz",
+    null
+   ],
+   [
+    "Mroczny di'maker",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Kakaowy wlamywacz",
+   "Mroczny di'maker"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:44",
+  "victim": "Spyflugan Astrid",
+  "vlevel": 15,
+  "killers": [
+   [
+    "Kakaowy wlamywacz",
+    null
+   ],
+   [
+    "Mroczny di'maker",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Kakaowy wlamywacz",
+   "Mroczny di'maker"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:44",
+  "victim": "Flats",
+  "vlevel": 19,
+  "killers": [
+   [
+    "Kakaowy wlamywacz",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Kakaowy wlamywacz"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:43",
+  "victim": "Glizda",
+  "vlevel": 11,
+  "killers": [
+   [
+    "Nisse da druid",
+    20
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Glizdor"
+ },
+ {
+  "date": "2026-11-25 10:41",
+  "victim": "Aenneas",
+  "vlevel": 23,
+  "killers": [
+   [
+    "Kakaowy wlamywacz",
+    null
+   ],
+   [
+    "Tester Sd",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Kakaowy wlamywacz"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:37",
+  "victim": "Abyssor",
+  "vlevel": 16,
+  "killers": [
+   [
+    "Glizda",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Glizda"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:18",
+  "victim": "Weyland Yutani",
+  "vlevel": 14,
+  "killers": [
+   [
+    "Tester Sd",
+    null
+   ],
+   [
+    "Mroczny di'maker",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Mroczny di'maker"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:07",
+  "victim": "Deez'Nutz",
+  "vlevel": 21,
+  "killers": [
+   [
+    "Glizdur",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Glizdur"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 09:18",
+  "victim": "Tharg",
+  "vlevel": 63,
+  "killers": [
+   [
+    "Quantumleap",
+    88
+   ],
+   [
+    "Krug",
+    104
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Tharg"
+ },
+ {
+  "date": "2026-11-25 09:09",
+  "victim": "Stare Narty Malysza",
+  "vlevel": 100,
+  "killers": [
+   [
+    "Quantumleap",
+    88
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Stare Narty Malysza"
+ },
+ {
+  "date": "2026-11-24 13:31",
+  "victim": "Edzio Listonosz",
+  "vlevel": 52,
+  "killers": [
+   [
+    "Kopacz Ognia",
+    82
+   ],
+   [
+    "Samba'sky",
+    78
+   ]
+  ],
+  "tracked_killers": [
+   "Kopacz Ognia",
+   "Samba'sky"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-24 13:30",
+  "victim": "Edzio Listonosz",
+  "vlevel": 54,
+  "killers": [
+   [
+    "Kopacz Ognia",
+    82
+   ]
+  ],
+  "tracked_killers": [
+   "Kopacz Ognia"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-23 13:28",
+  "victim": "Toruk'Slayer",
+  "vlevel": 22,
+  "killers": [
+   [
+    "Hulaj Dusza",
+    83
+   ]
+  ],
+  "tracked_killers": [
+   "Hulaj Dusza"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-22 14:30",
+  "victim": "Bee Lau",
+  "vlevel": 74,
+  "killers": [
+   [
+    "Kopacz Ognia",
+    82
+   ]
+  ],
+  "tracked_killers": [
+   "Kopacz Ognia"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-22 14:17",
+  "victim": "Beluca",
+  "vlevel": 27,
+  "killers": [
+   [
+    "Glizdor",
+    74
+   ],
+   [
+    "Hulaj Dusza",
+    83
+   ]
+  ],
+  "tracked_killers": [
+   "Glizdor",
+   "Hulaj Dusza"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-22 14:17",
+  "victim": "Korzak Noah",
+  "vlevel": 46,
+  "killers": [
+   [
+    "Wachu Mag",
+    null
+   ],
+   [
+    "Bsmarck",
+    27
+   ]
+  ],
+  "tracked_killers": [
+   "Wachu Mag"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-21 22:15",
+  "victim": "Stare Narty Malysza",
+  "vlevel": 99,
+  "killers": [
+   [
+    "Sweeney",
+    100
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Stare Narty Malysza"
+ },
+ {
+  "date": "2026-11-21 16:25",
+  "victim": "Ur Didact",
+  "vlevel": 41,
+  "killers": [
+   [
+    "Glizdor",
+    74
+   ],
+   [
+    "Ww",
+    28
+   ]
+  ],
+  "tracked_killers": [
+   "Glizdor",
+   "Ww"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-21 12:55",
+  "victim": "Wizard Tempest",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Pierogi Ruskie",
+    21
+   ],
+   [
+    "Glizdor",
+    74
+   ]
+  ],
+  "tracked_killers": [
+   "Pierogi Ruskie",
+   "Glizdor"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-21 12:44",
+  "victim": "Ehmorha",
+  "vlevel": 58,
+  "killers": [
+   [
+    "Domino",
+    61
+   ]
+  ],
+  "tracked_killers": [
+   "Domino"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-21 12:25",
+  "victim": "Barbossa",
+  "vlevel": 25,
+  "killers": [
+   [
+    "Ehmorha",
+    58
+   ],
+   [
+    "Natus Vinceri",
+    46
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kanrak"
+ },
+ {
+  "date": "2026-11-21 12:14",
+  "victim": "J'Wick",
+  "vlevel": 14,
+  "killers": [
+   [
+    "Barbossa",
+    24
+   ]
+  ],
+  "tracked_killers": [
+   "Barbossa"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-21 03:47",
+  "victim": "Wodywodpecker",
+  "vlevel": 24,
+  "killers": [
+   [
+    "a scorpion",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Wodywodpecker"
+ },
+ {
+  "date": "2026-11-19 15:22",
+  "victim": "Koirr",
+  "vlevel": 55,
+  "killers": [
+   [
+    "demon skeleton",
+    null
+   ],
+   [
+    "a ghoul",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Koirr"
+ },
+ {
+  "date": "2026-11-19 07:20",
+  "victim": "Zabka",
+  "vlevel": 21,
+  "killers": [
+   [
+    "Gueaoeiruere",
+    50
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Zabka"
+ },
+ {
+  "date": "2026-11-18 15:30",
+  "victim": "Barbossa",
+  "vlevel": 25,
+  "killers": [
+   [
+    "Powdered Milkman",
+    20
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kanrak"
+ },
+ {
+  "date": "2026-11-18 14:09",
+  "victim": "Barbossa",
+  "vlevel": 26,
+  "killers": [
+   [
+    "The Issue",
+    27
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kanrak"
+ },
+ {
+  "date": "2026-11-18 13:00",
+  "victim": "Wladeczek",
+  "vlevel": 45,
+  "killers": [
+   [
+    "a giant spider",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Wladeczek"
+ },
+ {
+  "date": "2026-11-18 01:31",
+  "victim": "Ineedaname",
+  "vlevel": 24,
+  "killers": [
+   [
+    "Kopacz Ognia",
+    82
+   ]
+  ],
+  "tracked_killers": [
+   "Kopacz Ognia"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-18 01:17",
+  "victim": "Szyje na Drutach",
+  "vlevel": 21,
+  "killers": [
+   [
+    "Ineedaname",
+    24
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-17 13:31",
+  "victim": "Stoned Homie",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Zabka",
+    7
+   ]
+  ],
+  "tracked_killers": [
+   "Zabka"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-17 12:01",
+  "victim": "Kikkoman",
+  "vlevel": 30,
+  "killers": [
+   [
+    "Hulaj Dusza",
+    83
+   ],
+   [
+    "Turrican",
+    86
+   ]
+  ],
+  "tracked_killers": [
+   "Hulaj Dusza",
+   "Turrican"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-17 09:03",
+  "victim": "Ineedaname",
+  "vlevel": 25,
+  "killers": [
+   [
+    "Kopacz Ognia",
+    82
+   ]
+  ],
+  "tracked_killers": [
+   "Kopacz Ognia"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-17 07:59",
+  "victim": "Wodywodpecker",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Ineedaname",
+    25
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Wodywodpecker"
+ },
+ {
+  "date": "2026-11-17 00:37",
+  "victim": "Zafeminowany Polak",
+  "vlevel": 7,
+  "killers": [
+   [
+    "Ghazphantom",
+    29
+   ]
+  ],
+  "tracked_killers": [
+   "Ghazphantom"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-17 00:19",
+  "victim": "Wodywodpecker",
+  "vlevel": 20,
+  "killers": [
+   [
+    "a poison spider",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Wodywodpecker"
+ },
+ {
+  "date": "2026-11-16 14:00",
+  "victim": "Koirr",
+  "vlevel": 56,
+  "killers": [
+   [
+    "a demon skeleton",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Koirr"
+ },
+ {
+  "date": "2026-11-16 00:49",
+  "victim": "Wodywodpecker",
+  "vlevel": 21,
+  "killers": [
+   [
+    "a scorpion",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Wodywodpecker"
+ },
+ {
+  "date": "2026-11-15 13:14",
+  "victim": "Afk Check",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Samba'sky",
+    75
+   ],
+   [
+    "Velkron",
+    19
+   ]
+  ],
+  "tracked_killers": [
+   "Samba'sky"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-15 13:10",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Samba'sky",
+    75
+   ]
+  ],
+  "tracked_killers": [
+   "Samba'sky"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-14 05:35",
+  "victim": "Szyje na Drutach",
+  "vlevel": 22,
+  "killers": [
+   [
+    "Natural Born Killer",
+    null
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-13 21:43",
+  "victim": "Zafeminowany Polak",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Ghazphantom",
+    29
+   ]
+  ],
+  "tracked_killers": [
+   "Ghazphantom"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-12 21:28",
+  "victim": "Samba'sky",
+  "vlevel": 75,
+  "killers": [
+   [
+    "a demon skeleton",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Samba'sky"
+ },
+ {
+  "date": "2026-11-12 14:44",
+  "victim": "Haalland",
+  "vlevel": 9,
+  "killers": [
+   [
+    "Barbossa",
+    25
+   ]
+  ],
+  "tracked_killers": [
+   "Barbossa"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-12 14:37",
+  "victim": "Barbossa",
+  "vlevel": 25,
+  "killers": [
+   [
+    "Haalland",
+    null
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kanrak"
+ },
+ {
+  "date": "2026-11-12 11:12",
+  "victim": "Tharg",
+  "vlevel": 60,
+  "killers": [
+   [
+    "a giant spider",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Tharg"
+ },
+ {
+  "date": "2026-11-12 07:46",
+  "victim": "Tharg",
+  "vlevel": 61,
+  "killers": [
+   [
+    "a giant spider",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Tharg"
+ },
+ {
+  "date": "2026-11-12 03:25",
+  "victim": "Marry Jane",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Zafeminowany Polak",
+    8
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Marry Jane"
+ },
+ {
+  "date": "2026-11-11 12:02",
+  "victim": "Hulaj Dusza",
+  "vlevel": 84,
+  "killers": [
+   [
+    "a dragon lord",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Hulaj Dusza"
+ },
+ {
+  "date": "2026-11-11 11:07",
+  "victim": "Koirr",
+  "vlevel": 54,
+  "killers": [
+   [
+    "dragon lord",
+    null
+   ],
+   [
+    "a dragon",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Koirr"
+ }
+]
