@@ -201,7 +201,58 @@ def run_kills(pages=3):
     save(KILLS, kills[:2000])
     print("kills added", added)
 
+def link_new(s, net, own, chars, clusters, log, name, note, today):
+    """Track a new character permanently. Put it under an existing owner if the scanner links it strongly."""
+    p = player(s, name); time.sleep(PAUSE)
+    if p: chars[name] = p
+    res = [e for e in scanner(s, name) if float(e.get("score") or 0) >= MIN_SCORE]
+    time.sleep(PAUSE)
+    best = next((e for e in res if e.get("name") in own), None)
+    if best:
+        score = float(best["score"]); shared = (best.get("overlap") or {}).get("status") == "confirmed"
+        main = own[best["name"]]
+        cf = "h" if score >= HIGH_SCORE and not shared else "m"
+        ev = f"score {round(score)} with {best['name']}" + (", shared online time" if shared else "") + f"; {note}"
+        next(c for c in clusters if c[0] == main)[2].append([name, cf, ev, today]); own[name] = main
+    else:
+        clusters.append([name, chars.get(name, {}).get("g", "X"), []]); own[name] = name; main = name
+    log.append({"date": today, "type": "added", "name": name, "owner": main, "guild": note})
+    for e in res:
+        other = e.get("name")
+        if not other or other in own: continue
+        score = float(e["score"]); shared = (e.get("overlap") or {}).get("status") == "confirmed"
+        cf = "h" if score >= HIGH_SCORE and not shared else "m"
+        next(c for c in clusters if c[0] == own[name])[2].append([other, cf, f"score {round(score)} with {name}" + (", shared online time" if shared else "") + f" (new {today})", today])
+        own[other] = own[name]
+        chars.setdefault(other, {"g": "X", "r": "", "l": int(e.get("level") or 0), "v": "", "ls": ""})
+        log.append({"date": today, "type": "new_alt", "name": other, "owner": own[name], "via": name, "score": round(score)})
+
+def run_add(names, note):
+    net = load(NET, None); log = load(LOG, [])
+    s = session(); today = now()[:10]
+    own = owner_of(net)
+    for n in names:
+        n = n.strip()
+        if n and n not in own:
+            link_new(s, net, own, net["chars"], net["clusters"], log, n, note, today)
+    save(NET, net); save(LOG, log[-300:])
+
+def probe_guild(gname):
+    s = session()
+    soup = BeautifulSoup(s.get(f"{BASE}/stats/guild/{requests.utils.quote(gname)}", timeout=30).text, "html.parser")
+    out = []
+    for ti, t in enumerate(soup.find_all("table")):
+        out.append(f"-- table {ti}: " + " | ".join(th.get_text(" ", strip=True) for th in t.find_all("th")))
+        for tr in t.find_all("tr")[:4]:
+            out.append("   " + " | ".join(td.get_text(" ", strip=True) for td in tr.find_all("td")))
+    for h in soup.find_all(["h1","h2","h3","h4","b","strong"]):
+        tx = h.get_text(" ", strip=True)
+        if "nvit" in tx: out.append("HEADING: " + tx)
+    (DATA / "probe_guild.txt").write_text("\n".join(out), encoding="utf-8")
+
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "online"
     if mode == "backfill": run_kills(20)
+    elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
+    elif mode == "probeguild": probe_guild(sys.argv[2])
     else: {"online": run_online, "scan": run_scan, "kills": run_kills}[mode]()
