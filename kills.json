@@ -500,6 +500,19 @@
   "owner_victim": "Mroczny di'maker"
  },
  {
+  "date": "2026-11-25 10:51",
+  "victim": "Tester Sd",
+  "vlevel": 9,
+  "killers": [
+   [
+    "Georges St-Pierre",
+    76
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Quekss"
+ },
+ {
   "date": "2026-11-25 10:45",
   "victim": "Many Runes",
   "vlevel": 22,
@@ -598,6 +611,34 @@
   ],
   "tracked_killers": [
    "Glizda"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-25 10:29",
+  "victim": "Tester Sd",
+  "vlevel": 9,
+  "killers": [
+   [
+    "Genevieve Gilbault",
+    19
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Quekss"
+ },
+ {
+  "date": "2026-11-25 10:25",
+  "victim": "Juraj Slafkovsky",
+  "vlevel": 18,
+  "killers": [
+   [
+    "Tester Sd",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Tester Sd"
   ],
   "owner_victim": null
  },
