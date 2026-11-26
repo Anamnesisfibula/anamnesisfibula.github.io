@@ -1,0 +1,19 @@
+-- table 0: Founded | Members | Levels | Average level
+   
+   2026-10-10 | 31
+   
+   283 | 9
+-- table 1: Powergamers | Name | Level | Experience
+   
+   
+   Zabka (MS) |  | 22 | 0 | +452
+-- table 2: Last few deaths | Name | Date | Via
+   
+   
+   Kakaowy wlamywacz (15) |  | 2026-11-25 12:48:00 | Husleiro (115)
+   Glizda (10) |  | 2026-11-25 12:45:00 | Husleiro (115)
+-- table 3: Members | Rank | Name | Level | Vocation | Joined
+   
+   
+   the Leader | Grzeczny Obywatel | 1 | Master Sorcerer | 2026-10-10
+   a Vice-Leader | Ell | 30 | Royal Paladin | 2026-10-10
