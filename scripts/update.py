@@ -394,11 +394,17 @@ def run_sugset(spec):
             print(i, st, r.status_code, r.text[:200])
     run_import()
 
+def run_stats():
+    key = os.environ.get("SUGGEST_ADMIN_KEY", ""); api = load(DATA / "config.json", {}).get("api", "")
+    for r in requests.get(f"{api}/admin/stats", params={"key": key}, timeout=30).json():
+        print("STATS", r["day"], r["views"], r["visitors"])
+
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "online"
     if mode == "backfill": run_kills(20)
     elif mode == "ownscan": run_ownscan()
     elif mode == "import": run_import()
+    elif mode == "stats": run_stats()
     elif mode == "sugset": run_sugset(sys.argv[2])
     elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
     elif mode == "probeguild": probe_guild(sys.argv[2])

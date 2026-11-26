@@ -118,6 +118,17 @@ export default {
       if (p.startsWith('/exiva/')) { const r = await exiva(p, req, u, body, env, iph); if (r) return r; }
       if (p === '/suggestions' && req.method === 'GET') return json(await list(env), 200, { 'Cache-Control': 'no-store' });
 
+      if (p === '/hit' && req.method === 'POST') {
+        // invisible visit counter: no cookies, no IPs stored; visitor hash changes every day
+        const day = new Date().toISOString().slice(0, 10);
+        const vh = await sha((req.headers.get('CF-Connecting-IP') || '') + '|' + (req.headers.get('User-Agent') || '') + '|' + day + '|' + env.ADMIN_KEY);
+        await env.DB.batch([
+          env.DB.prepare('INSERT INTO pv (day, n) VALUES (?, 1) ON CONFLICT(day) DO UPDATE SET n = n + 1').bind(day),
+          env.DB.prepare('INSERT OR IGNORE INTO uv (day, vh) VALUES (?, ?)').bind(day, vh),
+          env.DB.prepare('DELETE FROM uv WHERE day < ?').bind(new Date(Date.now() - 120 * 864e5).toISOString().slice(0, 10))]);
+        return new Response(null, { status: 204, headers: cors });
+      }
+
       if (p === '/names' && req.method === 'GET') {
         const q = clean(u.searchParams.get('q'), 30); if (q.length < 2) return json([]);
         const ck = new Request('https://cache.local/names/' + encodeURIComponent(q.toLowerCase()));
@@ -172,6 +183,10 @@ export default {
         const key = req.method === 'POST' ? body.key : u.searchParams.get('key');
         if (!safeEq(key, env.ADMIN_KEY)) { await limited(env, 'admin', iph); return err('Wrong admin key.', 403); }
         if (p === '/admin/check') return json({ ok: true });
+        if (p === '/admin/stats') {
+          const { results } = await env.DB.prepare('SELECT p.day, p.n AS views, (SELECT COUNT(*) FROM uv WHERE uv.day = p.day) AS visitors FROM pv p ORDER BY p.day DESC LIMIT 60').all();
+          return json(results);
+        }
         if (p === '/admin/set' && req.method === 'POST') {
           const sid = parseInt(body.id), st = body.status;
           if (!sid || !['open', 'approved', 'rejected', 'deleted'].includes(st)) return err('bad status');

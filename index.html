@@ -382,6 +382,7 @@ document.getElementById('sugF').addEventListener('submit',async e=>{e.preventDef
     m.className='note ok';m.textContent='Thanks. '+r.char+' is now waiting for votes and the admin.';e.target.reset();document.getElementById('sCharInfo').textContent='';document.getElementById('sMainInfo').textContent='';await loadSug()}
   catch(err){m.className='note err';m.textContent=err.message}b.disabled=false});
 async function initSug(){try{const c=await getJ('config');API=(c.api||'').replace(/\/$/,'')}catch(e){}
+  if(API)fetch(API+'/hit',{method:'POST',keepalive:true}).catch(()=>{});
   document.getElementById('sugOff').hidden=!!API;document.getElementById('sugF').hidden=!API;if(API){loadSug();setInterval(loadSug,60000)}}
 /* ---------- exiva triangulation (BETA) ---------- */
 const EX={
