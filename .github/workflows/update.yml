@@ -47,7 +47,9 @@ jobs:
             fi
             cd ..
           }
-          if [ "$MODE" = "scan" ]; then
+          if [ "$MODE" = "probe" ]; then
+            python scripts/probe.py databr/probe.txt; push
+          elif [ "$MODE" = "scan" ]; then
             python scripts/update.py online; python scripts/update.py scan; push
           elif [ "$MODE" = "online" ]; then
             python scripts/update.py online; push
