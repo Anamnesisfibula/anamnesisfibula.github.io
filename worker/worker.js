@@ -92,6 +92,8 @@ async function exiva(p, req, u, body, env, iph) {
     if (await limited(env, 'read', iph)) return err('Too many results sent, wait a few minutes.', 429);
     const h = await env.DB.prepare('SELECT id FROM hunt WHERE id=? AND last>?').bind(id, now - HUNT_AGE).first();
     if (!h) return err('That hunt has ended. Start a new one.', 404);
+    // A new result from the same place (within 10 squares) replaces the older one.
+    await env.DB.prepare('DELETE FROM reading WHERE hunt=? AND abs(x-?)<=10 AND abs(y-?)<=10').bind(id, x, y).run();
     await env.DB.prepare('INSERT INTO reading (hunt, spot, x, y, z, dir, dist, lvl, who, owner, t, iph) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)')
       .bind(id, clean(body.spot, 30) || 'Spot', x, y, z, dir, dist, lvl, clean(body.who, 30), owner, now, iph).run();
     await env.DB.prepare('UPDATE hunt SET last=? WHERE id=?').bind(now, id).run();
