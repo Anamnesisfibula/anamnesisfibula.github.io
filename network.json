@@ -54,7 +54,7 @@
    "r": "a Member",
    "l": 24,
    "v": "Master Sorcerer",
-   "ls": "2026-11-25 21:37"
+   "ls": "2026-11-26 01:22"
   },
   "Bubblebea": {
    "g": "BW",
@@ -117,7 +117,7 @@
    "r": "a Member",
    "l": 7,
    "v": "Sorcerer",
-   "ls": "2026-11-26 00:40"
+   "ls": "2026-11-26 01:09"
   },
   "Marry Jane": {
    "g": "BW",
@@ -215,7 +215,7 @@
    "r": "the Leader",
    "l": 82,
    "v": "Master Sorcerer",
-   "ls": "2026-11-25 15:19"
+   "ls": "2026-11-26 01:22"
   },
   "Akarat Zakarum": {
    "g": "RB",
@@ -229,7 +229,7 @@
    "r": "a Vice-Leader",
    "l": 61,
    "v": "Elder Druid",
-   "ls": "2026-11-25 12:22"
+   "ls": "2026-11-26 01:27"
   },
   "Venator": {
    "g": "RB",
@@ -369,14 +369,14 @@
    "r": "BULLER",
    "l": 78,
    "v": "Royal Paladin",
-   "ls": "2026-11-25 22:37"
+   "ls": "2026-11-26 01:27"
   },
   "Sir Zawalisty Knight": {
    "g": "RB",
    "r": "BULLER",
    "l": 31,
    "v": "Elite Knight",
-   "ls": "2026-11-22 14:43"
+   "ls": "2026-11-26 01:09"
   },
   "Stare Narty Malysza": {
    "g": "RB",
@@ -432,7 +432,7 @@
    "r": "BULLER",
    "l": 35,
    "v": "Royal Paladin",
-   "ls": "2026-11-25 23:50"
+   "ls": "2026-11-26 01:22"
   },
   "Pierogi Ruskie": {
    "g": "RB",
@@ -453,7 +453,7 @@
    "r": "BULLY MAKER",
    "l": 21,
    "v": "Elder Druid",
-   "ls": "2026-11-25 10:12"
+   "ls": "2026-11-26 01:26"
   },
   "Melepeta": {
    "g": "CC",
@@ -467,7 +467,7 @@
    "r": "the Leader",
    "l": 75,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 00:41"
+   "ls": "2026-11-26 01:28"
   },
   "Glizdur": {
    "g": "X",
@@ -500,9 +500,9 @@
   "Don Oyche": {
    "g": "X",
    "r": "",
-   "l": 19,
+   "l": 20,
    "v": "Elder Druid",
-   "ls": "2026-11-26 00:39"
+   "ls": "2026-11-26 01:27"
   },
   "Sredi": {
    "g": "X",
@@ -601,6 +601,160 @@
    "l": 1,
    "v": "Paladin",
    "ls": "2026-11-23 00:19"
+  },
+  "Gueaoeiruere": {
+   "g": "WU",
+   "r": "Jeszcze raz krociutko i c",
+   "l": 50,
+   "v": "Royal Paladin",
+   "ls": "2026-11-26 01:22"
+  },
+  "Bone": {
+   "g": "WU",
+   "r": "WINDYKATOR",
+   "l": 55,
+   "v": "Royal Paladin",
+   "ls": "2026-11-25 08:57"
+  },
+  "Chuck Noris": {
+   "g": "WU",
+   "r": "",
+   "l": 20,
+   "v": "Master Sorcerer",
+   "ls": "2026-05-16 22:11"
+  },
+  "Hupaxuda": {
+   "g": "WU",
+   "r": "",
+   "l": 20,
+   "v": "Knight",
+   "ls": "2026-06-30 10:42"
+  },
+  "Kaldren": {
+   "g": "WU",
+   "r": "",
+   "l": 35,
+   "v": "Royal Paladin",
+   "ls": "2026-11-14 01:36"
+  },
+  "Kurier": {
+   "g": "WU",
+   "r": "",
+   "l": 40,
+   "v": "Royal Paladin",
+   "ls": "2026-11-22 22:52"
+  },
+  "Pie": {
+   "g": "WU",
+   "r": "",
+   "l": 20,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-26 01:30"
+  },
+  "Therion": {
+   "g": "WU",
+   "r": "",
+   "l": 53,
+   "v": "Elite Knight",
+   "ls": "2026-08-02 00:55"
+  },
+  "Tupac Shakur": {
+   "g": "WU",
+   "r": "",
+   "l": 30,
+   "v": "Master Sorcerer",
+   "ls": "2026-10-26 12:11"
+  },
+  "Yarambake": {
+   "g": "WU",
+   "r": "",
+   "l": 30,
+   "v": "Royal Paladin",
+   "ls": "2026-05-01 11:36"
+  },
+  "Gon brazola": {
+   "g": "WU",
+   "r": "EGZEKUTOR",
+   "l": 26,
+   "v": "Master Sorcerer",
+   "ls": "2026-09-15 00:08"
+  },
+  "Lyzask": {
+   "g": "WU",
+   "r": "",
+   "l": 34,
+   "v": "Royal Paladin",
+   "ls": "2026-11-22 21:38"
+  },
+  "Szczelam z uha": {
+   "g": "WU",
+   "r": "",
+   "l": 29,
+   "v": "Royal Paladin",
+   "ls": "2026-05-04 20:36"
+  },
+  "Vito Soprano": {
+   "g": "WU",
+   "r": "",
+   "l": 42,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-01 21:34"
+  },
+  "Waz": {
+   "g": "WU",
+   "r": "",
+   "l": 30,
+   "v": "Elite Knight",
+   "ls": "2026-09-25 23:57"
+  },
+  "Bartek": {
+   "g": "WU",
+   "r": "WOJOWNIK",
+   "l": 39,
+   "v": "Royal Paladin",
+   "ls": "2026-10-14 16:35"
+  },
+  "Donnie Darko": {
+   "g": "WU",
+   "r": "",
+   "l": 44,
+   "v": "Royal Paladin",
+   "ls": "2026-05-08 01:25"
+  },
+  "Gloomcarver": {
+   "g": "WU",
+   "r": "",
+   "l": 41,
+   "v": "Knight",
+   "ls": "2026-11-26 01:30"
+  },
+  "Joseph Fritz": {
+   "g": "WU",
+   "r": "",
+   "l": 45,
+   "v": "Royal Paladin",
+   "ls": "2026-07-18 19:14"
+  },
+  "Swantewit": {
+   "g": "WU",
+   "r": "",
+   "l": 44,
+   "v": "Elite Knight",
+   "ls": "2026-05-12 23:45"
+  },
+  "Waginosceptyk": {
+   "g": "WU",
+   "r": "",
+   "l": 26,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-11 01:24"
+  },
+  "Yz": {
+   "g": "WU",
+   "r": "New Members",
+   "l": 32,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-14 19:34"
   }
  },
  "clusters": [
@@ -1058,7 +1212,117 @@
    "Polonez",
    "X",
    []
+  ],
+  [
+   "Gueaoeiruere",
+   "WU",
+   []
+  ],
+  [
+   "Bone",
+   "WU",
+   []
+  ],
+  [
+   "Chuck Noris",
+   "WU",
+   []
+  ],
+  [
+   "Hupaxuda",
+   "WU",
+   []
+  ],
+  [
+   "Kaldren",
+   "WU",
+   []
+  ],
+  [
+   "Kurier",
+   "WU",
+   []
+  ],
+  [
+   "Pie",
+   "WU",
+   []
+  ],
+  [
+   "Therion",
+   "WU",
+   []
+  ],
+  [
+   "Tupac Shakur",
+   "WU",
+   []
+  ],
+  [
+   "Yarambake",
+   "WU",
+   []
+  ],
+  [
+   "Gon brazola",
+   "WU",
+   []
+  ],
+  [
+   "Lyzask",
+   "WU",
+   []
+  ],
+  [
+   "Szczelam z uha",
+   "WU",
+   []
+  ],
+  [
+   "Vito Soprano",
+   "WU",
+   []
+  ],
+  [
+   "Waz",
+   "WU",
+   []
+  ],
+  [
+   "Bartek",
+   "WU",
+   []
+  ],
+  [
+   "Donnie Darko",
+   "WU",
+   []
+  ],
+  [
+   "Gloomcarver",
+   "WU",
+   []
+  ],
+  [
+   "Joseph Fritz",
+   "WU",
+   []
+  ],
+  [
+   "Swantewit",
+   "WU",
+   []
+  ],
+  [
+   "Waginosceptyk",
+   "WU",
+   []
+  ],
+  [
+   "Yz",
+   "WU",
+   []
   ]
  ],
- "scanned": "2026-11-26 00:43"
+ "scanned": "2026-11-26 01:30"
 }
