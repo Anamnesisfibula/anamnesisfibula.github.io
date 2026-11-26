@@ -113,7 +113,7 @@ export default {
     const u = new URL(req.url); const p = u.pathname;
     const iph = await sha((req.headers.get('CF-Connecting-IP') || '') + '|' + env.ADMIN_KEY);
     let body = {};
-    if (req.method === 'POST') { try { body = await req.json(); } catch { return err('bad json'); } }
+    if (req.method === 'POST' && p !== '/hit') { try { body = await req.json(); } catch { return err('bad json'); } }
     try {
       if (p.startsWith('/exiva/')) { const r = await exiva(p, req, u, body, env, iph); if (r) return r; }
       if (p === '/suggestions' && req.method === 'GET') return json(await list(env), 200, { 'Cache-Control': 'no-store' });
