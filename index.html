@@ -198,7 +198,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
         <div class="hl" id="exHunts"></div>
       </div>
       <div class="card" id="exIn" hidden>
-        <div class="row" style="justify-content:space-between"><h3 style="margin:0">Hunting <span id="exName"></span></h3><span class="row"><button type="button" id="exShare" style="min-height:36px">Copy link</button><button type="button" id="exLeave" style="min-height:36px">Leave</button></span></div>
+        <div class="row" style="justify-content:space-between"><h3 style="margin:0">Hunting <span id="exName"></span></h3><span class="row"><button type="button" id="exShare" style="min-height:36px">Copy link</button><button type="button" id="exLeave" style="min-height:36px">Leave</button><button type="button" id="exEnd" style="min-height:36px">End hunt</button></span></div>
         <p class="note" id="exMode" style="margin:4px 0 10px"></p>
         <div style="display:grid;gap:12px">
           <label>Cast from<select id="exSpot"></select></label>
@@ -498,7 +498,7 @@ function exRender(){if(!exHunt)return;$e('exName').textContent=exHunt.target;
     return `<div class="rd${old?' old':''}"><span class="sw" style="background:${old?'var(--l)':exColor(r)}"></span><b>${esc(r.spot)}</b><span>${esc(exText(r))}</span><span class="lv">${esc(exAgo(r.t))}${r.who?' · '+esc(r.who):''}</span>${mine?`<button type="button" data-del="${r.id}">Remove</button>`:''}</div>`}).join('')||'<p class="note">No results yet. Cast exiva and add what it says.</p>'}
 async function exRefresh(){if(!exHunt)return;
   if(exHunt.local){exNow=Math.floor(Date.now()/1000)}
-  else{try{const r=await api('/exiva/hunt?id='+encodeURIComponent(exHunt.id));exReads=exLatest(r.readings);exNow=r.now;exHunt.target=r.hunt.target;exSkew=r.now-Date.now()/1000}catch(err){$e('exMsg').className='note err';$e('exMsg').textContent=err.message;if(/not found/.test(err.message))exLeave();return}}
+  else{try{const r=await api('/exiva/hunt?id='+encodeURIComponent(exHunt.id));exReads=exLatest(r.readings);exNow=r.now;exHunt.target=r.hunt.target;exSkew=r.now-Date.now()/1000}catch(err){$e('exMsg').className='note err';$e('exMsg').textContent=err.message;if(/not found|ended/.test(err.message)){exLeave();$e('exStartMsg').className='note';$e('exStartMsg').textContent=err.message}return}}
   exRender();exCompute()}
 const exSame=(a,b)=>Math.abs(a.x-b.x)<=10&&Math.abs(a.y-b.y)<=10;
 // Keep only the newest result per place (server does the same; this covers a race).
@@ -506,11 +506,17 @@ const exLatest=L=>{const out=[];for(const r of L.slice().sort((a,b)=>b.t-a.t||b.
 function exSaveLocal(){exLS('exLocal',JSON.stringify({target:exHunt.target,reads:exReads}))}
 function exJoin(id,target,local){exHunt={id,target:target||'…',local:!!local};$e('exStart').hidden=true;$e('exIn').hidden=false;$e('exRes').hidden=false;
   if(local){let L={};try{L=JSON.parse(exLS('exLocal')||'{}')}catch(e){}exReads=L.target===target?(L.reads||[]):[];exSaveLocal()}else exReads=[];
-  $e('exMode').textContent=local?'Results stay in this browser only, because the shared server is not switched on.':'Everyone with the link sees results live. A new result from the same spot replaces the old one, and results older than the window fade out.';
+  $e('exMode').textContent=local?'Results stay in this browser only, because the shared server is not switched on.':'Everyone with the link sees results live. A new result from the same spot replaces the old one, and results older than the window fade out. End hunt closes it for everyone.';
   $e('exShare').hidden=!!local;if(!local&&location.hash!=='#exiva/'+id)history.replaceState(null,'','#exiva/'+id);
   exUI();exRefresh();clearInterval(exPoll);exPoll=setInterval(()=>{if(!$e('v-exiva').hidden&&!document.hidden)exRefresh()},4000)}
 function exLeave(){exHunt=null;exReads=[];clearInterval(exPoll);$e('exStart').hidden=false;$e('exIn').hidden=true;$e('exRes').hidden=true;exCompute();if(location.hash.startsWith('#exiva/'))history.replaceState(null,'','#exiva');exHunts()}
 $e('exLeave').onclick=exLeave;
+let exEndArm=null;
+$e('exEnd').onclick=async()=>{const b=$e('exEnd');
+  if(!exEndArm){b.textContent='Tap again to end for everyone';exEndArm=setTimeout(()=>{exEndArm=null;b.textContent='End hunt'},4000);return}
+  clearTimeout(exEndArm);exEndArm=null;b.textContent='End hunt';const t=exHunt.target;
+  try{if(exHunt.local)exLS('exLocal','{}');else await api('/exiva/end',{hunt:exHunt.id});exLeave();$e('exStartMsg').className='note ok';$e('exStartMsg').textContent='The hunt for '+t+' has ended.'}
+  catch(err){$e('exMsg').className='note err';$e('exMsg').textContent=err.message}};
 $e('exShare').onclick=async()=>{const u=location.href.split('#')[0]+'#exiva/'+exHunt.id;try{await navigator.clipboard.writeText(u);$e('exMsg').className='note ok';$e('exMsg').textContent='Link copied. Send it to the others casting.'}catch(e){$e('exMsg').textContent=u}};
 async function exHunts(){const box=$e('exHunts');if(!API){box.innerHTML='<p class="note">The shared server is not switched on, so a hunt only works in this browser for now.</p>';return}
   try{const r=await api('/exiva/hunts');exNow=r.now;box.innerHTML=r.hunts.length?'<p class="note" style="margin:6px 0 0">Hunts going on now:</p>'+r.hunts.map(h=>`<button type="button" data-id="${esc(h.id)}" data-t="${esc(h.target)}"><b>${esc(h.target)}</b><span class="lv">${h.n} recent result${h.n===1?'':'s'} · ${esc(exAgo(h.last))}</span></button>`).join(''):'<p class="note">No hunts going on right now.</p>'}catch(e){box.innerHTML='<p class="note err">'+esc(e.message)+'</p>'}}
