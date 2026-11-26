@@ -1,5 +1,20 @@
 [
  {
+  "date": "2026-11-26 11:25",
+  "victim": "Tyshawn",
+  "vlevel": 29,
+  "killers": [
+   [
+    "Sneak",
+    31
+   ]
+  ],
+  "tracked_killers": [
+   "Sneak"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-26 06:04",
   "victim": "Ill Bill",
   "vlevel": 40,
