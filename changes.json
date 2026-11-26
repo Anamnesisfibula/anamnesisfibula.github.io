@@ -496,17 +496,19 @@
  },
  {
   "date": "2026-11-26",
-  "type": "added",
+  "type": "new_alt",
   "name": "Goat freddy",
-  "owner": "Goat freddy",
-  "guild": "reported by admin"
+  "owner": "Azifaralek",
+  "via": "admin report",
+  "score": 105
  },
  {
   "date": "2026-11-26",
-  "type": "new_alt",
+  "type": "added",
   "name": "Azifaralek",
-  "owner": "Goat freddy",
+  "owner": "Azifaralek",
   "via": "Goat freddy",
-  "score": 105
+  "score": 105,
+  "guild": "main of Goat freddy (reported by admin)"
  }
 ]
