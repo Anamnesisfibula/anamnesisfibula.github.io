@@ -250,9 +250,20 @@ def probe_guild(gname):
         if "nvit" in tx: out.append("HEADING: " + tx)
     (DATA / "probe_guild.txt").write_text("\n".join(out), encoding="utf-8")
 
+def probe_scan(names):
+    s = session(); out = []
+    for n in names:
+        r = s.post(f"{BASE}/stats/friends/x", data={"name": n}, headers={"X-Requested-With": "XMLHttpRequest"}, timeout=30)
+        out.append(f"{n}: HTTP {r.status_code} {r.headers.get('content-type')} {r.text[:300]!r}")
+        time.sleep(PAUSE)
+    for g in ["Stare Gity", "Stare gity"]:
+        out.append(f"guild {g}: {len(guild_members(s, g))} members")
+    (DATA / "probe_scan.txt").write_text("\n".join(out), encoding="utf-8")
+
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "online"
     if mode == "backfill": run_kills(20)
     elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
     elif mode == "probeguild": probe_guild(sys.argv[2])
+    elif mode == "probescan": probe_scan(sys.argv[2].split(";"))
     else: {"online": run_online, "scan": run_scan, "kills": run_kills}[mode]()
