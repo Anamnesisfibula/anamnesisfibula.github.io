@@ -39,6 +39,34 @@
   "owner_victim": "Pie"
  },
  {
+  "date": "2026-11-25 16:55",
+  "victim": "Energy Field Master",
+  "vlevel": 13,
+  "killers": [
+   [
+    "Puerco Man",
+    58
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Domino"
+ },
+ {
+  "date": "2026-11-25 16:51",
+  "victim": "Boston Celtics",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Energy Field Master",
+    null
+   ]
+  ],
+  "tracked_killers": [
+   "Energy Field Master"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-25 16:03",
   "victim": "Jaum",
   "vlevel": 26,
