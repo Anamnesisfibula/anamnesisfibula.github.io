@@ -141,5 +141,29 @@
   "owner": "Sztefan",
   "via": "Sztefan",
   "score": 23
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Shadowfiend",
+  "owner": "Domino",
+  "via": "death list scan",
+  "score": "112"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Hymel Jadwiga",
+  "owner": "Domino",
+  "via": "death list scan",
+  "score": "18"
+ },
+ {
+  "date": "2026-11-26",
+  "type": "new_alt",
+  "name": "Szyje na Drucie",
+  "owner": "Kopacz Ognia",
+  "via": "death list scan",
+  "score": "20"
  }
 ]

@@ -846,6 +846,27 @@
    "l": 31,
    "v": "",
    "ls": ""
+  },
+  "Shadowfiend": {
+   "g": "X",
+   "r": "",
+   "l": 24,
+   "v": "Paladin",
+   "ls": "2026-11-26 01:52"
+  },
+  "Hymel Jadwiga": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-25 21:41"
+  },
+  "Szyje na Drucie": {
+   "g": "X",
+   "r": "",
+   "l": 8,
+   "v": "Druid",
+   "ls": "2026-11-26 00:54"
   }
  },
  "clusters": [
@@ -937,6 +958,12 @@
      "Sir Zawalisty Knight",
      "l",
      "score 33–38"
+    ],
+    [
+     "Szyje na Drucie",
+     "l",
+     "score 20 with Szyje na Drutach, almost the same name",
+     "2026-11-26"
     ]
    ]
   ],
@@ -997,6 +1024,18 @@
      "Night Stalker",
      "h",
      "score 490"
+    ],
+    [
+     "Shadowfiend",
+     "m",
+     "score 112 with Domino (scanned from Shadowfiend), killed together with tracked chars 3 times",
+     "2026-11-26"
+    ],
+    [
+     "Hymel Jadwiga",
+     "l",
+     "score 18 with Domino, killed together with Glizda",
+     "2026-11-26"
     ]
    ]
   ],
