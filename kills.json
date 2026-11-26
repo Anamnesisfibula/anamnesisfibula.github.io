@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-26 05:52",
+  "victim": "Szyje na Drucicczkach",
+  "vlevel": 12,
+  "killers": [
+   [
+    "Ill Bill",
+    40
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
   "date": "2026-11-25 18:04",
   "victim": "Franciscus Assisiensi",
   "vlevel": 20,
