@@ -1147,6 +1147,13 @@
    "l": 1,
    "v": "",
    "ls": ""
+  },
+  "Obywatel Pal": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-26 13:17"
   }
  },
  "clusters": [
@@ -1200,6 +1207,12 @@
      "Tester Sd",
      "c",
      "same account as Quekss on amera.fibula.app (2026-11-26); before: reported by admin",
+     "2026-11-26"
+    ],
+    [
+     "Obywatel Pal",
+     "h",
+     "reported by admin",
      "2026-11-26"
     ]
    ]
