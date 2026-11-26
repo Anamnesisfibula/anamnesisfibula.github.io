@@ -137,10 +137,15 @@ def run_scan():
 
     # 1) new guild members become their own entry
     for code, gname in GUILDS.items():
-        for n in guild_members(s, gname):
-            if n not in own:
-                log.append({"date": today, "type": "new_member", "name": n, "guild": gname})
-                link_new(s, net, own, chars, clusters, log, n, f"member of {gname}", today)
+        members = guild_members(s, gname)
+        new = [n for n in members if n not in own]
+        first_time = members and len(new) == len(members)
+        for n in new:
+            link_new(s, net, own, chars, clusters, log, n, f"member of {gname}", today, log_added=False)
+            if not first_time:
+                log.append({"date": today, "type": "new_member", "name": n, "owner": own.get(n), "guild": gname})
+        if first_time:
+            log.append({"date": today, "type": "guild_added", "guild": gname, "names": new})
         time.sleep(PAUSE)
 
     # 2) refresh info + look for new alts
@@ -222,7 +227,7 @@ def run_kills(pages=3):
     save(KILLS, kills[:2000])
     print("kills added", added)
 
-def link_new(s, net, own, chars, clusters, log, name, note, today):
+def link_new(s, net, own, chars, clusters, log, name, note, today, log_added=True):
     """Track a new character permanently. Put it under an existing owner if the scanner links it strongly."""
     p = player(s, name); time.sleep(PAUSE)
     if p: chars[name] = p
@@ -237,7 +242,7 @@ def link_new(s, net, own, chars, clusters, log, name, note, today):
         next(c for c in clusters if c[0] == main)[2].append([name, cf, ev, today]); own[name] = main
     else:
         clusters.append([name, chars.get(name, {}).get("g", "X"), []]); own[name] = name; main = name
-    log.append({"date": today, "type": "added", "name": name, "owner": main, "guild": note})
+    if log_added: log.append({"date": today, "type": "added", "name": name, "owner": main, "guild": note})
     for e in res:
         other = e.get("name")
         if not other or other in own: continue

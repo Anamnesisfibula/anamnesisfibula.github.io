@@ -211,8 +211,10 @@ async function load(){const u=document.getElementById('upd');
   try{const [n,st]=await Promise.all([getJ('network'),getJ('status')]);
     D=n;online=new Set((st.online||[]).map(String));snap=String(st.updated||'');u.textContent='Collected '+String(st.checked||snap)+' · page checked '+new Date().toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(n.scanned?' · alt scan '+String(n.scanned):'');render();renderKills()}
   catch(err){u.textContent='Could not load data'}}
-async function loadChanges(){try{const L=await getJ('changes');const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change'};
-  document.getElementById('chBody').innerHTML=L.slice().reverse().map(c=>`<tr><td>${esc(c.date||'')}</td><td>${esc(T[c.type]||c.type||'')}</td><td><a class="nm" href="${url(c.name||'')}">${esc(c.name||'')}</a></td><td>${esc(c.owner||'')}</td><td>${esc(c.type==='new_alt'?'via '+c.via+', score '+c.score:c.type==='guild_change'?c.from+' → '+c.to:c.guild||'')}</td></tr>`).join('')||'<tr><td colspan="5" class="note">No changes yet. The first nightly scan found nothing new.</td></tr>'}catch(e){}}
+async function loadChanges(){try{const L=await getJ('changes');
+  const T={new_alt:'New alt',new_member:'New guild member',guild_change:'Guild change',added:'Added by hand',guild_added:'Guild added'};
+  const det=c=>c.type==='new_alt'?`via ${esc(c.via)}, score ${esc(c.score)}`:c.type==='guild_change'?`${esc(c.from)} → ${esc(c.to)}`:c.type==='guild_added'?`<details><summary>${(c.names||[]).length} members</summary>${(c.names||[]).map(esc).join(', ')}</details>`:esc(c.guild||'');
+  document.getElementById('chBody').innerHTML=L.slice().reverse().map(c=>`<tr><td>${esc(c.date||'')}</td><td>${esc(T[c.type]||c.type||'')}</td><td>${c.name?`<a class="nm" href="${url(c.name)}">${esc(c.name)}</a>`:esc(c.guild||'')}</td><td>${esc(c.owner&&c.owner!==c.name?c.owner:'')}</td><td>${det(c)}</td></tr>`).join('')||'<tr><td colspan="5" class="note">No changes yet.</td></tr>'}catch(e){}}
 let KL=[];
 function ownerOf(n){for(const c of D.clusters){if(c[0]===n||c[2].some(a=>a[0]===n))return c[0]}return null}
 function pn(n,l,tracked){const s=esc(n)+(l?` <span class="lv">(${esc(l)})</span>`:'');return tracked?`<a class="nm tr" href="${url(n)}">${esc(n)}</a>${l?` <span class="lv">(${esc(l)})</span>`:''}${ownerOf(n)&&ownerOf(n)!==n?` <span class="lv">· ${esc(ownerOf(n))}</span>`:''}`:s}
