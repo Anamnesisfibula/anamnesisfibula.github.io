@@ -1,8 +1,8 @@
-// Suggest-alt API for the enemy tracker. Anyone can suggest and vote; only the admin (ADMIN_KEY) can approve.
+// Suggest-alt and Exiva hunt API for the enemy tracker. Anyone can suggest and vote; only the admin (ADMIN_KEY) can approve.
 const ORIGIN = 'https://anamnesisfibula.github.io';
 const RAW = 'https://raw.githubusercontent.com/Anamnesisfibula/anamnesisfibula.github.io/data/network.json';
 const OT = 'https://opentibia.info';
-const LIMITS = { suggest: [5, 3600], vote: [60, 3600], lookup: [60, 600], names: [150, 600], admin: [20, 600] };
+const LIMITS = { suggest: [5, 3600], vote: [60, 3600], lookup: [60, 600], names: [150, 600], admin: [20, 600], hunt: [20, 3600], read: [120, 600], exget: [900, 600] };
 
 const cors = { 'Access-Control-Allow-Origin': ORIGIN, 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type', 'Vary': 'Origin' };
 const json = (o, st = 200, extra = {}) => new Response(JSON.stringify(o), { status: st, headers: { 'Content-Type': 'application/json', ...cors, ...extra } });
@@ -47,6 +47,66 @@ async function list(env) {
   return results;
 }
 
+// ---- exiva hunts (BETA): shared readings, no login ----
+const DIRS = ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw', ''];
+const DISTS = ['beside', 'near', 'far', 'veryfar'];
+const LVLS = ['same', 'up', 'down'];
+const HUNT_AGE = 6 * 3600, READ_AGE = 2 * 3600;
+const huntId = () => [...crypto.getRandomValues(new Uint8Array(6))].map(b => 'abcdefghjkmnpqrstuvwxyz23456789'[b % 31]).join('');
+
+async function exiva(p, req, u, body, env, iph) {
+  const now = Math.floor(Date.now() / 1000);
+  if (p === '/exiva/hunts' && req.method === 'GET') {
+    if (await limited(env, 'exget', iph)) return err('Too many requests, slow down a little.', 429);
+    const { results } = await env.DB.prepare(`SELECT h.id, h.target, h.created, h.last, (SELECT COUNT(*) FROM reading r WHERE r.hunt=h.id AND r.t>?) AS n
+      FROM hunt h WHERE h.last>? ORDER BY h.last DESC LIMIT 30`).bind(now - 900, now - HUNT_AGE).all();
+    return json({ now, hunts: results }, 200, { 'Cache-Control': 'no-store' });
+  }
+  if (p === '/exiva/hunt' && req.method === 'GET') {
+    if (await limited(env, 'exget', iph)) return err('Too many requests, slow down a little.', 429);
+    const id = clean(u.searchParams.get('id'), 12);
+    const h = await env.DB.prepare('SELECT id, target, created, last FROM hunt WHERE id=?').bind(id).first();
+    if (!h) return err('That hunt was not found. It may have ended.', 404);
+    const { results } = await env.DB.prepare('SELECT id, spot, x, y, z, dir, dist, lvl, who, owner, t FROM reading WHERE hunt=? AND t>? ORDER BY t DESC LIMIT 200').bind(id, now - READ_AGE).all();
+    return json({ now, hunt: h, readings: results.map(r => ({ ...r, owner: r.owner.slice(0, 8) })) }, 200, { 'Cache-Control': 'no-store' });
+  }
+  if (p === '/exiva/start' && req.method === 'POST') {
+    const target = clean(body.target, 40);
+    if (target.length < 2) return err('Write the name of the character you are looking for.');
+    if (await limited(env, 'hunt', iph)) return err('Too many hunts started from you, try again later.', 429);
+    const old = await env.DB.prepare('SELECT id FROM hunt WHERE lower(target)=lower(?) AND last>?').bind(target, now - 1800).first();
+    if (old) { await env.DB.prepare('UPDATE hunt SET last=? WHERE id=?').bind(now, old.id).run(); return json({ ok: true, id: old.id, joined: true }); }
+    const id = huntId();
+    await env.DB.prepare('INSERT INTO hunt (id, target, created, last, iph) VALUES (?,?,?,?,?)').bind(id, target, now, now, iph).run();
+    await env.DB.prepare('DELETE FROM reading WHERE t<?').bind(now - 86400).run();
+    await env.DB.prepare('DELETE FROM hunt WHERE last<?').bind(now - 86400).run();
+    return json({ ok: true, id });
+  }
+  if (p === '/exiva/read' && req.method === 'POST') {
+    const id = clean(body.hunt, 12), owner = clean(body.owner, 64);
+    const x = parseInt(body.x), y = parseInt(body.y), z = parseInt(body.z);
+    const dir = String(body.dir ?? ''), dist = String(body.dist ?? ''), lvl = String(body.lvl || 'same');
+    if (owner.length < 16) return err('bad owner');
+    if (!(x >= 31000 && x <= 35000 && y >= 30000 && y <= 34000 && z >= 0 && z <= 15)) return err('That cast spot is outside the map.');
+    if (!DISTS.includes(dist) || !DIRS.includes(dir) || !LVLS.includes(lvl) || ((dist === 'beside') !== (dir === ''))) return err('Pick a direction and a distance.');
+    if (await limited(env, 'read', iph)) return err('Too many results sent, wait a few minutes.', 429);
+    const h = await env.DB.prepare('SELECT id FROM hunt WHERE id=? AND last>?').bind(id, now - HUNT_AGE).first();
+    if (!h) return err('That hunt has ended. Start a new one.', 404);
+    await env.DB.prepare('INSERT INTO reading (hunt, spot, x, y, z, dir, dist, lvl, who, owner, t, iph) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)')
+      .bind(id, clean(body.spot, 30) || 'Spot', x, y, z, dir, dist, lvl, clean(body.who, 30), owner, now, iph).run();
+    await env.DB.prepare('UPDATE hunt SET last=? WHERE id=?').bind(now, id).run();
+    return json({ ok: true });
+  }
+  if (p === '/exiva/del' && req.method === 'POST') {
+    const owner = clean(body.owner, 64), rid = parseInt(body.id);
+    if (owner.length < 16 || !rid) return err('bad request');
+    if (await limited(env, 'read', iph)) return err('Too many changes, wait a few minutes.', 429);
+    await env.DB.prepare('DELETE FROM reading WHERE id=? AND owner=?').bind(rid, owner).run();
+    return json({ ok: true });
+  }
+  return null;
+}
+
 export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') return new Response(null, { headers: cors });
@@ -55,6 +115,7 @@ export default {
     let body = {};
     if (req.method === 'POST') { try { body = await req.json(); } catch { return err('bad json'); } }
     try {
+      if (p.startsWith('/exiva/')) { const r = await exiva(p, req, u, body, env, iph); if (r) return r; }
       if (p === '/suggestions' && req.method === 'GET') return json(await list(env), 200, { 'Cache-Control': 'no-store' });
 
       if (p === '/names' && req.method === 'GET') {

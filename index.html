@@ -78,9 +78,33 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
 .vb button{min-height:40px;padding:0 12px}.vb button[aria-pressed=true]{border-color:var(--on);background:color-mix(in srgb,var(--on) 18%,var(--card))}
 .adm{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.adm input{flex:1 1 220px;font:15px Inter,sans-serif;padding:8px 12px;min-height:40px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
 .err{color:var(--rb)}.ok{color:var(--h)}
+.beta{font:700 11px Inter,sans-serif;letter-spacing:.06em;background:var(--m)!important;color:#fff;border-radius:6px!important;padding:1px 6px!important}
+.exw{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:16px;align-items:start;margin-top:14px}
+.exc{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h3{margin:0 0 8px;font-size:15px}
+.exc label{display:grid;gap:4px;font-weight:600;font-size:14px}
+.exc input,.exc select{font:16px Inter,sans-serif;padding:8px 12px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-weight:400;width:100%}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>input{flex:1 1 160px;width:auto}
+.compass{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;max-width:260px}
+.compass button,.seg button{justify-content:center;padding:0 8px;min-height:48px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}.seg button{flex:1 1 0;flex-direction:column;gap:0;line-height:1.2;font-size:14px}.seg button small{color:var(--mut);font-size:12px}
+.compass button[aria-pressed=true],.seg button[aria-pressed=true],.hl button[aria-pressed=true]{border-color:var(--on);background:color-mix(in srgb,var(--on) 22%,var(--card));font-weight:700}
+.go{background:var(--band);color:#fff;border-color:var(--band);font-weight:600}
+.go:disabled{opacity:.5;cursor:default}
+.hl{display:grid;gap:6px}.hl button{justify-content:space-between;text-align:left;width:100%}
+.rd{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}.rd:last-child{border-bottom:0}
+.rd.old{opacity:.45}.rd .sw{width:12px;height:12px;border-radius:3px;flex:none}.rd button{min-height:32px;padding:0 10px;font-size:13px;margin-left:auto}
+.mapw{position:relative;background:#0b1216;border:1px solid var(--line);border-radius:12px;overflow:hidden;touch-action:none;height:min(72vh,720px);min-height:360px}
+.mapw canvas{display:block;width:100%;height:100%;cursor:grab}.mapw.pick canvas{cursor:crosshair}
+.mapbar{position:absolute;top:8px;right:8px;display:flex;gap:6px}.mapbar button{min-height:40px;padding:0 12px;background:rgba(20,28,30,.85);color:#fff;border-color:rgba(255,255,255,.25)}
+.mapinfo{position:absolute;left:8px;bottom:8px;right:8px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
+.mapinfo span{background:rgba(20,28,30,.85);color:#fff;border-radius:8px;padding:4px 10px;font-size:13px}
+.verdict{font-weight:600}
+@media(max-width:860px){.exw{grid-template-columns:minmax(0,1fr)}.mapw{height:62vh}}
 .hide{display:none!important}[hidden]{display:none!important}
-.tabs{display:flex;gap:8px;padding-block:14px 0;border-bottom:1px solid var(--line)}
-.tabs a{text-decoration:none;font-weight:600;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center;gap:6px;border-radius:10px 10px 0 0;color:var(--mut);border-bottom:3px solid transparent}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding-block:14px 0;border-bottom:1px solid var(--line)}
+.tabs a{white-space:nowrap;flex:none;text-decoration:none;font-weight:600;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center;gap:6px;border-radius:10px 10px 0 0;color:var(--mut);border-bottom:3px solid transparent}
 .tabs a[aria-current=page]{color:var(--ink);border-bottom-color:var(--on)}
 .tabs span{font-size:13px;background:var(--on);color:#fff;border-radius:999px;padding:0 8px}.tabs span:empty{display:none}
 .olt{width:100%;max-width:980px;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:14px}
@@ -105,7 +129,7 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
     <div class="onl" id="onList"></div>
   </section>
 </header>
-<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a><a href="#suggest" id="t-suggest">Suggest alt <span id="sugN"></span></a></nav>
+<nav class="tabs band" aria-label="Views"><a href="#online" id="t-online">Online <span id="tabN"></span></a><a href="#owners" id="t-owners">Owners</a><a href="#kills" id="t-kills">Kills</a><a href="#changes" id="t-changes">Changes</a><a href="#suggest" id="t-suggest">Suggest alt <span id="sugN"></span></a><a href="#exiva" id="t-exiva">Exiva <span class="beta">BETA</span></a></nav>
 
 <div id="v-owners" hidden>
 <div class="band intro"><h2>Characters by owner</h2><p class="note">Each box is one likely owner, with the main on top and every linked character below it, whatever guild they are in. Links come from matching login and logout times on opentibia.info, so they are strong hints, not proof. The search started from Bullywannabes, Reformed Bullies, Carlins Cartel, Wyrok Ulicy and Stare Gity.</p></div>
@@ -161,6 +185,55 @@ a{color:inherit}a.nm{text-decoration:none}a.nm:hover{text-decoration:underline}
     <label class="tg"><input type="radio" name="sf" value="rejected"> Rejected</label>
   </div>
   <div id="sList" class="slist"></div>
+</section>
+<section class="band" id="v-exiva" hidden>
+  <h2>Exiva triangulation <span class="tag" style="font:600 12px Inter,sans-serif;color:var(--m);vertical-align:middle">BETA</span></h2>
+  <p class="note" style="max-width:80ch">Cast exiva on the target from a known spot, such as a depot, and enter what the spell said. Each result marks an area on the map, and the area where all results agree is shown in red. Results from different cities cross at wide angles, so Carlin, Edron and Darashia together work best, with Thais or Venore as a fourth. Everyone in the same hunt sees the results live. Casting stays in your own hands: this page only does the maths.</p>
+  <div class="exw">
+    <div class="exc">
+      <div class="card" id="exStart">
+        <h3>Start or join a hunt</h3>
+        <form class="row" id="exStartF" autocomplete="off"><input id="exTarget" list="sMains" maxlength="40" placeholder="Name of the target" aria-label="Name of the target" required><button class="go" type="submit">Start hunt</button></form>
+        <p class="note" id="exStartMsg" aria-live="polite"></p>
+        <div class="hl" id="exHunts"></div>
+      </div>
+      <div class="card" id="exIn" hidden>
+        <div class="row" style="justify-content:space-between"><h3 style="margin:0">Hunting <span id="exName"></span></h3><span class="row"><button type="button" id="exShare" style="min-height:36px">Copy link</button><button type="button" id="exLeave" style="min-height:36px">Leave</button></span></div>
+        <p class="note" id="exMode" style="margin:4px 0 10px"></p>
+        <div style="display:grid;gap:12px">
+          <label>Cast from<select id="exSpot"></select></label>
+          <p class="note" id="exPickMsg" hidden style="margin:-6px 0 0">Click the map where you are standing.</p>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Direction</div>
+            <div class="compass" id="exDir">
+              <button type="button" data-d="nw">NW</button><button type="button" data-d="n">N</button><button type="button" data-d="ne">NE</button>
+              <button type="button" data-d="w">W</button><button type="button" data-d="">Next to you</button><button type="button" data-d="e">E</button>
+              <button type="button" data-d="sw">SW</button><button type="button" data-d="s">S</button><button type="button" data-d="se">SE</button>
+            </div></div>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Distance</div>
+            <div class="seg" id="exDist"><button type="button" data-v="near">To the …<small>5–99 sqm</small></button><button type="button" data-v="far">Far<small>100–274</small></button><button type="button" data-v="veryfar">Very far<small>251+</small></button></div></div>
+          <div id="exLvlW"><div style="font-weight:600;font-size:14px;margin-bottom:4px">Floor (only said when close)</div>
+            <div class="seg" id="exLvl"><button type="button" data-v="same" aria-pressed="true">Same</button><button type="button" data-v="up">Higher / above</button><button type="button" data-v="down">Lower / below</button></div></div>
+          <label>Or paste the message<input id="exPaste" placeholder="Name is far to the north-east."></label>
+          <label>Your name (optional)<input id="exWho" maxlength="30" placeholder="Shown next to your results"></label>
+          <div class="copyrow" style="margin:0"><button class="go" type="button" id="exSend" disabled>Add result</button><span class="note" id="exMsg" aria-live="polite"></span></div>
+        </div>
+      </div>
+      <div class="card" id="exRes" hidden>
+        <div class="row" style="justify-content:space-between"><h3 style="margin:0">Results</h3>
+          <label style="display:flex;gap:6px;align-items:center;font-weight:400;font-size:13px">Use the last<select id="exWin" style="width:auto;min-height:36px;padding:4px 8px"><option value="3">3 min</option><option value="5" selected>5 min</option><option value="10">10 min</option><option value="20">20 min</option><option value="60">60 min</option></select></label></div>
+        <p class="verdict" id="exVerdict" aria-live="polite"></p>
+        <div id="exList"></div>
+      </div>
+    </div>
+    <div>
+      <div class="mapw" id="exMapW">
+        <canvas id="exMap" aria-label="Map with the areas the results point to"></canvas>
+        <div class="mapbar"><button type="button" id="exFit">Fit to result</button><button type="button" id="exZin" aria-label="Zoom in">+</button><button type="button" id="exZout" aria-label="Zoom out">−</button></div>
+        <div class="mapinfo"><span id="exPos">Drag to move, scroll or pinch to zoom</span></div>
+      </div>
+      <p class="note">Red is where every recent result agrees, amber is where only some do, and the darkened part fits none. Distances are counted in squares, so each band is a square ring around the caster, cut into 8 slices. Far and very far overlap from 251 to 274 squares, because sources disagree on where the line is on old servers. Different floors are only told when the target is within 100 squares. Map from <a href="https://tibiamaps.io/">TibiaMaps.io</a> (tibia-map-data, which invites reuse). It is the current Tibia map, so some areas did not exist on Fibula.</p>
+    </div>
+  </div>
 </section>
 <section class="band live">
   <h2>About the data</h2>
@@ -226,9 +299,9 @@ function render(){
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('onlyOn').addEventListener('change',render);
 document.getElementById('exp').addEventListener('click',e=>{open=!open;e.target.textContent=open?'Collapse all':'Expand all';render()});
-function route(){const V=['online','owners','kills','changes','suggest'];let h=location.hash.slice(1);if(!V.includes(h))h='online';
+function route(){const V=['online','owners','kills','changes','suggest','exiva'];let h=location.hash.slice(1).split('/')[0];if(!V.includes(h))h='online';
   for(const v of V){document.getElementById('v-'+v).hidden=v!==h;const t=document.getElementById('t-'+v);if(v===h)t.setAttribute('aria-current','page');else t.removeAttribute('aria-current')}
-  if(h==='suggest')setTimeout(loadSug,0)}
+  if(h==='suggest')setTimeout(loadSug,0);if(h==='exiva')setTimeout(()=>window.exOpen&&window.exOpen(),0)}
 window.addEventListener('hashchange',route);
 render();route();
 
@@ -310,7 +383,142 @@ document.getElementById('sugF').addEventListener('submit',async e=>{e.preventDef
   catch(err){m.className='note err';m.textContent=err.message}b.disabled=false});
 async function initSug(){try{const c=await getJ('config');API=(c.api||'').replace(/\/$/,'')}catch(e){}
   document.getElementById('sugOff').hidden=!!API;document.getElementById('sugF').hidden=!API;if(API){loadSug();setInterval(loadSug,60000)}}
-initSug();
+/* ---------- exiva triangulation (BETA) ---------- */
+const EX={
+  // Depot spots from TibiaMaps.io markers. Venore is approximate.
+  spots:[['Carlin',32336,31784,7],['Edron',33169,31812,8],['Darashia',33214,32455,8],['Thais',32347,32226,7],['Venore',32918,32075,6],["Ab'Dendriel",32682,31685,7],['Kazordoon',32657,31910,8]],
+  map:{x0:31744,y0:30976,w:2560,h:2048,src:['https://tibiamaps.github.io/tibia-map-data/floor-07-map.png','https://raw.githubusercontent.com/tibiamaps/tibia-map-data/main/data/floor-07-map.png']},
+  dirs:{n:'north',ne:'north-east',e:'east',se:'south-east',s:'south',sw:'south-west',w:'west',nw:'north-west'},
+  band:{beside:[0,4],near:[5,99],far:[100,274],veryfar:[251,1e9]},
+  cols:['#3b82f6','#e11d8f','#16a34a','#f59e0b','#8b5cf6','#06b6d4','#ef4444','#84cc16']
+};
+const exOwner=(()=>{try{let v=localStorage.getItem('exOwner');if(!v){v=crypto.randomUUID().replace(/-/g,'');localStorage.setItem('exOwner',v)}return v}catch(e){return crypto.randomUUID().replace(/-/g,'')}})();
+const exLS=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+let exHunt=null,exReads=[],exNow=0,exSkew=0,exSel={dir:null,dist:null,lvl:'same'},exCustom=null,exPicking=false,exPoll=null,exBest=null,exInited=false;
+const $e=id=>document.getElementById(id);
+function exSector(dx,dy){const ax=Math.abs(dx),ay=Math.abs(dy),R=2.42;if(ay*R<=ax)return dx>0?'e':'w';if(ax*R<=ay)return dy>0?'s':'n';return(dy>0?'s':'n')+(dx>0?'e':'w')}
+function exHit(r,x,y){const dx=x-r.x,dy=y-r.y,d=Math.max(Math.abs(dx),Math.abs(dy)),b=EX.band[r.dist];if(d<b[0]||d>b[1])return false;return r.dist==='beside'||exSector(dx,dy)===r.dir}
+// A cell counts if any of its centre and four edge midpoints fits, to soften the edges.
+function exCell(r,x,y){return exHit(r,x,y)||exHit(r,x-2,y)||exHit(r,x+2,y)||exHit(r,x,y-2)||exHit(r,x,y+2)}
+const exText=r=>r.dist==='beside'?(r.lvl==='up'?'is above you':r.lvl==='down'?'is below you':'is standing next to you'):(r.dist==='near'?(r.lvl==='up'?'is on a higher level to the ':r.lvl==='down'?'is on a lower level to the ':'is to the '):r.dist==='far'?'is far to the ':'is very far to the ')+EX.dirs[r.dir];
+function exParse(t){t=t.toLowerCase();let dist=null,dir='',lvl='same';
+  if(/standing next to you/.test(t))dist='beside';else if(/is above you/.test(t)){dist='beside';lvl='up'}else if(/is below you/.test(t)){dist='beside';lvl='down'}
+  else{const m=t.match(/(north-east|north-west|south-east|south-west|north|south|east|west)/);if(!m)return null;dir=Object.keys(EX.dirs).find(k=>EX.dirs[k]===m[1]);
+    dist=/very far/.test(t)?'veryfar':/far to/.test(t)?'far':'near';if(/higher level/.test(t))lvl='up';if(/lower level/.test(t))lvl='down'}
+  return{dir,dist,lvl}}
+
+/* map view */
+const exCv=$e('exMap'),exCtx=exCv.getContext('2d');const exImg=new Image();let exImgOk=false,exView={s:.4,ox:31950,oy:31500},exOv=document.createElement('canvas');const CELL=4;
+exOv.width=EX.map.w/CELL;exOv.height=EX.map.h/CELL;
+function exLoadImg(i=0){if(i>=EX.map.src.length)return;exImg.onload=()=>{exImgOk=true;exDraw()};exImg.onerror=()=>exLoadImg(i+1);exImg.src=EX.map.src[i]}
+function exSize(){const r=exCv.getBoundingClientRect(),d=devicePixelRatio||1;if(!r.width)return false;exCv.width=Math.round(r.width*d);exCv.height=Math.round(r.height*d);return true}
+function exFitBox(x1,y1,x2,y2,pad=40){const r=exCv.getBoundingClientRect();if(!r.width)return;const s=Math.min((r.width-pad*2)/(x2-x1),(r.height-pad*2)/(y2-y1));exView.s=Math.max(.15,Math.min(8,s));exView.ox=(x1+x2)/2-r.width/2/exView.s;exView.oy=(y1+y2)/2-r.height/2/exView.s;exDraw()}
+const exHome=()=>exFitBox(32050,31550,33350,32650,10);
+function exDraw(){if(!exSize())return;const d=devicePixelRatio||1,c=exCtx,W=exCv.width,H=exCv.height,s=exView.s*d;
+  c.setTransform(1,0,0,1,0,0);c.fillStyle='#0b1216';c.fillRect(0,0,W,H);c.imageSmoothingEnabled=exView.s<1;
+  c.setTransform(s,0,0,s,-exView.ox*s,-exView.oy*s);
+  if(exImgOk)c.drawImage(exImg,EX.map.x0,EX.map.y0,EX.map.w,EX.map.h);
+  c.imageSmoothingEnabled=false;c.drawImage(exOv,EX.map.x0,EX.map.y0,EX.map.w,EX.map.h);
+  const px=1/s*d;c.font=`600 ${13*px}px Inter,sans-serif`;c.textBaseline='middle';
+  for(const [n,x,y] of EX.spots){c.fillStyle='rgba(255,255,255,.9)';c.beginPath();c.arc(x,y,3.5*px,0,7);c.fill();c.lineWidth=3*px;c.strokeStyle='rgba(0,0,0,.75)';c.strokeText(n,x+7*px,y);c.fillText(n,x+7*px,y)}
+  if(exCustom&&$e('exSpot').value==='c'){c.strokeStyle='#fff';c.lineWidth=2*px;c.beginPath();c.arc(exCustom[0],exCustom[1],7*px,0,7);c.stroke()}
+  const V={n:[0,-1],ne:[1,-1],e:[1,0],se:[1,1],s:[0,1],sw:[-1,1],w:[-1,0],nw:[-1,-1]};
+  exActive().forEach((r,i)=>{const col=exColor(r);c.fillStyle=col;c.strokeStyle=col;c.lineWidth=3*px;c.beginPath();c.arc(r.x,r.y,6*px,0,7);c.fill();
+    if(r.dir){const v=V[r.dir],L=(r.dist==='near'?40:r.dist==='far'?70:100)*px/(v[0]&&v[1]?1.41:1);c.beginPath();c.moveTo(r.x,r.y);c.lineTo(r.x+v[0]*L,r.y+v[1]*L);c.stroke();
+      const a=Math.atan2(v[1],v[0]),hx=r.x+v[0]*L,hy=r.y+v[1]*L,k=9*px;c.beginPath();c.moveTo(hx,hy);c.lineTo(hx-k*Math.cos(a-.5),hy-k*Math.sin(a-.5));c.lineTo(hx-k*Math.cos(a+.5),hy-k*Math.sin(a+.5));c.fill()}});
+}
+function exColor(r){const owners=[...new Set(exReads.map(x=>x.spot+'|'+x.owner))];return EX.cols[owners.indexOf(r.spot+'|'+r.owner)%EX.cols.length]}
+const exWinS=()=>+$e('exWin').value*60;
+const exActive=()=>exReads.filter(r=>exNow-r.t<=exWinS());
+function exCompute(){const A=exActive(),W=exOv.width,H=exOv.height,o=exOv.getContext('2d'),img=o.createImageData(W,H),D=img.data;exBest=null;
+  if(A.length){const cnt=new Uint8Array(W*H);let max=0;
+    for(let j=0;j<H;j++)for(let i=0;i<W;i++){const x=EX.map.x0+i*CELL+2,y=EX.map.y0+j*CELL+2;let n=0;for(const r of A)if(exCell(r,x,y))n++;cnt[j*W+i]=n;if(n>max)max=n}
+    let bx1=1e9,by1=1e9,bx2=-1e9,by2=-1e9,nb=0;
+    for(let k=0;k<W*H;k++){const n=cnt[k],p=k*4;if(!n){D[p+3]=140;continue}
+      if(n===max){D[p]=255;D[p+1]=20;D[p+2]=60;D[p+3]=175;nb++;const i=k%W,j=(k/W)|0;bx1=Math.min(bx1,i);by1=Math.min(by1,j);bx2=Math.max(bx2,i);by2=Math.max(by2,j)}
+      else{D[p]=245;D[p+1]=175;D[p+2]=40;D[p+3]=Math.round(30+50*n/max)}}
+    exBest={max,n:A.length,cells:nb,box:[EX.map.x0+bx1*CELL,EX.map.y0+by1*CELL,EX.map.x0+(bx2+1)*CELL,EX.map.y0+(by2+1)*CELL]}}
+  o.putImageData(img,0,0);
+  const v=$e('exVerdict');
+  if(!exBest)v.textContent=exReads.length?'No results in the time window. Cast again or widen the window.':'No results yet.';
+  else{const b=exBest.box,w=b[2]-b[0],h=b[3]-b[1];
+    v.textContent=(exBest.max===exBest.n?(exBest.n===1?'One result: the red area is everywhere it fits. Add a cast from another city to narrow it.':`All ${exBest.n} results agree on the red area`):`No spot fits all ${exBest.n} results. Red fits ${exBest.max} of them, so the target may have moved or a result is wrong`)+(exBest.n>1?` (about ${w}×${h} squares, centre ${Math.round(b[0]+w/2)}, ${Math.round(b[1]+h/2)}).`:'')}
+  exDraw()}
+
+/* pan and zoom */
+const exPtr=new Map();let exDrag=null,exMoved=0;
+function exZoom(f,cx,cy){const r=exCv.getBoundingClientRect();if(cx==null){cx=r.width/2;cy=r.height/2}const mx=exView.ox+cx/exView.s,my=exView.oy+cy/exView.s;exView.s=Math.max(.15,Math.min(8,exView.s*f));exView.ox=mx-cx/exView.s;exView.oy=my-cy/exView.s;exDraw()}
+const exLoc=e=>{const r=exCv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]};
+exCv.addEventListener('pointerdown',e=>{exCv.setPointerCapture(e.pointerId);exPtr.set(e.pointerId,exLoc(e));exMoved=0;exDrag={v:{...exView},pts:new Map(exPtr)}});
+exCv.addEventListener('pointermove',e=>{const p=exLoc(e);$e('exPos').textContent=`x ${Math.round(exView.ox+p[0]/exView.s)}, y ${Math.round(exView.oy+p[1]/exView.s)}`;
+  if(!exPtr.has(e.pointerId)||!exDrag)return;exPtr.set(e.pointerId,p);const P=[...exPtr.values()],S=[...exDrag.pts.values()];
+  if(P.length===1&&S.length===1){const dx=P[0][0]-S[0][0],dy=P[0][1]-S[0][1];exMoved=Math.max(exMoved,Math.abs(dx)+Math.abs(dy));exView.ox=exDrag.v.ox-dx/exView.s;exView.oy=exDrag.v.oy-dy/exView.s;exDraw()}
+  else if(P.length>=2&&S.length>=2){exMoved=99;const d0=Math.hypot(S[0][0]-S[1][0],S[0][1]-S[1][1]),d1=Math.hypot(P[0][0]-P[1][0],P[0][1]-P[1][1]);const c0=[(S[0][0]+S[1][0])/2,(S[0][1]+S[1][1])/2],c1=[(P[0][0]+P[1][0])/2,(P[0][1]+P[1][1])/2];
+    const s=Math.max(.15,Math.min(8,exDrag.v.s*d1/Math.max(d0,1)));const mx=exDrag.v.ox+c0[0]/exDrag.v.s,my=exDrag.v.oy+c0[1]/exDrag.v.s;exView.s=s;exView.ox=mx-c1[0]/s;exView.oy=my-c1[1]/s;exDraw()}});
+function exUp(e){if(!exPtr.has(e.pointerId))return;const p=exLoc(e);exPtr.delete(e.pointerId);
+  if(exPicking&&exMoved<6&&!exPtr.size){exCustom=[Math.round(exView.ox+p[0]/exView.s),Math.round(exView.oy+p[1]/exView.s)];exSetPick(true);exUI();exDraw()}
+  exDrag=exPtr.size?{v:{...exView},pts:new Map(exPtr)}:null}
+exCv.addEventListener('pointerup',exUp);exCv.addEventListener('pointercancel',exUp);
+exCv.addEventListener('wheel',e=>{e.preventDefault();const p=exLoc(e);exZoom(e.deltaY<0?1.25:.8,p[0],p[1])},{passive:false});
+$e('exZin').onclick=()=>exZoom(1.5);$e('exZout').onclick=()=>exZoom(1/1.5);
+$e('exFit').onclick=()=>{if(exBest&&exBest.cells){const b=exBest.box;const pad=Math.max(30,(b[2]-b[0])*.15);exFitBox(b[0]-pad,b[1]-pad,b[2]+pad,b[3]+pad)}else exHome()};
+addEventListener('resize',()=>exDraw());
+
+/* input */
+function exSetPick(on){exPicking=on;$e('exMapW').classList.toggle('pick',on);$e('exPickMsg').hidden=!on;$e('exPickMsg').textContent=exCustom?'Spot set at x '+exCustom[0]+', y '+exCustom[1]+'. Click the map again to move it.':'Click the map where you are standing.'}
+$e('exSpot').innerHTML=EX.spots.map((s,i)=>`<option value="${i}">${esc(s[0])} depot${s[0]==='Venore'?' (approx.)':''}</option>`).join('')+'<option value="c">Another spot: click the map</option>';
+$e('exSpot').value=exLS('exSpot')||'0';
+$e('exSpot').addEventListener('change',e=>{exLS('exSpot',e.target.value);exSetPick(e.target.value==='c');exUI();exDraw()});
+$e('exWho').value=exLS('exWho')||'';$e('exWho').addEventListener('change',e=>exLS('exWho',e.target.value.trim()));
+function exPress(box,attr,val){box.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset[attr]===val)))}
+function exUI(){exPress($e('exDir'),'d',exSel.dir);exPress($e('exDist'),'v',exSel.dist);exPress($e('exLvl'),'v',exSel.lvl);
+  const beside=exSel.dir==='';$e('exDist').querySelectorAll('button').forEach(b=>b.disabled=beside);$e('exLvlW').hidden=!(beside||exSel.dist==='near');
+  const spotOk=$e('exSpot').value!=='c'||exCustom;$e('exSend').disabled=!(exHunt&&spotOk&&exSel.dir!==null&&(beside||exSel.dist))}
+$e('exDir').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;exSel.dir=b.dataset.d;if(exSel.dir==='')exSel.dist='beside';else if(exSel.dist==='beside')exSel.dist=null;exUI()});
+$e('exDist').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;exSel.dist=b.dataset.v;if(exSel.dist!=='near')exSel.lvl='same';exUI()});
+$e('exLvl').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;exSel.lvl=b.dataset.v;exUI()});
+$e('exPaste').addEventListener('input',e=>{const r=exParse(e.target.value);const m=$e('exMsg');if(!e.target.value.trim()){m.textContent='';return}
+  if(!r){m.className='note err';m.textContent='Could not read that message.';return}exSel={...r};m.className='note ok';m.textContent='Read as: '+exText(r)+'.';exUI()});
+$e('exSend').addEventListener('click',async()=>{const m=$e('exMsg'),b=$e('exSend');const v=$e('exSpot').value;const sp=v==='c'?['Own spot',exCustom[0],exCustom[1],7]:EX.spots[+v];
+  const r={hunt:exHunt.id,spot:sp[0],x:sp[1],y:sp[2],z:sp[3],dir:exSel.dir,dist:exSel.dist,lvl:exSel.lvl,who:$e('exWho').value.trim(),owner:exOwner};
+  b.disabled=true;m.className='note';m.textContent='Sending …';
+  try{if(exHunt.local){exReads.unshift({...r,id:Date.now(),owner:exOwner.slice(0,8),t:Math.floor(Date.now()/1000)});exSaveLocal()}else await api('/exiva/read',r);
+    m.className='note ok';m.textContent='Added: '+sp[0]+', '+exText(r)+'.';exSel={dir:null,dist:null,lvl:'same'};$e('exPaste').value='';await exRefresh()}
+  catch(err){m.className='note err';m.textContent=err.message}exUI()});
+$e('exWin').addEventListener('change',()=>{exRender();exCompute()});
+$e('exList').addEventListener('click',async e=>{const b=e.target.closest('button[data-del]');if(!b)return;const id=+b.dataset.del;
+  try{if(exHunt.local){exReads=exReads.filter(r=>r.id!==id);exSaveLocal()}else await api('/exiva/del',{id,owner:exOwner});await exRefresh()}catch(err){$e('exMsg').textContent=err.message}});
+
+/* hunts */
+const exAgo=t=>{const s=Math.max(0,exNow-t);return s<60?s+' s ago':s<3600?Math.floor(s/60)+' min ago':Math.floor(s/3600)+' h ago'};
+function exRender(){if(!exHunt)return;$e('exName').textContent=exHunt.target;
+  $e('exList').innerHTML=exReads.map(r=>{const old=exNow-r.t>exWinS(),mine=r.owner===exOwner.slice(0,8);
+    return `<div class="rd${old?' old':''}"><span class="sw" style="background:${old?'var(--l)':exColor(r)}"></span><b>${esc(r.spot)}</b><span>${esc(exText(r))}</span><span class="lv">${esc(exAgo(r.t))}${r.who?' · '+esc(r.who):''}</span>${mine?`<button type="button" data-del="${r.id}">Remove</button>`:''}</div>`}).join('')||'<p class="note">No results yet. Cast exiva and add what it says.</p>'}
+async function exRefresh(){if(!exHunt)return;
+  if(exHunt.local){exNow=Math.floor(Date.now()/1000)}
+  else{try{const r=await api('/exiva/hunt?id='+encodeURIComponent(exHunt.id));exReads=r.readings;exNow=r.now;exHunt.target=r.hunt.target;exSkew=r.now-Date.now()/1000}catch(err){$e('exMsg').className='note err';$e('exMsg').textContent=err.message;if(/not found/.test(err.message))exLeave();return}}
+  exRender();exCompute()}
+function exSaveLocal(){exLS('exLocal',JSON.stringify({target:exHunt.target,reads:exReads}))}
+function exJoin(id,target,local){exHunt={id,target:target||'…',local:!!local};$e('exStart').hidden=true;$e('exIn').hidden=false;$e('exRes').hidden=false;
+  if(local){let L={};try{L=JSON.parse(exLS('exLocal')||'{}')}catch(e){}exReads=L.target===target?(L.reads||[]):[];exSaveLocal()}else exReads=[];
+  $e('exMode').textContent=local?'Results stay in this browser only, because the shared server is not switched on.':'Everyone with the link sees results live. Results older than the window fade out.';
+  $e('exShare').hidden=!!local;if(!local&&location.hash!=='#exiva/'+id)history.replaceState(null,'','#exiva/'+id);
+  exUI();exRefresh();clearInterval(exPoll);exPoll=setInterval(()=>{if(!$e('v-exiva').hidden&&!document.hidden)exRefresh()},4000)}
+function exLeave(){exHunt=null;exReads=[];clearInterval(exPoll);$e('exStart').hidden=false;$e('exIn').hidden=true;$e('exRes').hidden=true;exCompute();if(location.hash.startsWith('#exiva/'))history.replaceState(null,'','#exiva');exHunts()}
+$e('exLeave').onclick=exLeave;
+$e('exShare').onclick=async()=>{const u=location.href.split('#')[0]+'#exiva/'+exHunt.id;try{await navigator.clipboard.writeText(u);$e('exMsg').className='note ok';$e('exMsg').textContent='Link copied. Send it to the others casting.'}catch(e){$e('exMsg').textContent=u}};
+async function exHunts(){const box=$e('exHunts');if(!API){box.innerHTML='<p class="note">The shared server is not switched on, so a hunt only works in this browser for now.</p>';return}
+  try{const r=await api('/exiva/hunts');exNow=r.now;box.innerHTML=r.hunts.length?'<p class="note" style="margin:6px 0 0">Hunts going on now:</p>'+r.hunts.map(h=>`<button type="button" data-id="${esc(h.id)}" data-t="${esc(h.target)}"><b>${esc(h.target)}</b><span class="lv">${h.n} recent result${h.n===1?'':'s'} · ${esc(exAgo(h.last))}</span></button>`).join(''):'<p class="note">No hunts going on right now.</p>'}catch(e){box.innerHTML='<p class="note err">'+esc(e.message)+'</p>'}}
+$e('exHunts').addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(b)exJoin(b.dataset.id,b.dataset.t)});
+$e('exStartF').addEventListener('submit',async e=>{e.preventDefault();const t=$e('exTarget').value.trim(),m=$e('exStartMsg');if(t.length<2)return;
+  if(!API){exJoin('local',t,true);return}
+  m.className='note';m.textContent='Starting …';try{const r=await api('/exiva/start',{target:t});m.textContent='';exJoin(r.id,t)}catch(err){m.className='note err';m.textContent=err.message}});
+function exOpen(){if(!exInited)return;if(!exImg.src)exLoadImg();if(!exDrawn){exHome();exDrawn=true}else exDraw();
+  const id=(location.hash.split('/')[1]||'').trim();if(id&&API&&(!exHunt||exHunt.id!==id))exJoin(id);else if(!exHunt)exHunts();else exRefresh()}
+let exDrawn=false;
+window.exOpen=exOpen;
+window.exInit=()=>{exInited=true;if($e('exSpot').value==='c')exSetPick(true);exCompute();if(location.hash.startsWith('#exiva'))exOpen()};
+initSug().then(()=>window.exInit&&window.exInit());
 load();setInterval(load,60000);loadKills();setInterval(loadKills,120000);document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Checking …';await load();await loadChanges();await loadKills();b.disabled=false;b.textContent='Refresh now'});loadChanges();setInterval(loadChanges,600000);
 }
 </script>
