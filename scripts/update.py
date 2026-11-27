@@ -97,7 +97,7 @@ def player(s, name):
     t = soup.find("table")
     if not t: return None
     tds = [re.sub(r"\s+", " ", td.get_text(" ", strip=True)) for td in t.find_all("td")]
-    if not tds: return None
+    if len(tds) < 2: return None   # unknown or empty player page
     info = tds[0]
     voc = re.search(r"Voc: (.+?) Town", info)
     guild = re.search(r"Guild: (.*?)\s*of (.+)$", info)
@@ -150,7 +150,9 @@ def run_scan():
 
     # 2) refresh info + look for new alts
     for n in list(own):
-        p = player(s, n); time.sleep(PAUSE)
+        try: p = player(s, n)
+        except Exception as e: print('player failed', n, e); p = None
+        time.sleep(PAUSE)
         if p:
             old = chars.get(n, {})
             if p["g"] == old.get("g") and not p["r"]: p["r"] = old.get("r", "")
@@ -346,14 +348,17 @@ def run_ownscan(min_days=2, max_verify=60):
         if n not in cache:
             cache[n] = sessions(s, n); time.sleep(PAUSE)
         return cache[n]
-    added = 0
+    added = 0; per_owner = {}
     for d, t, x in cands[:max_verify]:
         if x in own: continue
         m, ov = exact_matches(sess(t), sess(x))
-        if m < 3: continue
-        cf = "h" if m >= 6 and ov == 0 else "m"
-        ev = f"own scanner: {m} exact handovers with {t}, seen on {d} days" + (f", {round(ov)} min online together" if ov else "") + f" (new {today})"
+        # online at the same time as the tracked char = a different account, not a handover
+        if m < 4 or ov > 0: continue
         main = own[t]
+        if per_owner.get(main, 0) >= 3: continue   # one busy account must not flood its owner
+        per_owner[main] = per_owner.get(main, 0) + 1
+        cf = "h" if m >= 6 else "m"
+        ev = f"own scanner: {m} exact handovers with {t}, seen on {d} days (new {today})"
         next(c for c in clusters if c[0] == main)[2].append([x, cf, ev, today]); own[x] = main
         p = player(s, x); time.sleep(PAUSE)
         chars[x] = p or {"g": "X", "r": "", "l": 0, "v": "", "ls": ""}
