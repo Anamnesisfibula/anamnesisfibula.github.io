@@ -1,5 +1,3 @@
 Akarat Zakarum: HTTP 200 application/json; charset=utf-8 '[]'
-Wariat Av: HTTP 200 application/json; charset=utf-8 '[]'
-Quekss: HTTP 200 application/json; charset=utf-8 '[]'
 guild Stare Gity: 6 members
 guild Stare gity: 6 members
