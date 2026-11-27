@@ -71,6 +71,7 @@ def run_online():
     record_events(on)
 
 # ---------- own scanner: login/logout event log ----------
+WATCH = DATA / "watch.json"     # suspected alts kept off the page; checked on every own scan
 EVENTS = DATA / "events.json"     # [[unix_ts, [logged in], [logged out]], ...]
 PREV = DATA / "online_prev.json"
 KEEP_DAYS = 21
@@ -330,17 +331,41 @@ def handovers(events, tracked):
                 for x in near_out - {t}: cnt[t][x].add(day)
     return cnt
 
+def check_watch(net, log, events, alert_days=4):
+    """Count handover days and online-together snapshots between each watched char and its owner's chars.
+    Logs a 'watch' change once when handovers keep recurring."""
+    watch = load(WATCH, [])
+    if not watch: return set()
+    own = owner_of(net); today = now()[:10]
+    for w in watch:
+        group = {n for n, o in own.items() if o == w["owner"]}
+        cnt = handovers(events, group)
+        days = set().union(*[cnt[t].get(w["name"], set()) for t in group]) if group else set()
+        on, prev, together = set(), None, 0
+        for ts, ins, outs in events:
+            if prev and ts - prev > 20 * 60: on = set()
+            prev = ts; on |= set(ins); on -= set(outs)
+            if w["name"] in on and on & group: together += 1
+        w.update({"handover_days": len(days), "together": together, "checked": now()})
+        if len(days) >= alert_days and not w.get("alerted"):
+            w["alerted"] = today
+            log.append({"date": today, "type": "watch", "name": w["name"], "owner": w["owner"],
+                        "note": f"handovers with {w['owner']}'s chars on {len(days)} days, online together in {together} snapshots"})
+    save(WATCH, watch)
+    return {w["name"] for w in watch}
+
 def run_ownscan(min_days=2, max_verify=60):
     net = load(NET, None); log = load(LOG, [])
     own = owner_of(net); chars, clusters = net["chars"], net["clusters"]
     events = load(EVENTS, [])
     if len(events) < 50:
         print("own scanner: not enough events yet", len(events)); return
+    watched = check_watch(net, log, events)
     cnt = handovers(events, set(own))
     cands = []
     for t, others in cnt.items():
         for x, days in others.items():
-            if x in own or len(days) < min_days: continue
+            if x in own or x in watched or len(days) < min_days: continue
             cands.append((len(days), t, x))
     cands.sort(reverse=True)
     s = session(); today = now()[:10]; cache = {}
