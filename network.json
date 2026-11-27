@@ -1175,6 +1175,13 @@
    "l": 1,
    "v": "Master Sorcerer",
    "ls": "2026-11-26 23:24"
+  },
+  "Zarakura": {
+   "g": "X",
+   "r": "",
+   "l": 28,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:56"
   }
  },
  "clusters": [
@@ -1344,6 +1351,12 @@
      "c",
      "same account as Szyje na Drucie on amera.fibula.app",
      "2026-11-26"
+    ],
+    [
+     "Zarakura",
+     "h",
+     "own scanner: 7 exact handovers with Sir Zawalisty Knight, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
     ]
    ]
   ],
@@ -2115,9 +2128,9 @@
  ],
  "scanned": "2026-11-27 12:43",
  "ownscan": {
-  "time": "2026-11-27 12:08",
-  "events": 150,
-  "candidates": 792,
-  "added": 3
+  "time": "2026-11-27 12:45",
+  "events": 153,
+  "candidates": 134,
+  "added": 1
  }
 }
