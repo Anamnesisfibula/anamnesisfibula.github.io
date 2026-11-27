@@ -1175,6 +1175,139 @@
    "l": 0,
    "v": "",
    "ls": ""
+  },
+  "Zarakura": {
+   "g": "X",
+   "r": "",
+   "l": 28,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:29"
+  },
+  "Smallbengt": {
+   "g": "X",
+   "r": "",
+   "l": 20,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 03:11"
+  },
+  "Heart Healer": {
+   "g": "X",
+   "r": "",
+   "l": 50,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 04:22"
+  },
+  "Halopara": {
+   "g": "X",
+   "r": "",
+   "l": 38,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:30"
+  },
+  "Zzork": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "No vocation",
+   "ls": "2026-11-27 04:30"
+  },
+  "Ziggs Bro": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 03:22"
+  },
+  "Yes I Love This": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Knight",
+   "ls": "2026-11-27 02:20"
+  },
+  "Stefanos": {
+   "g": "X",
+   "r": "",
+   "l": 8,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:30"
+  },
+  "Romanovski": {
+   "g": "X",
+   "r": "",
+   "l": 31,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 02:56"
+  },
+  "Poups": {
+   "g": "X",
+   "r": "",
+   "l": 42,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:30"
+  },
+  "Ness Kraven": {
+   "g": "X",
+   "r": "",
+   "l": 22,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 04:22"
+  },
+  "Maharba": {
+   "g": "X",
+   "r": "",
+   "l": 36,
+   "v": "Royal Paladin",
+   "ls": "2026-11-27 04:22"
+  },
+  "Machokeitor": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Paladin",
+   "ls": "2026-11-27 04:06"
+  },
+  "Koyer": {
+   "g": "X",
+   "r": "",
+   "l": 49,
+   "v": "No vocation",
+   "ls": "2026-11-27 03:22"
+  },
+  "Ira Ni": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Knight",
+   "ls": "2026-11-27 04:06"
+  },
+  "Georges St-Pierre": {
+   "g": "X",
+   "r": "",
+   "l": 78,
+   "v": "Royal Paladin",
+   "ls": "2026-11-27 03:22"
+  },
+  "Avorian": {
+   "g": "X",
+   "r": "",
+   "l": 27,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 04:06"
+  },
+  "Arya Stark": {
+   "g": "X",
+   "r": "",
+   "l": 20,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 02:56"
+  },
+  "Antedeguemon": {
+   "g": "X",
+   "r": "",
+   "l": 45,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 03:37"
   }
  },
  "clusters": [
@@ -1344,6 +1477,120 @@
      "c",
      "same account as Szyje na Drucie on amera.fibula.app",
      "2026-11-26"
+    ],
+    [
+     "Zarakura",
+     "h",
+     "own scanner: 6 exact handovers with Sir Zawalisty Knight, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Smallbengt",
+     "m",
+     "own scanner: 3 exact handovers with Sir Zawalisty Knight, seen on 2 days, 30 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Heart Healer",
+     "m",
+     "own scanner: 4 exact handovers with Sir Zawalisty Knight, seen on 2 days, 11 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Halopara",
+     "m",
+     "own scanner: 3 exact handovers with Sir Zawalisty Knight, seen on 2 days, 11 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Zzork",
+     "m",
+     "own scanner: 6 exact handovers with Kopacz Ognia, seen on 2 days, 45 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Ziggs Bro",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 339 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Yes I Love This",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 173 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Stefanos",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 69 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Romanovski",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 147 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Poups",
+     "m",
+     "own scanner: 5 exact handovers with Kopacz Ognia, seen on 2 days, 43 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Ness Kraven",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 60 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Maharba",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 132 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Machokeitor",
+     "m",
+     "own scanner: 5 exact handovers with Kopacz Ognia, seen on 2 days, 104 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Koyer",
+     "m",
+     "own scanner: 4 exact handovers with Kopacz Ognia, seen on 2 days, 60 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Ira Ni",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 330 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Georges St-Pierre",
+     "m",
+     "own scanner: 4 exact handovers with Kopacz Ognia, seen on 2 days, 113 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Avorian",
+     "m",
+     "own scanner: 3 exact handovers with Kopacz Ognia, seen on 2 days, 202 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Arya Stark",
+     "m",
+     "own scanner: 5 exact handovers with Kopacz Ognia, seen on 2 days, 58 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Antedeguemon",
+     "m",
+     "own scanner: 4 exact handovers with Kopacz Ognia, seen on 2 days, 193 min online together (new 2026-11-27)",
+     "2026-11-27"
     ]
    ]
   ],
@@ -2113,5 +2360,11 @@
    ]
   ]
  ],
- "scanned": "2026-11-26 09:16"
+ "scanned": "2026-11-26 09:16",
+ "ownscan": {
+  "time": "2026-11-27 04:31",
+  "events": 118,
+  "candidates": 47,
+  "added": 19
+ }
 }
