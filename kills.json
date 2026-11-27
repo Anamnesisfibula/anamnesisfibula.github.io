@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-27 03:11",
+  "victim": "Spanky Pants",
+  "vlevel": 12,
+  "killers": [
+   [
+    "a goblin",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
   "date": "2026-11-27 01:27",
   "victim": "Flats",
   "vlevel": 18,
