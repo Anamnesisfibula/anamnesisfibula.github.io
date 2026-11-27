@@ -1574,6 +1574,41 @@
    "l": 54,
    "v": "Master Sorcerer",
    "ls": "2026-11-27 06:40"
+  },
+  "Zis Vis": {
+   "g": "X",
+   "r": "",
+   "l": 37,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 06:29"
+  },
+  "Spanky Pants": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 01:08"
+  },
+  "Qala": {
+   "g": "X",
+   "r": "",
+   "l": 7,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 07:44"
+  },
+  "Mister": {
+   "g": "X",
+   "r": "",
+   "l": 67,
+   "v": "Elite Knight",
+   "ls": "2026-11-27 01:08"
+  },
+  "Isa Isa": {
+   "g": "X",
+   "r": "",
+   "l": 21,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:56"
   }
  },
  "clusters": [
@@ -2084,6 +2119,36 @@
      "Blue Fent",
      "m",
      "own scanner: 4 exact handovers with Tyrionix, seen on 2 days, 139 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Zis Vis",
+     "m",
+     "own scanner: 3 exact handovers with Yoh, seen on 2 days, 1895 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Spanky Pants",
+     "m",
+     "own scanner: 3 exact handovers with Yoh, seen on 2 days, 212 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Qala",
+     "m",
+     "own scanner: 4 exact handovers with Yoh, seen on 2 days, 1760 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Mister",
+     "m",
+     "own scanner: 4 exact handovers with Yoh, seen on 2 days, 740 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Isa Isa",
+     "m",
+     "own scanner: 4 exact handovers with Yoh, seen on 2 days, 648 min online together (new 2026-11-27)",
      "2026-11-27"
     ]
    ]
@@ -2856,9 +2921,9 @@
  ],
  "scanned": "2026-11-26 09:16",
  "ownscan": {
-  "time": "2026-11-27 06:40",
-  "events": 126,
-  "candidates": 520,
-  "added": 9
+  "time": "2026-11-27 07:45",
+  "events": 131,
+  "candidates": 610,
+  "added": 5
  }
 }
