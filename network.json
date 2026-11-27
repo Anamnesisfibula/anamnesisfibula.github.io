@@ -1927,6 +1927,27 @@
      "Seryjny Morderca",
      "l",
      "score 18–20"
+    ],
+    [
+     "Mroczny di'maker",
+     "m",
+     "reported by admin (other tracker: same owner as Koirr)",
+     "2026-11-27"
+    ],
+    [
+     "Mroczny Elder",
+     "n",
+     "name only"
+    ],
+    [
+     "Mroczny Maker",
+     "n",
+     "name only"
+    ],
+    [
+     "Mroczny Marcelo",
+     "n",
+     "name only"
     ]
    ]
   ],
@@ -2193,27 +2214,6 @@
    ]
   ],
   [
-   "Mroczny di'maker",
-   "BW",
-   [
-    [
-     "Mroczny Elder",
-     "n",
-     "name only"
-    ],
-    [
-     "Mroczny Maker",
-     "n",
-     "name only"
-    ],
-    [
-     "Mroczny Marcelo",
-     "n",
-     "name only"
-    ]
-   ]
-  ],
-  [
    "Marry Jane",
    "BW",
    []
@@ -2231,6 +2231,12 @@
      "Ursus",
      "m",
      "reported by admin",
+     "2026-11-27"
+    ],
+    [
+     "Pumas",
+     "m",
+     "reported by admin (other tracker: same owner as Venator)",
      "2026-11-27"
     ]
    ]
@@ -2276,11 +2282,6 @@
      "2026-11-27"
     ]
    ]
-  ],
-  [
-   "Pumas",
-   "RB",
-   []
   ],
   [
    "Stary Jaksinowski",
@@ -2358,7 +2359,20 @@
   [
    "Chuck Noris",
    "WU",
-   []
+   [
+    [
+     "Gon brazola",
+     "m",
+     "reported by admin (other tracker: same owner as Chuck Noris)",
+     "2026-11-27"
+    ],
+    [
+     "Szczelam z uha",
+     "m",
+     "reported by admin (other tracker: same owner as Chuck Noris)",
+     "2026-11-27"
+    ]
+   ]
   ],
   [
    "Hupaxuda",
@@ -2375,12 +2389,32 @@
   [
    "Kaldren",
    "WU",
-   []
+   [
+    [
+     "Yz",
+     "m",
+     "reported by admin (other tracker: same owner as Kaldren)",
+     "2026-11-27"
+    ],
+    [
+     "Qw",
+     "c",
+     "same account as Yz on amera.fibula.app",
+     "2026-11-26"
+    ]
+   ]
   ],
   [
    "Kurier",
    "WU",
-   []
+   [
+    [
+     "Bsmarck",
+     "m",
+     "reported by admin (other tracker: same owner as Kurier)",
+     "2026-11-27"
+    ]
+   ]
   ],
   [
    "Pie",
@@ -2396,6 +2430,12 @@
      "Mobilne Krematorium",
      "m",
      "reported by admin",
+     "2026-11-27"
+    ],
+    [
+     "Waginosceptyk",
+     "m",
+     "reported by admin (other tracker: same owner as Pie)",
      "2026-11-27"
     ]
    ]
@@ -2423,11 +2463,6 @@
    ]
   ],
   [
-   "Gon brazola",
-   "WU",
-   []
-  ],
-  [
    "Lyzask",
    "WU",
    [
@@ -2450,11 +2485,6 @@
      "2026-11-26"
     ]
    ]
-  ],
-  [
-   "Szczelam z uha",
-   "WU",
-   []
   ],
   [
    "Vito Soprano",
@@ -2514,23 +2544,6 @@
    []
   ],
   [
-   "Waginosceptyk",
-   "WU",
-   []
-  ],
-  [
-   "Yz",
-   "WU",
-   [
-    [
-     "Qw",
-     "c",
-     "same account as Yz on amera.fibula.app",
-     "2026-11-26"
-    ]
-   ]
-  ],
-  [
    "Sztefan",
    "SG",
    [
@@ -2541,11 +2554,6 @@
      "2026-11-26"
     ]
    ]
-  ],
-  [
-   "Bsmarck",
-   "SG",
-   []
   ],
   [
    "Koniowi Zamelduj",
