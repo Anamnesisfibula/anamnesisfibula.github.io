@@ -279,6 +279,11 @@ def probe_guild(gname):
         if "nvit" in tx: out.append("HEADING: " + tx)
     (DATA / "probe_guild.txt").write_text("\n".join(out), encoding="utf-8")
 
+def probe_page(path):
+    """Debug: save the raw HTML of an opentibia.info page (GET) to probe_page.html."""
+    s = session(); r = s.get(BASE + path, timeout=30)
+    (DATA / "probe_page.html").write_text(f"<!-- HTTP {r.status_code} {r.url} -->\n" + r.text, encoding="utf-8")
+
 def probe_scan(names):
     s = session(); out = []; full = {}
     for n in names:
@@ -442,4 +447,5 @@ if __name__ == "__main__":
     elif mode == "add": run_add(sys.argv[2].split(";"), sys.argv[3] if len(sys.argv) > 3 else "added by hand")
     elif mode == "probeguild": probe_guild(sys.argv[2])
     elif mode == "probescan": probe_scan(sys.argv[2].split(";"))
+    elif mode == "probepage": probe_page(sys.argv[2])
     else: {"online": run_online, "scan": run_scan, "kills": run_kills}[mode]()
