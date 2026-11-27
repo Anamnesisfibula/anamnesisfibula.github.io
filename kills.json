@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-27 15:19",
+  "victim": "Wachu Mag",
+  "vlevel": 19,
+  "killers": [
+   [
+    "Lord-Xoroba",
+    100
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Koirr"
+ },
+ {
   "date": "2026-11-27 14:54",
   "victim": "Samba'sky",
   "vlevel": 78,
@@ -71,6 +84,25 @@
   ],
   "tracked_killers": [],
   "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-27 14:47",
+  "victim": "No'go",
+  "vlevel": 19,
+  "killers": [
+   [
+    "Wariat Av",
+    108
+   ],
+   [
+    "Abahawas",
+    90
+   ]
+  ],
+  "tracked_killers": [
+   "Wariat Av"
+  ],
+  "owner_victim": null
  },
  {
   "date": "2026-11-27 14:43",
