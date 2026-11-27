@@ -1511,6 +1511,69 @@
    "l": 21,
    "v": "Master Sorcerer",
    "ls": "2026-11-27 02:03"
+  },
+  "Pallyn": {
+   "g": "X",
+   "r": "",
+   "l": 76,
+   "v": "Royal Paladin",
+   "ls": "2026-11-27 06:39"
+  },
+  "Hebi": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 06:39"
+  },
+  "Dmizla": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 05:08"
+  },
+  "Bleydbr": {
+   "g": "X",
+   "r": "",
+   "l": 48,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 02:35"
+  },
+  "Genevieve Gilbault": {
+   "g": "X",
+   "r": "",
+   "l": 19,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 04:22"
+  },
+  "Andrel": {
+   "g": "X",
+   "r": "",
+   "l": 88,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 06:15"
+  },
+  "Yoh": {
+   "g": "X",
+   "r": "",
+   "l": 22,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 06:40"
+  },
+  "Salvavidas": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 06:40"
+  },
+  "Blue Fent": {
+   "g": "X",
+   "r": "",
+   "l": 54,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 06:40"
   }
  },
  "clusters": [
@@ -1967,6 +2030,60 @@
      "Tyrionix",
      "m",
      "own scanner: 3 exact handovers with Yes I Love This, seen on 2 days, 66 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Pallyn",
+     "h",
+     "own scanner: 7 exact handovers with Zarken, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Hebi",
+     "m",
+     "own scanner: 3 exact handovers with Zarken, seen on 2 days, 113 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Dmizla",
+     "m",
+     "own scanner: 3 exact handovers with Zarken, seen on 2 days, 30 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Bleydbr",
+     "m",
+     "own scanner: 3 exact handovers with Zarken, seen on 2 days, 185 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Genevieve Gilbault",
+     "m",
+     "own scanner: 3 exact handovers with Yes I Love This, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Andrel",
+     "m",
+     "own scanner: 3 exact handovers with Yes I Love This, seen on 2 days, 67 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Yoh",
+     "m",
+     "own scanner: 3 exact handovers with Xin Zhao, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Salvavidas",
+     "m",
+     "own scanner: 4 exact handovers with Tyrionix, seen on 2 days, 622 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Blue Fent",
+     "m",
+     "own scanner: 4 exact handovers with Tyrionix, seen on 2 days, 139 min online together (new 2026-11-27)",
      "2026-11-27"
     ]
    ]
@@ -2739,9 +2856,9 @@
  ],
  "scanned": "2026-11-26 09:16",
  "ownscan": {
-  "time": "2026-11-27 05:36",
-  "events": 122,
-  "candidates": 335,
-  "added": 29
+  "time": "2026-11-27 06:40",
+  "events": 126,
+  "candidates": 520,
+  "added": 9
  }
 }
