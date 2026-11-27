@@ -518,5 +518,53 @@
   "owner": "Akarat Zakarum",
   "via": "reported by admin",
   "score": "-"
+ },
+ {
+  "date": "2026-11-27",
+  "type": "guild_change",
+  "name": "Glizda",
+  "owner": "Glizdor",
+  "from": "Bullywannabes",
+  "to": "no guild"
+ },
+ {
+  "date": "2026-11-27",
+  "type": "guild_change",
+  "name": "Glizzy",
+  "owner": "Glizdor",
+  "from": "Bullywannabes",
+  "to": "no guild"
+ },
+ {
+  "date": "2026-11-27",
+  "type": "guild_change",
+  "name": "Glizdek",
+  "owner": "Glizdor",
+  "from": "Bullywannabes",
+  "to": "no guild"
+ },
+ {
+  "date": "2026-11-27",
+  "type": "guild_change",
+  "name": "Glizdogon",
+  "owner": "Glizdor",
+  "from": "Bullywannabes",
+  "to": "no guild"
+ },
+ {
+  "date": "2026-11-27",
+  "type": "guild_change",
+  "name": "Wodywodpecker",
+  "owner": "Wodywodpecker",
+  "from": "Bullywannabes",
+  "to": "no guild"
+ },
+ {
+  "date": "2026-11-27",
+  "type": "guild_change",
+  "name": "Bsmarck",
+  "owner": "Bsmarck",
+  "from": "Stare Gity",
+  "to": "no guild"
  }
 ]
