@@ -1,5 +1,20 @@
 [
  {
+  "date": "2026-11-27 01:27",
+  "victim": "Flats",
+  "vlevel": 18,
+  "killers": [
+   [
+    "Gloomcarver",
+    41
+   ]
+  ],
+  "tracked_killers": [
+   "Gloomcarver"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-26 22:40",
   "victim": "Kassadin",
   "vlevel": 8,
