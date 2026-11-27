@@ -246,6 +246,19 @@
   "owner_victim": "Kopacz Ognia"
  },
  {
+  "date": "2026-11-26 14:33",
+  "victim": "The Messi Of Tibia",
+  "vlevel": 39,
+  "killers": [
+   [
+    "Batushka",
+    62
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
   "date": "2026-11-26 14:29",
   "victim": "Halopara",
   "vlevel": 39,
@@ -270,6 +283,21 @@
   ],
   "tracked_killers": [],
   "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 14:19",
+  "victim": "Potrzyj Golebia",
+  "vlevel": 36,
+  "killers": [
+   [
+    "The Messi Of Tibia",
+    39
+   ]
+  ],
+  "tracked_killers": [
+   "The Messi Of Tibia"
+  ],
+  "owner_victim": null
  },
  {
   "date": "2026-11-26 14:15",
