@@ -1609,6 +1609,20 @@
    "l": 21,
    "v": "Master Sorcerer",
    "ls": "2026-11-27 04:56"
+  },
+  "Shurmana": {
+   "g": "X",
+   "r": "",
+   "l": 19,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 07:15"
+  },
+  "The Messi Of Tibia": {
+   "g": "X",
+   "r": "",
+   "l": 38,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 08:49"
   }
  },
  "clusters": [
@@ -2149,6 +2163,18 @@
      "Isa Isa",
      "m",
      "own scanner: 4 exact handovers with Yoh, seen on 2 days, 648 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Shurmana",
+     "m",
+     "own scanner: 3 exact handovers with Zis Vis, seen on 2 days, 535 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "The Messi Of Tibia",
+     "m",
+     "own scanner: 3 exact handovers with Yoh, seen on 2 days, 590 min online together (new 2026-11-27)",
      "2026-11-27"
     ]
    ]
@@ -2921,9 +2947,9 @@
  ],
  "scanned": "2026-11-26 09:16",
  "ownscan": {
-  "time": "2026-11-27 07:45",
-  "events": 131,
-  "candidates": 610,
-  "added": 5
+  "time": "2026-11-27 08:50",
+  "events": 135,
+  "candidates": 653,
+  "added": 2
  }
 }
