@@ -26,6 +26,19 @@
   "owner_victim": "Samba'sky"
  },
  {
+  "date": "2026-11-27 14:53",
+  "victim": "Energy Field Master",
+  "vlevel": 17,
+  "killers": [
+   [
+    "Abahawas",
+    90
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Domino"
+ },
+ {
   "date": "2026-11-27 14:52",
   "victim": "Akarat Zakarum",
   "vlevel": 91,
