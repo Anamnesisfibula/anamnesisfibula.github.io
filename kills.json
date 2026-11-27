@@ -19,6 +19,21 @@
   "owner_victim": null
  },
  {
+  "date": "2026-11-26 17:49",
+  "victim": "Blue Fent",
+  "vlevel": 58,
+  "killers": [
+   [
+    "Xin Zhao",
+    21
+   ]
+  ],
+  "tracked_killers": [
+   "Xin Zhao"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-26 17:41",
   "victim": "Yes I Love This",
   "vlevel": 8,
@@ -45,6 +60,61 @@
   "owner_victim": "Kopacz Ognia"
  },
  {
+  "date": "2026-11-26 17:05",
+  "victim": "Diuf",
+  "vlevel": 20,
+  "killers": [
+   [
+    "a scorpion",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 16:57",
+  "victim": "Diamond",
+  "vlevel": 16,
+  "killers": [
+   [
+    "a cyclops",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 16:33",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "a field item",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 14:40",
+  "victim": "Jenny Bambina",
+  "vlevel": 36,
+  "killers": [
+   [
+    "Slowik",
+    37
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
   "date": "2026-11-26 14:29",
   "victim": "Halopara",
   "vlevel": 39,
@@ -52,6 +122,32 @@
    [
     "Gollum",
     70
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 14:27",
+  "victim": "Zarken",
+  "vlevel": 20,
+  "killers": [
+   [
+    "Pad Thai",
+    62
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 14:15",
+  "victim": "Xin Zhao",
+  "vlevel": 18,
+  "killers": [
+   [
+    "Klopfgeister",
+    25
    ]
   ],
   "tracked_killers": [],
@@ -103,6 +199,32 @@
   ],
   "tracked_killers": [],
   "owner_victim": "Glizdor"
+ },
+ {
+  "date": "2026-11-26 12:23",
+  "victim": "Kassadin",
+  "vlevel": 7,
+  "killers": [
+   [
+    "Kaftenbog",
+    31
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 12:21",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Kaftenbog",
+    31
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
  },
  {
   "date": "2026-11-26 12:20",
@@ -213,6 +335,21 @@
   "owner_victim": null
  },
  {
+  "date": "2026-11-26 08:39",
+  "victim": "Papagayo",
+  "vlevel": 11,
+  "killers": [
+   [
+    "Kaboom",
+    6
+   ]
+  ],
+  "tracked_killers": [
+   "Kaboom"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-26 06:04",
   "victim": "Ill Bill",
   "vlevel": 40,
@@ -237,6 +374,20 @@
     40
    ]
   ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 00:59",
+  "victim": "Chivi Chan",
+  "vlevel": 20,
+  "killers": [
+   [
+    "a cyclops",
+    null
+   ]
+  ],
+  "pve": true,
   "tracked_killers": [],
   "owner_victim": "Kopacz Ognia"
  },
