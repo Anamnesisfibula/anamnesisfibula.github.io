@@ -1,3 +1,233 @@
 {
- "Akarat Zakarum": []
+ "Zorro Zwinia": [
+  {
+   "name": "Akarat Zakarum",
+   "level": 91,
+   "score": 10,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Ww",
+   "level": 28,
+   "score": 10,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Lendin",
+   "level": 30,
+   "score": 5.4312300473734165,
+   "shared": "confirmed"
+  }
+ ],
+ "Rooky Balboa": [],
+ "Jajo": [],
+ "Martina": [],
+ "Morre": [
+  {
+   "name": "Dawaj milion",
+   "level": 61,
+   "score": 60.83660721622426,
+   "shared": "confirmed"
+  },
+  {
+   "name": "Kakaowy wlamywacz",
+   "level": 1,
+   "score": 59,
+   "shared": "not_detected"
+  }
+ ],
+ "Badie": [],
+ "Northern Pike": [],
+ "Chadziaj": [],
+ "Headhunteerz": [],
+ "Drugi w Kulach": [],
+ "Tanczacy z dwarfami": [],
+ "Mapleboi": [],
+ "Spluwa Del Toro": [],
+ "Szyje na Drucicckku": [
+  {
+   "name": "Szyje na Drucicczkach",
+   "level": 1,
+   "score": 8,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Szyje na Drutach",
+   "level": 21,
+   "score": 8,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Kopacz Ognia",
+   "level": 82,
+   "score": 7,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Jeynsblack",
+   "level": 20,
+   "score": 5.749156913310851,
+   "shared": "confirmed"
+  }
+ ],
+ "Szyje na Drucjuszu": [
+  {
+   "name": "Szyje na Drutach",
+   "level": 21,
+   "score": 6,
+   "shared": "not_detected"
+  }
+ ],
+ "Neravin": [
+  {
+   "name": "Azaroth",
+   "level": 16,
+   "score": 19,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Good Boy",
+   "level": 1,
+   "score": 10,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Lyzask",
+   "level": 34,
+   "score": 9,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Sinterklaas",
+   "level": 1,
+   "score": 7.718251056890761,
+   "shared": "confirmed"
+  },
+  {
+   "name": "Henke",
+   "level": 126,
+   "score": 5.30272618292862,
+   "shared": "confirmed"
+  }
+ ],
+ "Rookq": [],
+ "Eqkeeper": [],
+ "Angelina": [],
+ "Karambam": [],
+ "Kriso": [],
+ "Lody'algida": [
+  {
+   "name": "Turrican",
+   "level": 86,
+   "score": 7,
+   "shared": "not_detected"
+  }
+ ],
+ "Bestia z Carlin": [],
+ "Napad na bank": [],
+ "Leo Vince": [
+  {
+   "name": "Yamaha",
+   "level": 43,
+   "score": 25,
+   "shared": "not_detected"
+  }
+ ],
+ "Synchrom": [],
+ "Matt'Sky": [],
+ "Qw": [],
+ "Xuremi": [
+  {
+   "name": "Zabka",
+   "level": 22,
+   "score": 22,
+   "shared": "not_detected"
+  }
+ ],
+ "Xinup Saint": [
+  {
+   "name": "Losos Saint",
+   "level": 40,
+   "score": 23,
+   "shared": "not_detected"
+  }
+ ],
+ "Naughty Girl": [],
+ "Aiming": [],
+ "Itemxc": [],
+ "Losos Saint": [
+  {
+   "name": "Xinup Saint",
+   "level": 30,
+   "score": 23,
+   "shared": "not_detected"
+  }
+ ],
+ "Naughty Boy": [],
+ "Rorz": [],
+ "Cloudive": [],
+ "Polonez": [],
+ "Koniowi Zamelduj": [],
+ "Zawadiaka": [],
+ "Yz": [],
+ "Kaldren": [],
+ "Bsmarck": [
+  {
+   "name": "Kurier",
+   "level": 40,
+   "score": 6,
+   "shared": "not_detected"
+  }
+ ],
+ "Kurier": [
+  {
+   "name": "Bsmarck",
+   "level": 27,
+   "score": 6,
+   "shared": "not_detected"
+  }
+ ],
+ "Waginosceptyk": [
+  {
+   "name": "Pie",
+   "level": 20,
+   "score": 7,
+   "shared": "not_detected"
+  },
+  {
+   "name": "Pomagacz",
+   "level": 36,
+   "score": 6.987404411008157,
+   "shared": "confirmed"
+  }
+ ],
+ "Pie": [
+  {
+   "name": "Waginosceptyk",
+   "level": 26,
+   "score": 7,
+   "shared": "not_detected"
+  }
+ ],
+ "Pumas": [],
+ "Venator": [],
+ "Gon brazola": [],
+ "Szczelam z uha": [],
+ "Chuck Noris": [],
+ "Mroczny di'maker": [
+  {
+   "name": "Wachu Mag",
+   "level": 1,
+   "score": 8,
+   "shared": "not_detected"
+  }
+ ],
+ "Koirr": [
+  {
+   "name": "Wachu Mag",
+   "level": 1,
+   "score": 151,
+   "shared": "not_detected"
+  }
+ ]
 }
