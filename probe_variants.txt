@@ -1,0 +1,7 @@
+plain: HTTP 200 len=2 asof=None cookies=['session', 'serverType', 'server'] '[]'
+xrw: HTTP 200 len=2 asof=None cookies=['session', 'serverType', 'server'] '[]'
+after page + referer: HTTP 200 len=25791 asof=1795749175 cookies=['session', 'serverType', 'server'] '[{"base_score":255,"level":28,"matches":[{"diff":0,"friend_logout":"2026-11-26 22:40:00","self_login":"2026-11-26 22:40:00","type":"before"},{"diff":0,"friend_logout":"2026-11-26 21:57:00","self_login'
+no server cookie: HTTP 200 len=5423 asof=None cookies=['session'] '<!DOCTYPE html>\n<html>\n<head>\n\t<title>OpenTibia Info</title>\n\t<meta name="title" content="OpenTibia Info">\n\t<meta property="og:title" content="OpenTibia Info">\n\t<meta http-equiv="Content-Type" content'
+server amera: HTTP 200 len=5423 asof=None cookies=['session'] '<!DOCTYPE html>\n<html>\n<head>\n\t<title>OpenTibia Info</title>\n\t<meta name="title" content="OpenTibia Info">\n\t<meta property="og:title" content="OpenTibia Info">\n\t<meta http-equiv="Content-Type" content'
+server fibula-amera: HTTP 200 len=5423 asof=None cookies=['session'] '<!DOCTYPE html>\n<html>\n<head>\n\t<title>OpenTibia Info</title>\n\t<meta name="title" content="OpenTibia Info">\n\t<meta property="og:title" content="OpenTibia Info">\n\t<meta http-equiv="Content-Type" content'
+server Amera: HTTP 200 len=5423 asof=None cookies=['session'] '<!DOCTYPE html>\n<html>\n<head>\n\t<title>OpenTibia Info</title>\n\t<meta name="title" content="OpenTibia Info">\n\t<meta property="og:title" content="OpenTibia Info">\n\t<meta http-equiv="Content-Type" content'
