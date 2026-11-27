@@ -1,5 +1,128 @@
 [
  {
+  "date": "2026-11-27 14:54",
+  "victim": "Samba'sky",
+  "vlevel": 78,
+  "killers": [
+   [
+    "Rom Baro",
+    100
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Samba'sky"
+ },
+ {
+  "date": "2026-11-27 14:52",
+  "victim": "Akarat Zakarum",
+  "vlevel": 91,
+  "killers": [
+   [
+    "Memphiz",
+    112
+   ],
+   [
+    "Rom Baro",
+    100
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Akarat Zakarum"
+ },
+ {
+  "date": "2026-11-27 14:49",
+  "victim": "Azifaralek",
+  "vlevel": 83,
+  "killers": [
+   [
+    "Abahawas",
+    90
+   ],
+   [
+    "Rom Baro",
+    100
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Azifaralek"
+ },
+ {
+  "date": "2026-11-27 14:48",
+  "victim": "Glizdor",
+  "vlevel": 75,
+  "killers": [
+   [
+    "Abahawas",
+    90
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Glizdor"
+ },
+ {
+  "date": "2026-11-27 14:48",
+  "victim": "Kopacz Ognia",
+  "vlevel": 82,
+  "killers": [
+   [
+    "Quantumleap",
+    88
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-27 14:43",
+  "victim": "Kanrak",
+  "vlevel": 56,
+  "killers": [
+   [
+    "Quantumleap",
+    88
+   ],
+   [
+    "Abahawas",
+    90
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kanrak"
+ },
+ {
+  "date": "2026-11-27 14:37",
+  "victim": "Koirr",
+  "vlevel": 56,
+  "killers": [
+   [
+    "Abahawas",
+    90
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Koirr"
+ },
+ {
+  "date": "2026-11-27 14:37",
+  "victim": "Optachloser",
+  "vlevel": 80,
+  "killers": [
+   [
+    "Domino",
+    61
+   ],
+   [
+    "Azifaralek",
+    83
+   ]
+  ],
+  "tracked_killers": [
+   "Domino",
+   "Azifaralek"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-27 12:40",
   "victim": "Slay",
   "vlevel": 40,
