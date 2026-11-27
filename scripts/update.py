@@ -112,7 +112,7 @@ def player(s, name):
     return {"g": gcode, "r": rank, "l": level, "v": voc.group(1) if voc else "", "ls": ls[:16]}
 
 def scanner(s, name):
-    r = s.post(f"{BASE}/stats/friends/x", data={"name": name},
+    r = s.post(f"{BASE}/stats/friends", data={"name": name},
                headers={"X-Requested-With": "XMLHttpRequest"}, timeout=30)
     try: return r.json()
     except Exception: return []
@@ -287,7 +287,7 @@ def probe_page(path):
 def probe_scan(names):
     s = session(); out = []; full = {}
     for n in names:
-        r = s.post(f"{BASE}/stats/friends/x", data={"name": n}, headers={"X-Requested-With": "XMLHttpRequest"}, timeout=30)
+        r = s.post(f"{BASE}/stats/friends", data={"name": n}, headers={"X-Requested-With": "XMLHttpRequest"}, timeout=30)
         out.append(f"{n}: HTTP {r.status_code} {r.headers.get('content-type')} {r.text[:300]!r}")
         try: full[n] = [{k: e.get(k) for k in ("name", "level", "score")} | {"shared": (e.get("overlap") or {}).get("status")} for e in r.json()]
         except Exception: full[n] = None
