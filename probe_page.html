@@ -1,0 +1,480 @@
+<!-- HTTP 200 https://opentibia.info/stats/friends -->
+<!DOCTYPE html>
+<html>
+<head>
+		<title>OpenTibia Info - Players scanner</title>
+	<meta name="title" content="OpenTibia Info - Players scanner">
+	<meta property="og:title" content="OpenTibia Info - Players scanner">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="OpenTibia Info is a fansite of various Open Tibia Server. You will find here a knowledge base, calculators and various statistics."/>
+<meta name="keywords" content="tibiantis, tibiara, opentibia, tibia, ots, statistics"/>
+<meta name="theme-color" content="#888888"/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://opentibia.info/">
+<meta property="og:description" content="OpenTibia Info is a fansite of various Open Tibia Server. You will find here a knowledge base, calculators and various statistics.">
+<meta property="og:image" content="https://usa.michal.es/tibiantis/images/opentibia_256.png">
+<link rel="shortcut icon" href="https://usa.michal.es/tibiantis/images/opentibia_32.png">
+<link rel="search" type="application/opensearchdescription+xml" title="OpenTibia Info" href="/opensearch.xml"/>
+<link rel="stylesheet" href="https://usa.michal.es/tibiantis/css/const.css?v=7"/>
+<link rel="stylesheet" href="https://usa.michal.es/tibiantis/css/default.css?v=8"/>
+<link rel="stylesheet" href="https://usa.michal.es/tibiantis/css/discord.css?v=6"/>
+<script>
+	const site_url = '/';
+	const base_url = '/';
+	let cdn_url = 'https://usa.michal.es/tibiantis/';
+	let tibiantis_url = 'https://amera.fibula.app/characters/';
+	const server = 'fibula';
+</script>
+<script type="text/javascript" src="https://usa.michal.es/global/jquery.js"></script>
+	<script type="text/javascript" src="https://usa.michal.es/global/jquery-ui-1.12.1.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="https://usa.michal.es/tibiantis/js/helpers.js?v=3"></script>
+		<script type="text/javascript" src="https://usa.michal.es/tibiantis/js/custom.js?v=3"></script>
+	<script type="text/javascript" src="https://usa.michal.es/tibiantis/js/notification.js?v=3"></script>
+</head>
+<body>
+<div id="hiho"></div>
+<button id="burger-btn" aria-label="Menu" aria-expanded="false" aria-controls="sidebar">MENU</button>
+<div id="sidebar-backdrop"></div>
+<div id="main">
+	<nav id="sidebar">
+		<div class="menu fl">
+	<h5>Menu</h5>
+	<ul class="nav">
+					<li><a class="" href="/">Main page</a></li>
+				<li><a class="" href="/index/contact">Contact</a></li>
+							<li><a href="/user/google">Login</a></li>
+				<li><a href="#" id="darkMode">Toggle dark mode</a></li>
+		<li><a class="" href="/index/online_alert">Online alerts</a></li>
+		<li><a class="" href="/index/vip">Vip Online</a></li>
+	</ul>
+		<h5>Stats</h5>
+	<ul class="nav">
+		<li class="ml5">
+			Search Player:
+			<div class="ui-widget">
+				<input class="search-player" placeholder="Type to find player" style="font-size: 10px; width: 93%; margin-bottom: 2px;" type="text" maxlength="30">
+				<div class="search-results" style="position: absolute;z-index: 1;"></div>
+			</div>
+		</li>
+		<li><a class="" href="/stats/highscores">Highscores</a></li>
+		<li><a class="" href="/stats/powergamers">Powergamers [1D, 7D, R]</a></li>
+		<li><a class="" href="/stats/oldest">Top oldest active</a></li>
+		<li><a class="" href="/stats/top">Top 100 Powergamers</a></li>
+		<li><a class="" href="/stats/online">Online [All, Active]</a></li>
+		<li><a class="" href="/stats/insomniac">Insomniac</a></li>
+		<li><a class="" href="/stats/activity">Activity</a></li>
+					<li><a class="active badge-new" href="/stats/friends">Scanner</a></li>
+				<li><a class="" href="/stats/fishers">Online fishers</a></li>
+		<li><a class="" href="/stats/deaths">Deaths</a></li>
+		<li><a class="" href="/stats/killers">Top player killers</a></li>
+		<li><a class="" href="/stats/environmental">Monster kills</a></li>
+					<li><a class="" href="/war">Wars</a></li>
+							<li><a class="" href="/stats/guilds">Guilds</a></li>
+						<li><a class="" href="/stats/census">Census</a></li>
+		<li><a class="" href="/stats/bans">Bans</a></li>
+		<li><a class="" href="/stats/rookgaard">Rookgaard</a></li>
+		<li><a class="" href="/stats/max">Online Stats</a></li>
+	</ul>
+	<h5>Community</h5>
+	<ul class="nav">
+									<li>
+				<iframe src="https://discord.com/widget?id=1306246713371136060&theme=dark"
+						width="175" height="400" allowtransparency="true" frameborder="0"></iframe>
+			</li>
+				<li><a class=" badge-new" href="/library/accounts">War server</a></li>
+	</ul>
+	</div>
+<script>
+	var counterDataSmall = [
+		['Hour', 'Online'],
+				['21:30', 183],
+				['22:00', 192],
+				['22:30', 185],
+				['23:00', 186],
+				['23:30', 179],
+				['00:00', 168],
+				['00:30', 156],
+			];
+</script>
+<div class="menu fr">
+	<h5>Library</h5>
+	<ul class="nav">
+		<li><a class="" href="/library/spells">Spells</a></li>
+		<li><a class="" href="/library/creatures">Creatures</a></li>
+		<li><a class="" href="/library/summons">Summons</a></li>
+		<li><a class="" href="/library/items">Items</a></li>
+		<li><a class="" href="/library/quests">Quests</a></li>
+		<li><a class="" href="/library/npcs">NPCs</a></li>
+									<li><a href="/library/map" target="_blank">7.7 Cipsoft Map</a></li>
+									<li><a class="" href="/library/downloads">Downloads</a></li>
+		<li><a class="" href="/library/trivia">Trivia</a></li>
+	</ul>
+	<h5>Calculators</h5>
+	<ul class="nav">
+		<li><a class="" href="/calc/exp">Experience</a></li>
+		<li><a class="" href="/calc/magic">Magic level</a></li>
+		<li><a class="" href="/calc/regen">HP & Mana regen</a></li>
+		<li><a class="" href="/calc/stats">Player stats</a></li>
+		<li><a class="" href="/calc/equipment">Equipment parameters</a></li>
+		<li><a class="" href="/calc/frags">Frags</a></li>
+		<li><a class="" href="/calc/training">Skills Training</a></li>
+		<li><a class="" href="/calc/exori">Exori</a></li>
+		<li><a class="" href="/calc/speed">Speed</a></li>
+		<li><a class="" href="/calc/healing">Healing</a></li>
+		<!--<li><a class="" href="/calc/rune">Rune damage</a></li>-->
+		<li><a class="" href="/calc/notification">Notification timer</a></li>
+	</ul>
+	<h5>Online</h5>
+	<ul class="nav">
+		<li><a class="m" href="/stats/online">Currently: 162</a></li>
+		<li>
+			<div class="chart-small" style="width: 170px; height: 150px;"></div>
+		</li>
+	</ul>
+	<h5>Other servers</h5>
+<ul class="nav">
+			<li><a href="https://tibiantis.info/stats/online">Tibiantis [7.4]</a></li>
+											<li>
+				<a class="" href="/index/server/tibiara">
+					Tibiara [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/tibiarelic">
+					Tibia Relic [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/nostalther">
+					Nostalther [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/miracle">
+					Miracle [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/retronic">
+					Retronic [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/dura">
+					Dura [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/mythera">
+					Mythera [7.4]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/aldeia">
+					Aldeia [7.4]				</a>
+			</li>
+								<li>
+				<a class="active" href="/index/server/fibula">
+					Project Fibula [7.x]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/malvera">
+					Malvera [8.0]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/treasura">
+					Treasura [8.0]				</a>
+			</li>
+								<li>
+				<a class="" href="/index/server/noxious">
+					Noxious [8.6]				</a>
+			</li>
+			</ul>
+</div>
+	</nav>
+	<div class="content">
+		<br/>
+		<div class="banner">
+			OpenTibia Info
+		</div>
+				<div class="p10">
+			<div id="headline">
+	<h1>Players scanner</h1>
+</div>
+<p>
+	How does it work? Because I store the login and logout times of each character,
+	I can compare the times of a specific player with other players. If player A
+	logs out at 18:05, and in the same (+/- 1) minute player B logs in, and if
+	player B logs out at 12:00, for example, and in the same (+/- 1) minute player
+	A logs in, and such a situation repeats many times, then we can assume that
+	player A and B may be related. The score column is based on such situations
+	from the last 90 days. Reliable shared online time reduces the score using the
+	square of the non-overlapping share of the shorter total online time. It does
+	not automatically remove a candidate: an account may sometimes be used by
+	someone else. Results with a final score of 5 or lower are hidden.
+	<br/><br/>
+	It is worth noting that the data is based only on publicly available data, so
+	the risk of <b>incorrect data is high</b>. The tool is not intended to clearly
+	indicate a connection between characters, but only a slight indication, so I
+	do not support passing a death sentence on someone based solely on data from
+	this page. It's a good practice to perform a scan on your own on the suggested
+	characters too. This can help to confirm or discard matches.
+	<br/><br/>
+	Click any row below to view shared online intervals and matching login/logout times.
+</p>
+<p id="scanner-as-of"></p>
+<center>
+	<form id="pageForm">
+		<table class="mytab2">
+			<thead>
+			<tr>
+				<td colspan="3" class="m">
+					Enter the name of the player you want to find his other characters:
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="m">
+					<input type="text" name="name" placeholder="Name" value=""/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="m">
+					<input type="button" value="Find"/>
+				</td>
+			</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</form>
+</center>
+<script>
+	tibiantis_url = "https:\/\/amera.fibula.app\/characters\/";
+	const controller = "stats";
+
+	function formatDuration(seconds) {
+		let remaining = Number(seconds) || 0;
+		const parts = [];
+
+		[
+			[86400, 'd'],
+			[3600, 'h'],
+			[60, 'm'],
+			[1, 's']
+		].forEach(function (unit) {
+			const value = Math.floor(remaining / unit[0]);
+
+			if (value) {
+				parts.push(value + unit[1]);
+				remaining %= unit[0];
+			}
+		});
+
+		return parts.length ? parts.join(' ') : '0s';
+	}
+
+	function formatScore(score) {
+		return Number(score).toFixed(2).replace(/\.?0+$/, '');
+	}
+
+	function findFriend() {
+		showInfoPopup('Searching players, please wait...', false);
+		const ownName = $('[name=name]').val();
+		$('#pageForm tbody').empty();
+		$('#scanner-as-of').text('');
+
+		$.ajax({
+			url: window.location.pathname,
+			type: 'POST',
+			timeout: 8000,
+			dataType: 'json',
+			data: {name: ownName},
+			success: function (response, status, xhr) {
+				const asOf = Number(xhr.getResponseHeader('X-Scanner-As-Of'));
+
+				if (asOf) {
+					const stale = xhr.getResponseHeader('X-Scanner-Stale') === '1';
+					const date = new Date(asOf * 1000).toLocaleString('en-GB', {timeZone: 'Europe/Warsaw'});
+					$('#scanner-as-of').text('Data updated: ' + date + ' (Warsaw time)' + (stale ? ' — older than 30 hours' : ''));
+				}
+
+				if (!response.length) {
+					showInfoPopup('No results for this player in the available history.');
+					return;
+				}
+
+				const body = $('#pageForm tbody');
+				body.append($('<tr>').append($('<th>').addClass('m').text('Name'), $('<th>').addClass('m').text('Level'), $('<th>').addClass('m').text('Similarity score')));
+
+				response.forEach(function (entry, i) {
+					const rowId = 'match-' + i;
+					const row = $('<tr>').addClass('toggle-header').attr('data-target', rowId).css('cursor', 'pointer');
+					const nameCell = $('<td>').append($('<span>').addClass('toggle-icon').text('➕'), ' ');
+					nameCell.append($('<a>').attr('href', site_url + controller + '/player/' + encodeURIComponent(entry.name)).text(entry.name));
+					nameCell.append(' ', $('<a>').attr('href', tibiantis_url + encodeURIComponent(entry.name).replace(/%20/g, '+')).attr('target', '_blank').text('↗'));
+
+					if (entry.overlap.status === 'confirmed') {
+						nameCell.append(' ', $('<span>').addClass('overlap-note').text('shared online time'));
+					} else if (entry.overlap.status === 'uncertain') {
+						nameCell.append(' ', $('<span>').addClass('overlap-note').text('possible overlap'));
+					}
+
+					row.append(nameCell);
+					row.append($('<td>').addClass('m').text(entry.level));
+					row.append($('<td>').addClass('m').text(formatScore(entry.score)));
+					body.append(row);
+					const list = $('<ul>').css({paddingLeft: '20px', margin: '5px 0'});
+					const overlapCount = Number(entry.overlap.intervals) || 0;
+					const overlapCountLabel = overlapCount + (overlapCount === 1 ? ' interval' : ' intervals');
+					const penaltyRatio = Number(entry.penalty.ratio) || 0;
+
+					if (penaltyRatio > 0) {
+						list.append($('<li>').addClass('score-penalty').text(
+							'Similarity score: ' + formatScore(entry.base_score) + ' → ' +
+							formatScore(entry.score) + ' after a ' + (penaltyRatio * 100).toFixed(1) +
+							'% penalty (' + (Number(entry.penalty.overlap_ratio) * 100).toFixed(1) +
+							'% of the shorter online time overlaps: ' +
+							formatDuration(entry.penalty.reliable_overlap_seconds) +
+							' reliable shared online out of ' +
+							formatDuration(entry.penalty.shorter_online_seconds) +
+							' shorter total online time).'
+						));
+					}
+
+					if (entry.overlap.status === 'confirmed') {
+						list.append($('<li>').addClass('overlap-summary').text(
+							'Shared online time observed: ' + formatDuration(entry.overlap.seconds) +
+							' in ' + overlapCountLabel +
+							'; at least one interval remains after the timing margin.'
+						));
+					} else if (entry.overlap.status === 'uncertain') {
+						list.append($('<li>').addClass('overlap-summary').text(
+							'Possible shared online time: ' + formatDuration(entry.overlap.seconds) +
+							' in ' + overlapCountLabel + '; observation timing is uncertain.'
+						));
+					}
+
+					const overlapExamples = entry.overlap.examples || [];
+
+					overlapExamples.forEach(function (overlap) {
+						list.append($('<li>').addClass('match-overlap').text(
+							ownName + ' and ' + entry.name + ' online together: ' +
+							overlap.start + ' – ' + overlap.end + ' (' + formatDuration(overlap.seconds) + ')'
+						));
+					});
+
+					if (overlapCount > overlapExamples.length) {
+						list.append($('<li>').addClass('overlap-more').text(
+							'Showing the latest ' + overlapExamples.length + ' of ' +
+							overlapCount + ' overlapping intervals.'
+						));
+					}
+
+					entry.matches.forEach(function (match) {
+						const item = $('<li>').addClass(match.type === 'after' ? 'match-after' : 'match-before');
+
+						if (match.type === 'after') {
+							item.text(ownName + ' logout: ' + match.self_logout + ', ' + entry.name + ' login: ' + match.friend_login + ' (+' + match.diff + 's)');
+						} else {
+							item.text(entry.name + ' logout: ' + match.friend_logout + ', ' + ownName + ' login: ' + match.self_login + ' (+' + match.diff + 's)');
+						}
+
+						list.append(item);
+					});
+
+					body.append($('<tr>').attr('id', rowId).addClass('match-details').hide().append($('<td>').attr('colspan', 3).addClass('m').append(list)));
+				});
+				$('.overlay, .popup-info').fadeOut(300);
+			},
+			error: function (xhr, status) {
+				$('#pageForm tbody').empty();
+				if (xhr.status === 410) showInfoPopup('Scanner is disabled until further notice.');
+				else if (xhr.status === 409) showInfoPopup('This name belongs to several characters. Please contact an administrator.');
+				else if (xhr.status === 429) showInfoPopup('Scanner is busy. Please try again shortly.');
+				else if (status === 'timeout' || xhr.status === 504) showInfoPopup('Search took too long. Please try again.');
+				else showInfoPopup('Scanner is temporarily unavailable.');
+			}
+		});
+	}
+
+	$(document).ready(function () {
+		$('#pageForm').on('submit', function (e) {
+			e.preventDefault();
+			findFriend();
+		});
+		$('#pageForm [type=button]').on('click', findFriend);
+
+		$(document).on('click', '.toggle-header', function () {
+			const targetId = $(this).data('target');
+			const detailRow = $(`#${targetId}`);
+			const icon = $(this).find('.toggle-icon');
+
+			detailRow.toggle();
+
+			if (detailRow.is(':visible')) {
+				icon.html('&#x2796;');
+			} else {
+				icon.html('&#x2795;');
+			}
+		});
+	});
+</script>
+<style>
+    .toggle-icon {
+        display: inline-block;
+        width: 20px;
+        text-align: center;
+        font-size: 16px;
+        color: #444;
+        margin-right: 5px;
+    }
+
+    .match-after {
+        color: #2b7a2b;
+    }
+
+    .match-before {
+        color: #1a4d8f;
+    }
+
+    .overlap-note {
+        color: #a05a00;
+    }
+
+    .overlap-summary,
+    .match-overlap {
+        color: #a05a00;
+    }
+
+    .score-penalty {
+        color: #8a3d00;
+        font-weight: bold;
+    }
+
+    .overlap-more {
+        color: #666;
+        font-style: italic;
+    }
+</style>
+		</div>
+	</div>
+	<br style="clear: both;">
+</div>
+<div class="footer">
+	content © <a href="/index/contact">Gubihe (zQt)</a> 2020-2026<br>
+	</div>
+<div class="overlay"></div>
+<div class="popup popup-info">
+	<a href="#" class="btn-close"></a>
+	<p class="popup-name">S</p>
+</div>
+<div class="popup popup-players">
+	<a href="#" class="btn-close"></a>
+	<textarea cols="50" rows="20" placeholder="one player per line, accepted examples:&#10;Gubihe (2023-01-01 00:00:00 - 2023-12-31 23:59:59)&#10;Gubihe (2023-01-01 00:00:00)&#10;Gubihe"></textarea>
+	<br/>
+	<input type="button" value="Load players"/>
+</div>
+<div class="timers" style="display: none;"></div>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+	ga("create", "UA-39163485-6", "auto");
+	ga("send", "pageview");</script></body>
+</html>
