@@ -1,5 +1,25 @@
 [
  {
+  "date": "2026-11-27 12:40",
+  "victim": "Slay",
+  "vlevel": 40,
+  "killers": [
+   [
+    "Glizdor",
+    75
+   ],
+   [
+    "Turrican",
+    86
+   ]
+  ],
+  "tracked_killers": [
+   "Glizdor",
+   "Turrican"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-27 09:57",
   "victim": "Leike",
   "vlevel": 18,
