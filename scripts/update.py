@@ -284,6 +284,26 @@ def probe_page(path):
     s = session(); r = s.get(BASE + path, timeout=30)
     (DATA / "probe_page.html").write_text(f"<!-- HTTP {r.status_code} {r.url} -->\n" + r.text, encoding="utf-8")
 
+def probe_variants(name):
+    """Debug: try the scanner request in a few ways and save what comes back."""
+    out = []
+    def go(label, s, **kw):
+        r = s.post(f"{BASE}/stats/friends", data={"name": name}, timeout=30, **kw)
+        out.append(f"{label}: HTTP {r.status_code} len={len(r.text)} asof={r.headers.get('X-Scanner-As-Of')} cookies={list(s.cookies.keys())} {r.text[:200]!r}")
+        time.sleep(PAUSE)
+    s = session(); go("plain", s)
+    go("xrw", s, headers={"X-Requested-With": "XMLHttpRequest"})
+    s.get(f"{BASE}/stats/friends", timeout=30); time.sleep(PAUSE)
+    go("after page + referer", s, headers={"X-Requested-With": "XMLHttpRequest", "Referer": f"{BASE}/stats/friends", "Accept": "application/json, text/javascript, */*; q=0.01", "Origin": BASE})
+    s2 = requests.Session(); s2.headers["User-Agent"] = "Mozilla/5.0 (fibula-tracker)"
+    s2.get(f"{BASE}/stats/friends", timeout=30); time.sleep(PAUSE)
+    go("no server cookie", s2, headers={"X-Requested-With": "XMLHttpRequest"})
+    for srv in ["amera", "fibula-amera", "Amera"]:
+        s3 = requests.Session(); s3.headers["User-Agent"] = "Mozilla/5.0 (fibula-tracker)"
+        s3.get(f"{BASE}/index/server/{srv}", timeout=30); time.sleep(PAUSE)
+        go(f"server {srv}", s3, headers={"X-Requested-With": "XMLHttpRequest"})
+    (DATA / "probe_variants.txt").write_text("\n".join(out), encoding="utf-8")
+
 def probe_scan(names):
     s = session(); out = []; full = {}
     for n in names:
@@ -448,4 +468,5 @@ if __name__ == "__main__":
     elif mode == "probeguild": probe_guild(sys.argv[2])
     elif mode == "probescan": probe_scan(sys.argv[2].split(";"))
     elif mode == "probepage": probe_page(sys.argv[2])
+    elif mode == "probevariants": probe_variants(sys.argv[2])
     else: {"online": run_online, "scan": run_scan, "kills": run_kills}[mode]()
