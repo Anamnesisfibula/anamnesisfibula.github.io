@@ -1,5 +1,46 @@
 [
  {
+  "date": "2026-11-26 22:40",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Sokrates",
+    8
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 22:35",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Astrix",
+    58
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 22:25",
+  "victim": "Sharimi",
+  "vlevel": 18,
+  "killers": [
+   [
+    "Kassadin",
+    16
+   ]
+  ],
+  "tracked_killers": [
+   "Kassadin"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-26 22:17",
   "victim": "Blue Fent",
   "vlevel": 55,
@@ -10,6 +51,19 @@
    ]
   ],
   "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 21:58",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Astrix",
+    58
+   ]
+  ],
   "tracked_killers": [],
   "owner_victim": "Kopacz Ognia"
  },
@@ -28,6 +82,51 @@
    ]
   ],
   "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 21:49",
+  "victim": "Qala",
+  "vlevel": 20,
+  "killers": [
+   [
+    "a scorpion",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 21:44",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "a field item",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 21:40",
+  "victim": "Kassadin",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Merida",
+    28
+   ],
+   [
+    "a field item",
+    null
+   ]
+  ],
   "tracked_killers": [],
   "owner_victim": "Kopacz Ognia"
  },
