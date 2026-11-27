@@ -1,5 +1,63 @@
 [
  {
+  "date": "2026-11-26 17:53",
+  "victim": "Xin Zhao",
+  "vlevel": 18,
+  "killers": [
+   [
+    "Zis Vis",
+    37
+   ],
+   [
+    "Poups",
+    42
+   ]
+  ],
+  "tracked_killers": [
+   "Poups"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-26 17:41",
+  "victim": "Yes I Love This",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Titan-demon",
+    24
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 17:37",
+  "victim": "Yes I Love This",
+  "vlevel": 8,
+  "killers": [
+   [
+    "Keeperz",
+    40
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 14:29",
+  "victim": "Halopara",
+  "vlevel": 39,
+  "killers": [
+   [
+    "Gollum",
+    70
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
   "date": "2026-11-26 14:00",
   "victim": "Szyje na Drucicczkach",
   "vlevel": 11,
@@ -45,6 +103,21 @@
   ],
   "tracked_killers": [],
   "owner_victim": "Glizdor"
+ },
+ {
+  "date": "2026-11-26 12:20",
+  "victim": "Ztek",
+  "vlevel": 23,
+  "killers": [
+   [
+    "Halopara",
+    39
+   ]
+  ],
+  "tracked_killers": [
+   "Halopara"
+  ],
+  "owner_victim": null
  },
  {
   "date": "2026-11-26 12:08",
@@ -111,6 +184,35 @@
   "owner_victim": null
  },
  {
+  "date": "2026-11-26 10:57",
+  "victim": "Ira Ni",
+  "vlevel": 15,
+  "killers": [
+   [
+    "a lion",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-26 09:00",
+  "victim": "Rahamu",
+  "vlevel": 12,
+  "killers": [
+   [
+    "Heart Healer",
+    50
+   ]
+  ],
+  "tracked_killers": [
+   "Heart Healer"
+  ],
+  "owner_victim": null
+ },
+ {
   "date": "2026-11-26 06:04",
   "victim": "Ill Bill",
   "vlevel": 40,
@@ -135,6 +237,34 @@
     40
    ]
   ],
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-25 19:43",
+  "victim": "Machokeitor",
+  "vlevel": 12,
+  "killers": [
+   [
+    "a slime",
+    null
+   ]
+  ],
+  "pve": true,
+  "tracked_killers": [],
+  "owner_victim": "Kopacz Ognia"
+ },
+ {
+  "date": "2026-11-25 19:30",
+  "victim": "Machokeitor",
+  "vlevel": 13,
+  "killers": [
+   [
+    "a slime",
+    null
+   ]
+  ],
+  "pve": true,
   "tracked_killers": [],
   "owner_victim": "Kopacz Ognia"
  },
