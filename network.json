@@ -1308,6 +1308,209 @@
    "l": 45,
    "v": "Master Sorcerer",
    "ls": "2026-11-27 03:37"
+  },
+  "Zarken": {
+   "g": "X",
+   "r": "",
+   "l": 11,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:06"
+  },
+  "You Hach Mate": {
+   "g": "X",
+   "r": "",
+   "l": 32,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 03:37"
+  },
+  "Stova": {
+   "g": "X",
+   "r": "",
+   "l": 58,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 05:08"
+  },
+  "Old Gregg": {
+   "g": "X",
+   "r": "",
+   "l": 52,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 05:08"
+  },
+  "Nhocksillo": {
+   "g": "X",
+   "r": "",
+   "l": 33,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 05:33"
+  },
+  "Mijuxol": {
+   "g": "X",
+   "r": "",
+   "l": 80,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 05:30"
+  },
+  "Master Chiin": {
+   "g": "X",
+   "r": "",
+   "l": 21,
+   "v": "Druid",
+   "ls": "2026-11-27 05:08"
+  },
+  "La Mujer Lagarto Viva": {
+   "g": "X",
+   "r": "",
+   "l": 22,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 05:34"
+  },
+  "Kassadin": {
+   "g": "X",
+   "r": "",
+   "l": 16,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 01:33"
+  },
+  "Junkyard Dawg": {
+   "g": "X",
+   "r": "",
+   "l": 22,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 04:56"
+  },
+  "Jenny Bambina": {
+   "g": "X",
+   "r": "",
+   "l": 35,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 02:03"
+  },
+  "Irvah Enerst Vlastokh": {
+   "g": "X",
+   "r": "",
+   "l": 30,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 04:06"
+  },
+  "Ex Trimera": {
+   "g": "X",
+   "r": "",
+   "l": 34,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 04:22"
+  },
+  "Elfbought-Ng": {
+   "g": "X",
+   "r": "",
+   "l": 14,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 02:03"
+  },
+  "Elder Pastro": {
+   "g": "X",
+   "r": "",
+   "l": 84,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 05:08"
+  },
+  "Drageron": {
+   "g": "X",
+   "r": "",
+   "l": 100,
+   "v": "Royal Paladin",
+   "ls": "2026-11-27 05:08"
+  },
+  "Diuf": {
+   "g": "X",
+   "r": "",
+   "l": 20,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 02:05"
+  },
+  "Diamond": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 04:22"
+  },
+  "Chuck Norris": {
+   "g": "X",
+   "r": "",
+   "l": 55,
+   "v": "Royal Paladin",
+   "ls": "2026-11-27 04:22"
+  },
+  "Chivi Chan": {
+   "g": "X",
+   "r": "",
+   "l": 9,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 05:08"
+  },
+  "Cemu": {
+   "g": "X",
+   "r": "",
+   "l": 58,
+   "v": "Elite Knight",
+   "ls": "2026-11-27 05:08"
+  },
+  "Bolt": {
+   "g": "X",
+   "r": "",
+   "l": 66,
+   "v": "Royal Paladin",
+   "ls": "2026-11-27 03:37"
+  },
+  "Ax'e": {
+   "g": "X",
+   "r": "",
+   "l": 71,
+   "v": "Elite Knight",
+   "ls": "2026-11-27 03:51"
+  },
+  "Abelinha": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 02:41"
+  },
+  "Mojon Cibernetico": {
+   "g": "X",
+   "r": "",
+   "l": 57,
+   "v": "Elite Knight",
+   "ls": "2026-11-27 05:35"
+  },
+  "Kaboom": {
+   "g": "X",
+   "r": "",
+   "l": 6,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 05:35"
+  },
+  "Darkwuez": {
+   "g": "X",
+   "r": "",
+   "l": 30,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 05:08"
+  },
+  "Xin Zhao": {
+   "g": "X",
+   "r": "",
+   "l": 21,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 02:03"
+  },
+  "Tyrionix": {
+   "g": "X",
+   "r": "",
+   "l": 21,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 02:03"
   }
  },
  "clusters": [
@@ -1590,6 +1793,180 @@
      "Antedeguemon",
      "m",
      "own scanner: 4 exact handovers with Kopacz Ognia, seen on 2 days, 193 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Zarken",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 98 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "You Hach Mate",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 347 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Stova",
+     "m",
+     "own scanner: 5 exact handovers with Zzork, seen on 2 days, 416 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Old Gregg",
+     "m",
+     "own scanner: 4 exact handovers with Zzork, seen on 2 days, 61 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Nhocksillo",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 224 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Mijuxol",
+     "m",
+     "own scanner: 4 exact handovers with Zzork, seen on 2 days, 95 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Master Chiin",
+     "m",
+     "own scanner: 4 exact handovers with Zzork, seen on 2 days, 142 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "La Mujer Lagarto Viva",
+     "m",
+     "own scanner: 5 exact handovers with Zzork, seen on 2 days, 247 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Kassadin",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 31 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Junkyard Dawg",
+     "m",
+     "own scanner: 7 exact handovers with Zzork, seen on 2 days, 317 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Jenny Bambina",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 99 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Irvah Enerst Vlastokh",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 379 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Ex Trimera",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 189 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Elfbought-Ng",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 81 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Elder Pastro",
+     "m",
+     "own scanner: 4 exact handovers with Zzork, seen on 2 days, 89 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Drageron",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 29 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Diuf",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 175 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Diamond",
+     "m",
+     "own scanner: 5 exact handovers with Zzork, seen on 2 days, 130 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Chuck Norris",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 268 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Chivi Chan",
+     "m",
+     "own scanner: 3 exact handovers with Zzork, seen on 2 days, 295 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Cemu",
+     "m",
+     "own scanner: 4 exact handovers with Zzork, seen on 2 days, 135 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Bolt",
+     "h",
+     "own scanner: 29 exact handovers with Zzork, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Ax'e",
+     "m",
+     "own scanner: 18 exact handovers with Zzork, seen on 2 days, 89 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Abelinha",
+     "m",
+     "own scanner: 6 exact handovers with Zzork, seen on 2 days, 30 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Mojon Cibernetico",
+     "m",
+     "own scanner: 4 exact handovers with Zarakura, seen on 2 days, 154 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Kaboom",
+     "m",
+     "own scanner: 4 exact handovers with Zarakura, seen on 2 days, 237 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Darkwuez",
+     "m",
+     "own scanner: 3 exact handovers with Zarakura, seen on 2 days, 66 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Xin Zhao",
+     "m",
+     "own scanner: 4 exact handovers with Yes I Love This, seen on 2 days (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Tyrionix",
+     "m",
+     "own scanner: 3 exact handovers with Yes I Love This, seen on 2 days, 66 min online together (new 2026-11-27)",
      "2026-11-27"
     ]
    ]
@@ -2362,9 +2739,9 @@
  ],
  "scanned": "2026-11-26 09:16",
  "ownscan": {
-  "time": "2026-11-27 04:31",
-  "events": 118,
-  "candidates": 47,
-  "added": 19
+  "time": "2026-11-27 05:36",
+  "events": 122,
+  "candidates": 335,
+  "added": 29
  }
 }
