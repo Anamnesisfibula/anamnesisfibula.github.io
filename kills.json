@@ -39,6 +39,19 @@
   "owner_victim": "Domino"
  },
  {
+  "date": "2026-11-27 14:53",
+  "victim": "Strzelba Kon",
+  "vlevel": 19,
+  "killers": [
+   [
+    "Quantumleap",
+    88
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Wariat Av"
+ },
+ {
   "date": "2026-11-27 14:52",
   "victim": "Akarat Zakarum",
   "vlevel": 91,
