@@ -280,14 +280,17 @@ def probe_guild(gname):
     (DATA / "probe_guild.txt").write_text("\n".join(out), encoding="utf-8")
 
 def probe_scan(names):
-    s = session(); out = []
+    s = session(); out = []; full = {}
     for n in names:
         r = s.post(f"{BASE}/stats/friends/x", data={"name": n}, headers={"X-Requested-With": "XMLHttpRequest"}, timeout=30)
         out.append(f"{n}: HTTP {r.status_code} {r.headers.get('content-type')} {r.text[:300]!r}")
+        try: full[n] = [{k: e.get(k) for k in ("name", "level", "score")} | {"shared": (e.get("overlap") or {}).get("status")} for e in r.json()]
+        except Exception: full[n] = None
         time.sleep(PAUSE)
     for g in ["Stare Gity", "Stare gity"]:
         out.append(f"guild {g}: {len(guild_members(s, g))} members")
     (DATA / "probe_scan.txt").write_text("\n".join(out), encoding="utf-8")
+    save(DATA / "probe_scan.json", full)
 
 # ---------- own scanner: find and verify alts ----------
 def sessions(s, name):
