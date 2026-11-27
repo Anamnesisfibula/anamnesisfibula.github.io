@@ -1623,6 +1623,27 @@
    "l": 38,
    "v": "Master Sorcerer",
    "ls": "2026-11-27 08:49"
+  },
+  "Scarlet": {
+   "g": "X",
+   "r": "",
+   "l": 20,
+   "v": "Elder Druid",
+   "ls": "2026-11-27 12:06"
+  },
+  "Charizard": {
+   "g": "X",
+   "r": "",
+   "l": 20,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 12:07"
+  },
+  "Borat": {
+   "g": "X",
+   "r": "",
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 12:07"
   }
  },
  "clusters": [
@@ -2175,6 +2196,24 @@
      "The Messi Of Tibia",
      "m",
      "own scanner: 3 exact handovers with Yoh, seen on 2 days, 590 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Scarlet",
+     "m",
+     "own scanner: 3 exact handovers with Ziggs Bro, seen on 2 days, 548 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Charizard",
+     "m",
+     "own scanner: 3 exact handovers with Ziggs Bro, seen on 2 days, 952 min online together (new 2026-11-27)",
+     "2026-11-27"
+    ],
+    [
+     "Borat",
+     "m",
+     "own scanner: 3 exact handovers with Ziggs Bro, seen on 2 days, 565 min online together (new 2026-11-27)",
      "2026-11-27"
     ]
    ]
@@ -2947,9 +2986,9 @@
  ],
  "scanned": "2026-11-26 09:16",
  "ownscan": {
-  "time": "2026-11-27 10:59",
-  "events": 145,
-  "candidates": 760,
-  "added": 0
+  "time": "2026-11-27 12:08",
+  "events": 150,
+  "candidates": 792,
+  "added": 3
  }
 }
