@@ -925,5 +925,13 @@
   "owner": "Venator",
   "via": "reported by admin",
   "score": "-"
+ },
+ {
+  "date": "2026-11-28",
+  "type": "new_alt",
+  "name": "Junkyard Dawg",
+  "owner": "Domino",
+  "via": "Ymor",
+  "score": "own 4"
  }
 ]

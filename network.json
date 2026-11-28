@@ -19,7 +19,7 @@
    "r": "a Vice-Leader",
    "l": 21,
    "v": "Elder Druid",
-   "ls": "2026-11-26 21:22"
+   "ls": "2026-11-27 20:11"
   },
   "Maticore": {
    "g": "BW",
@@ -33,56 +33,56 @@
    "r": "a Vice-Leader",
    "l": 1,
    "v": "Royal Paladin",
-   "ls": "2026-11-25 22:12"
+   "ls": "2026-11-27 22:39"
   },
   "Turbo Koksik": {
    "g": "BW",
    "r": "a Vice-Leader",
    "l": 27,
    "v": "Elder Druid",
-   "ls": "2026-11-11 20:08"
+   "ls": "2026-11-27 14:42"
   },
   "Ww": {
    "g": "BW",
    "r": "a Vice-Leader",
    "l": 28,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 23:47"
+   "ls": "2026-11-28 04:10"
   },
   "Barbossa": {
    "g": "BW",
    "r": "a Member",
    "l": 24,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 23:47"
+   "ls": "2026-11-27 23:36"
   },
   "Bubblebea": {
    "g": "BW",
    "r": "a Member",
    "l": 19,
    "v": "Elder Druid",
-   "ls": "2026-11-26 00:27"
+   "ls": "2026-11-27 23:09"
   },
   "Endurion": {
    "g": "BW",
    "r": "a Member",
    "l": 1,
-   "v": "Sorcerer",
-   "ls": "2026-11-27 12:35"
+   "v": "Master Sorcerer",
+   "ls": "2026-11-27 20:48"
   },
   "Glizda": {
    "g": "X",
    "r": "",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-27 10:48"
+   "ls": "2026-11-27 21:55"
   },
   "Glizdek": {
    "g": "X",
    "r": "",
    "l": 1,
    "v": "Sorcerer",
-   "ls": "2026-11-27 12:28"
+   "ls": "2026-11-27 22:39"
   },
   "Glizdogon": {
    "g": "X",
@@ -110,7 +110,7 @@
    "r": "a Member",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-25 21:21"
+   "ls": "2026-11-27 20:48"
   },
   "Lord Chutten": {
    "g": "BW",
@@ -131,21 +131,21 @@
    "r": "a Member",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-25 18:55"
+   "ls": "2026-11-27 20:33"
   },
   "Mroczny Elder": {
    "g": "BW",
    "r": "a Member",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-24 12:10"
+   "ls": "2026-11-27 23:09"
   },
   "Mroczny Maker": {
    "g": "BW",
    "r": "a Member",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-25 22:12"
+   "ls": "2026-11-27 21:55"
   },
   "Mroczny Marcelo": {
    "g": "BW",
@@ -194,14 +194,14 @@
    "r": "a Member",
    "l": 1,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 23:47"
+   "ls": "2026-11-27 23:36"
   },
   "Wodywodpecker": {
    "g": "X",
    "r": "",
    "l": 25,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 22:26"
+   "ls": "2026-11-28 01:21"
   },
   "Zabka": {
    "g": "BW",
@@ -213,23 +213,23 @@
   "Kopacz Ognia": {
    "g": "RB",
    "r": "the Leader",
-   "l": 82,
+   "l": 81,
    "v": "Master Sorcerer",
-   "ls": "2026-11-27 04:06"
+   "ls": "2026-11-28 02:39"
   },
   "Akarat Zakarum": {
    "g": "RB",
    "r": "a Vice-Leader",
-   "l": 91,
+   "l": 90,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 22:54"
+   "ls": "2026-11-28 01:21"
   },
   "Domino": {
    "g": "RB",
    "r": "a Vice-Leader",
    "l": 61,
    "v": "Elder Druid",
-   "ls": "2026-11-26 22:54"
+   "ls": "2026-11-28 02:12"
   },
   "Venator": {
    "g": "RB",
@@ -250,7 +250,7 @@
    "r": "BULLER",
    "l": 37,
    "v": "Master Sorcerer",
-   "ls": "2026-11-21 22:41"
+   "ls": "2026-11-27 18:05"
   },
   "Dawaj milion": {
    "g": "RB",
@@ -299,28 +299,28 @@
    "r": "BULLER",
    "l": 83,
    "v": "Elite Knight",
-   "ls": "2026-11-25 22:52"
+   "ls": "2026-11-27 21:40"
   },
   "Kanrak": {
    "g": "RB",
    "r": "BULLER",
-   "l": 56,
+   "l": 55,
    "v": "Elite Knight",
-   "ls": "2026-11-27 00:03"
+   "ls": "2026-11-27 22:54"
   },
   "Koirr": {
    "g": "RB",
    "r": "BULLER",
-   "l": 56,
+   "l": 55,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 22:54"
+   "ls": "2026-11-27 22:54"
   },
   "Konga Smash": {
    "g": "RB",
    "r": "BULLER",
    "l": 105,
    "v": "Royal Paladin",
-   "ls": "2026-11-27 00:18"
+   "ls": "2026-11-28 03:27"
   },
   "Kuciapa premium": {
    "g": "RB",
@@ -334,7 +334,7 @@
    "r": "BULLER",
    "l": 32,
    "v": "Elder Druid",
-   "ls": "2026-11-26 23:09"
+   "ls": "2026-11-28 01:06"
   },
   "Morre": {
    "g": "RB",
@@ -346,9 +346,9 @@
   "Night Stalker": {
    "g": "RB",
    "r": "BULLER",
-   "l": 52,
+   "l": 53,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 15:08"
+   "ls": "2026-11-28 02:39"
   },
   "Pumas": {
    "g": "RB",
@@ -362,21 +362,21 @@
    "r": "BULLER",
    "l": 101,
    "v": "Elite Knight",
-   "ls": "2026-11-26 22:54"
+   "ls": "2026-11-28 01:06"
   },
   "Samba'sky": {
    "g": "RB",
    "r": "BULLER",
-   "l": 78,
+   "l": 76,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 22:54"
+   "ls": "2026-11-27 23:24"
   },
   "Sir Zawalisty Knight": {
    "g": "RB",
    "r": "BULLER",
    "l": 31,
    "v": "Elite Knight",
-   "ls": "2026-11-27 03:22"
+   "ls": "2026-11-28 03:42"
   },
   "Stare Narty Malysza": {
    "g": "RB",
@@ -397,21 +397,21 @@
    "r": "BULLER",
    "l": 62,
    "v": "Royal Paladin",
-   "ls": "2026-11-27 09:51"
+   "ls": "2026-11-27 21:03"
   },
   "Wariat Av": {
    "g": "RB",
    "r": "BULLER",
    "l": 108,
    "v": "Royal Paladin",
-   "ls": "2026-11-22 21:24"
+   "ls": "2026-11-27 22:54"
   },
   "Wladeczek": {
    "g": "RB",
    "r": "BULLER",
    "l": 47,
    "v": "Royal Paladin",
-   "ls": "2026-11-25 21:06"
+   "ls": "2026-11-28 01:45"
   },
   "Wolodyjowski": {
    "g": "RB",
@@ -439,42 +439,42 @@
    "r": "BULLY MAKER",
    "l": 21,
    "v": "Master Sorcerer",
-   "ls": "2026-11-27 12:34"
+   "ls": "2026-11-27 20:11"
   },
   "Strzelba Kon": {
    "g": "RB",
    "r": "BULLY MAKER",
    "l": 20,
    "v": "Master Sorcerer",
-   "ls": "2026-11-22 22:08"
+   "ls": "2026-11-27 21:03"
   },
   "Szyje na Drutach": {
    "g": "RB",
    "r": "BULLY MAKER",
    "l": 22,
    "v": "Elder Druid",
-   "ls": "2026-11-27 00:37"
+   "ls": "2026-11-28 02:24"
   },
   "Melepeta": {
    "g": "CC",
    "r": "a Vice-Leader",
    "l": 69,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 20:53"
+   "ls": "2026-11-27 22:30"
   },
   "Glizdor": {
    "g": "CC",
    "r": "the Leader",
-   "l": 75,
+   "l": 73,
    "v": "Master Sorcerer",
-   "ls": "2026-11-27 12:37"
+   "ls": "2026-11-27 23:51"
   },
   "Glizdur": {
    "g": "X",
    "r": "",
    "l": 1,
    "v": "Sorcerer",
-   "ls": "2026-11-26 00:12"
+   "ls": "2026-11-27 15:08"
   },
   "Lil Que": {
    "g": "X",
@@ -495,14 +495,14 @@
    "r": "",
    "l": 22,
    "v": "Master Sorcerer",
-   "ls": "2026-11-22 23:40"
+   "ls": "2026-11-27 23:09"
   },
   "Don Oyche": {
    "g": "X",
    "r": "",
    "l": 20,
    "v": "Elder Druid",
-   "ls": "2026-11-27 12:35"
+   "ls": "2026-11-27 17:40"
   },
   "Sredi": {
    "g": "X",
@@ -551,7 +551,7 @@
    "r": "the Leader",
    "l": 86,
    "v": "Elite Knight",
-   "ls": "2026-11-26 22:11"
+   "ls": "2026-11-27 21:40"
   },
   "Cho Po": {
    "g": "CC",
@@ -572,7 +572,7 @@
    "r": "a Member",
    "l": 22,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 20:10"
+   "ls": "2026-11-27 18:05"
   },
   "Bru'toh": {
    "g": "X",
@@ -584,9 +584,9 @@
   "Losos Saint": {
    "g": "X",
    "r": "",
-   "l": 40,
+   "l": 39,
    "v": "Knight",
-   "ls": "2026-11-25 19:11"
+   "ls": "2026-11-28 03:54"
   },
   "Cloudive": {
    "g": "X",
@@ -607,14 +607,14 @@
    "r": "Jeszcze raz krociutko i c",
    "l": 50,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 23:47"
+   "ls": "2026-11-27 15:41"
   },
   "Bone": {
    "g": "WU",
    "r": "WINDYKATOR",
    "l": 55,
    "v": "Royal Paladin",
-   "ls": "2026-11-27 10:06"
+   "ls": "2026-11-27 15:08"
   },
   "Chuck Noris": {
    "g": "WU",
@@ -649,7 +649,7 @@
    "r": "",
    "l": 20,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 01:37"
+   "ls": "2026-11-28 00:07"
   },
   "Therion": {
    "g": "WU",
@@ -768,7 +768,7 @@
    "r": "",
    "l": 27,
    "v": "Master Sorcerer",
-   "ls": "2026-11-22 22:37"
+   "ls": "2026-11-27 21:40"
   },
   "Koniowi Zamelduj": {
    "g": "SG",
@@ -810,14 +810,14 @@
    "r": "",
    "l": 30,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 23:24"
+   "ls": "2026-11-27 16:25"
   },
   "Drikov": {
    "g": "X",
    "r": "",
    "l": 20,
    "v": "Elder Druid",
-   "ls": "2026-11-27 12:40"
+   "ls": "2026-11-27 14:42"
   },
   "Monkeyinme": {
    "g": "X",
@@ -852,7 +852,7 @@
    "r": "",
    "l": 24,
    "v": "Paladin",
-   "ls": "2026-11-26 23:47"
+   "ls": "2026-11-27 20:26"
   },
   "Hymel Jadwiga": {
    "g": "X",
@@ -866,14 +866,14 @@
    "r": "",
    "l": 8,
    "v": "Druid",
-   "ls": "2026-11-26 19:24"
+   "ls": "2026-11-28 02:51"
   },
   "Energy Field Master": {
    "g": "X",
    "r": "",
    "l": 1,
    "v": "Sorcerer",
-   "ls": "2026-11-27 00:37"
+   "ls": "2026-11-28 03:42"
   },
   "Tester Sd": {
    "g": "X",
@@ -894,7 +894,7 @@
    "r": "",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-27 01:48"
+   "ls": "2026-11-27 22:15"
   },
   "Szyje na Drucicczkach": {
    "g": "X",
@@ -1012,7 +1012,7 @@
    "g": "X",
    "r": "",
    "l": 8,
-   "v": "No vocation",
+   "v": "Druid",
    "ls": "2026-11-27 00:18"
   },
   "Tanczacy z dwarfami": {
@@ -1020,7 +1020,7 @@
    "r": "",
    "l": 1,
    "v": "No vocation",
-   "ls": "2026-11-27 00:37"
+   "ls": "2026-11-27 22:30"
   },
   "Mapleboi": {
    "g": "X",
@@ -1055,7 +1055,7 @@
    "r": "",
    "l": 7,
    "v": "Sorcerer",
-   "ls": "2026-11-02 09:20"
+   "ls": "2026-11-27 21:55"
   },
   "Karambam": {
    "g": "X",
@@ -1153,21 +1153,21 @@
    "r": "",
    "l": 1,
    "v": "Druid",
-   "ls": "2026-11-26 13:23"
+   "ls": "2026-11-27 13:12"
   },
   "Goat freddy": {
    "g": "X",
    "r": "",
    "l": 36,
    "v": "Master Sorcerer",
-   "ls": "2026-11-26 16:10"
+   "ls": "2026-11-27 23:51"
   },
   "Azifaralek": {
    "g": "X",
    "r": "",
-   "l": 83,
+   "l": 82,
    "v": "Royal Paladin",
-   "ls": "2026-11-26 14:57"
+   "ls": "2026-11-28 00:48"
   },
   "Zorro Zwinia": {
    "g": "X",
@@ -1179,23 +1179,23 @@
   "Walp": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 43,
+   "v": "Elite Knight",
+   "ls": "2026-11-28 03:42"
   },
   "Wawahua": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 23:36"
   },
   "Samiec Alfa": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-07 13:02"
   },
   "Morree": {
    "g": "X",
@@ -1214,93 +1214,93 @@
   "Witam panstwa": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 28,
+   "v": "Master Sorcerer",
+   "ls": "2026-08-08 23:24"
   },
   "Ymor": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 27,
+   "v": "Royal Paladin",
+   "ls": "2026-11-28 04:09"
   },
   "Glizdorro": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 16:40"
   },
   "Glizduch": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 22:30"
   },
   "Sabrina": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 8,
+   "v": "Sorcerer",
+   "ls": "2026-09-25 14:32"
   },
   "Elegancki Manifest": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 22,
+   "v": "Paladin",
+   "ls": "2026-11-22 17:55"
   },
   "Zayebaniec": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Knight",
+   "ls": "2026-04-30 22:54"
   },
   "Biskvi": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 21,
+   "v": "Master Sorcerer",
+   "ls": "2026-11-28 03:42"
   },
   "Ba'boshka": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 8,
+   "v": "Knight",
+   "ls": "2026-11-28 03:21"
   },
   "Symulator Wedkarstwa": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 43,
+   "v": "Knight",
+   "ls": "2026-11-20 13:27"
   },
   "Sunia": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 8,
+   "v": "Paladin",
+   "ls": "2026-11-22 20:52"
   },
   "Mobilne Krematorium": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 7,
+   "v": "Druid",
+   "ls": "2026-11-26 00:39"
   },
   "Maly Terrorysta": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-09-02 23:11"
   },
   "Dr. Oettker": {
    "g": "X",
@@ -1312,135 +1312,142 @@
   "Robie Sydyki": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 19:38"
   },
   "Rider": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Knight",
+   "ls": "2026-11-27 20:26"
   },
   "Kamil Lewicki": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "No vocation",
+   "ls": "2026-11-27 10:06"
   },
   "Komanndoos": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-22 18:38"
   },
   "Satamo": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 14,
+   "v": "Paladin",
+   "ls": "2026-11-02 00:09"
   },
   "Ursus": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 29,
+   "v": "Master Sorcerer",
+   "ls": "2026-09-08 17:22"
   },
   "Lowa": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 17,
+   "v": "Paladin",
+   "ls": "2026-11-01 21:57"
   },
   "Fruareraruacha": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 21:55"
   },
   "Pistoleiro": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-14 11:05"
   },
   "Ssao Pao": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 7,
+   "v": "Sorcerer",
+   "ls": "2026-11-20 15:59"
   },
   "Pistol Pete": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-12 22:54"
   },
   "Doctor Scalpel": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-27 22:15"
   },
   "Simon Pheonix": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Druid",
+   "ls": "2026-11-21 21:46"
   },
   "Humla Mumla": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-20 17:49"
   },
   "Deedee The Dachshund": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-10-18 11:25"
   },
   "Odszczurzanie": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 10,
+   "v": "Druid",
+   "ls": "2026-07-22 21:52"
   },
   "The Guy": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 44,
+   "v": "Master Sorcerer",
+   "ls": "2026-08-18 14:33"
   },
   "Chrzaszcz": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 14,
+   "v": "Paladin",
+   "ls": "2026-06-02 00:24"
   },
   "Mituzm": {
    "g": "X",
    "r": "",
-   "l": 0,
-   "v": "",
-   "ls": ""
+   "l": 1,
+   "v": "Sorcerer",
+   "ls": "2026-11-27 16:56"
+  },
+  "Junkyard Dawg": {
+   "g": "X",
+   "r": "",
+   "l": 22,
+   "v": "Elder Druid",
+   "ls": "2026-11-28 04:19"
   }
  },
  "clusters": [
@@ -1838,6 +1845,12 @@
      "m",
      "reported by admin",
      "2026-11-27"
+    ],
+    [
+     "Junkyard Dawg",
+     "m",
+     "own scanner: 4 exact handovers with Ymor, seen on 2 days (new 2026-11-28)",
+     "2026-11-28"
     ]
    ]
   ],
@@ -2619,11 +2632,11 @@
    []
   ]
  ],
- "scanned": "2026-11-27 12:43",
+ "scanned": "2026-11-28 04:18",
  "ownscan": {
-  "time": "2026-11-27 12:45",
-  "events": 153,
-  "candidates": 134,
+  "time": "2026-11-28 04:20",
+  "events": 217,
+  "candidates": 1011,
   "added": 1
  }
 }
