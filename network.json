@@ -1441,13 +1441,6 @@
    "l": 1,
    "v": "Sorcerer",
    "ls": "2026-11-27 16:56"
-  },
-  "Junkyard Dawg": {
-   "g": "X",
-   "r": "",
-   "l": 22,
-   "v": "Elder Druid",
-   "ls": "2026-11-28 04:19"
   }
  },
  "clusters": [
@@ -1845,12 +1838,6 @@
      "m",
      "reported by admin",
      "2026-11-27"
-    ],
-    [
-     "Junkyard Dawg",
-     "m",
-     "own scanner: 4 exact handovers with Ymor, seen on 2 days (new 2026-11-28)",
-     "2026-11-28"
     ]
    ]
   ],
