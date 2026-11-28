@@ -1,5 +1,33 @@
 [
  {
+  "date": "2026-11-28 01:24",
+  "victim": "Ineedaname",
+  "vlevel": 23,
+  "killers": [
+   [
+    "Wodywodpecker",
+    25
+   ]
+  ],
+  "tracked_killers": [
+   "Wodywodpecker"
+  ],
+  "owner_victim": null
+ },
+ {
+  "date": "2026-11-28 01:21",
+  "victim": "Wodywodpecker",
+  "vlevel": 25,
+  "killers": [
+   [
+    "Ineedaname",
+    23
+   ]
+  ],
+  "tracked_killers": [],
+  "owner_victim": "Wodywodpecker"
+ },
+ {
   "date": "2026-11-27 18:18",
   "victim": "Losos Saint",
   "vlevel": 40,
